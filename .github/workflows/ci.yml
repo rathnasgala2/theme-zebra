@@ -52,6 +52,17 @@ jobs:
         run: |
           test "$(node --version)" = "v24.18.0"
 
+      # `tooling/test/template-conformance.test.mjs` imports the
+      # template checkout's own `src/core/index.js` by path (not as an
+      # npm dependency), so that module's bare-specifier imports (e.g.
+      # `@rathnasgala2/schemas`) only resolve if the template checkout
+      # has its own dependencies installed. Node's ESM resolution never
+      # looks outside the importing module's own directory ancestry, so
+      # `tooling/node_modules` cannot satisfy this on its own.
+      - name: Install the template sibling repository's dependencies
+        working-directory: template
+        run: npm ci
+
       - name: Install locked dependencies
         working-directory: tooling
         run: npm ci
