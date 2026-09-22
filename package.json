@@ -1,0 +1,11 @@
+{
+  "name": "@rathnasgala2/theme-zebra",
+  "version": "2.0.0",
+  "license": "Apache-2.0",
+  "files": [
+    "components.css",
+    "print.css",
+    "theme.json",
+    "tokens.css"
+  ]
+}

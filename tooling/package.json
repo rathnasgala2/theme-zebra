@@ -1,0 +1,42 @@
+{
+  "name": "@rathnasgala2/theme-zebra-tooling",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Unpublished local dev/test/SBOM tooling for the @rathnasgala2/theme-zebra repository. Never packed: this directory is not part of the parent package.json's `files` array.",
+  "engines": {
+    "node": "24.18.0",
+    "npm": "11.16.0"
+  },
+  "scripts": {
+    "format": "prettier --write --config .prettierrc.json ../*.md ../*.json ../*.css \"test/**/*.mjs\" eslint.config.js \"scripts/*.mjs\"",
+    "format:check": "prettier --check --config .prettierrc.json ../*.md ../*.json ../*.css \"test/**/*.mjs\" eslint.config.js \"scripts/*.mjs\"",
+    "lint": "eslint --config eslint.config.js .",
+    "schema:check": "node scripts/check-theme-schema.mjs",
+    "css:check": "node scripts/check-css-hooks.mjs",
+    "contrast:check": "node scripts/check-contrast.mjs",
+    "package:check": "node scripts/check-package-file-set.mjs",
+    "absence:check": "node scripts/check-forbidden-constructs.mjs",
+    "digest:generate": "node scripts/generate-theme-digests.mjs",
+    "digest:check": "node scripts/generate-theme-digests.mjs --check",
+    "test": "node --test \"test/**/*.test.mjs\"",
+    "duplication": "jscpd --config .jscpd.json",
+    "sbom:generate": "cyclonedx-npm --output-file ../sbom.cdx.json --output-format JSON --spec-version 1.6 && node scripts/normalize-sbom.mjs",
+    "sbom:check": "node scripts/check-sbom-current.mjs",
+    "audit": "npm audit --audit-level=high",
+    "workflows:check": "node scripts/check-workflow-pins.mjs",
+    "workflows:drift": "node scripts/check-workflow-drift.mjs",
+    "verify": "npm run format:check && npm run lint && npm run schema:check && npm run css:check && npm run contrast:check && npm run package:check && npm run absence:check && npm run digest:generate && npm run digest:check && npm test && npm run duplication && npm run sbom:check && npm run audit && npm run workflows:check"
+  },
+  "devDependencies": {
+    "@cyclonedx/cyclonedx-npm": "6.0.1",
+    "@eslint/js": "10.0.1",
+    "@rathnasgala2/schemas": "file:../../../local-packages/rathnasgala2-schemas-2.8.0.tgz",
+    "eslint": "10.10.0",
+    "globals": "17.12.0",
+    "jscpd": "5.2.0",
+    "postcss": "8.5.28",
+    "postcss-selector-parser": "7.1.6",
+    "prettier": "3.9.6"
+  }
+}
