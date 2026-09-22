@@ -28,6 +28,7 @@ async function main() {
   try {
     await run('npx', [
       'cyclonedx-npm',
+      '--package-lock-only',
       '--output-file',
       scratchPath,
       '--output-format',
