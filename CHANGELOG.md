@@ -4,6 +4,23 @@ All notable changes to `@rathnasgala2/theme-zebra` are documented here.
 
 ## Unreleased
 
+### Changed (SCHEMA-REPIN-2.11.0, 2026-09-22)
+
+- `tooling/package.json` re-pins `@rathnasgala2/schemas` from the LOCAL-1
+  local tarball (`file:../../../local-packages/rathnasgala2-schemas-2.8.0.tgz`)
+  to the exact published registry version `2.11.0`
+  (`https://registry.npmjs.org/@rathnasgala2/schemas/-/schemas-2.11.0.tgz`,
+  integrity `sha512-5hXxpLaXqEKKhoRLBBEq98rzJQ9K4u3b8nDMt/ZZmV2gL4XRmTOCwjF1U618UJ1CgmFnlifhQWRuDvQQVyFfTA==`).
+  This fixes CI, which was failing on every push because the `file:` path
+  does not exist on GitHub Actions runners. `urn:gala:schema:theme-contract:2.0.0`
+  and the `build-input` root this tooling validates against are
+  byte-identical between 2.8.0 and 2.11.0 (contract re-pin packet,
+  2026-09-19); `tooling/package-lock.json` and `sbom.cdx.json` regenerated
+  accordingly; full `npm run verify` re-run and green.
+- Added `tooling/scripts/check-no-local-schema-pin.mjs` (wired into
+  `verify` as `schema-pin:check`) so a `file:`/`local-packages` specifier
+  for `@rathnasgala2/schemas` can never silently return.
+
 ### Changed (THEMES-2.8.0, 2026-09-18)
 
 - `tooling/package.json` pins `@rathnasgala2/schemas` to the packed
