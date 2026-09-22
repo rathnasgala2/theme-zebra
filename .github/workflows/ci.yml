@@ -60,10 +60,6 @@ jobs:
       - working-directory: tooling
         run: npm run schema-pin:check
       - working-directory: tooling
-        run: npm run digest:generate
-      - working-directory: tooling
-        run: npm run digest:check
-      - working-directory: tooling
         run: npm run workflows:check
       - working-directory: tooling
         run: npm run workflows:drift
@@ -105,6 +101,14 @@ jobs:
       - name: Install locked dependencies
         working-directory: tooling
         run: npm ci
+
+      # The digest cycle regenerates theme.json's conformance evidence
+      # against the template checkout, so it belongs in the job that has
+      # that sibling on disk.
+      - working-directory: tooling
+        run: npm run digest:generate
+      - working-directory: tooling
+        run: npm run digest:check
 
       - working-directory: tooling
         run: npm run css:check
