@@ -78,15 +78,15 @@ jobs:
         with:
           persist-credentials: false
 
-      # PLACEHOLDER (W0-01): ref is provisional until the template
-      # repository exists on GitHub with a frozen contract revision to
-      # pin to. `tooling/scripts/check-css-hooks.mjs` and the conformance
+      # Pinned to the commit published as @rathnasgala2/template 2.0.0
+      # (verified against the registry's gitHead metadata for that version).
+      # `tooling/scripts/check-css-hooks.mjs` and the conformance
       # tests read this checkout by path (WORKSPACE_ROOT/template).
       - name: Check out the template sibling repository
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           repository: rathnasgala2/template
-          ref: main # PLACEHOLDER (W0-01): pin to a frozen release tag
+          ref: 15142f8baebaff5e174ac07d784073d2d2163b88 # 2.0.0
           path: template
           persist-credentials: false
 
