@@ -24,11 +24,6 @@
     padding: var(--gala-space-6) var(--gala-space-4);
   }
 
-  [data-gala-publication-root] #main-content {
-    outline-color: var(--gala-color-focus);
-    outline-width: var(--gala-focus-width);
-  }
-
   [data-gala-publication-root] footer {
     background-color: var(--gala-color-surface);
     border-top: var(--gala-border-width) solid var(--gala-color-border);
@@ -80,9 +75,15 @@
 
   [data-gala-publication-root] a {
     color: var(--gala-color-link);
-    outline-color: var(--gala-color-focus);
-    outline-width: var(--gala-focus-width);
     text-decoration-line: underline;
+    /* THD-H1: a themed focus ring (`outline-color`/`outline-width`
+       alongside `outline-style: solid`, under `:focus-visible`) belongs
+       here, on `#main-content` and on `select` once the styling contract
+       publishes a pseudo-class catalog (TPL-H2). Until then, setting
+       `outline-style` unconditionally would paint a permanent ring on
+       every link, and `outline-color`/`outline-width` alone paint
+       nothing (the initial value of `outline-style` is `none`), so
+       neither is declared here. */
   }
 
   [data-gala-publication-root] blockquote {
@@ -218,8 +219,6 @@
     border: var(--gala-border-width) solid var(--gala-color-border);
     border-radius: var(--gala-radius-small);
     color: var(--gala-color-text);
-    outline-color: var(--gala-color-focus);
-    outline-width: var(--gala-focus-width);
     padding: var(--gala-space-1) var(--gala-space-2);
   }
 
