@@ -16,6 +16,60 @@ next version; bumping `package.json`'s `version` for that release is an
 owner decision (recommended: `2.1.0`, since nothing below is a breaking
 change to the token/CSS-hook contract).
 
+### Changed (Contract 2.1.0 adoption, 2026-09-25)
+
+- `theme.json.contractVersion` bumped to `2.1.0` and `stylingContractDigest`
+  refreshed against the published `catalogDigest`. `templateRange` stays
+  `^2.0.0`, which already admits the template's currently published
+  `2.0.0` and its unreleased `2.1.0`.
+- Removed the `components.css`/`tokens.css` declarations gala-base (the
+  template's own `TPL-H3` cascade layer) now supplies: `h1`/`h2`
+  `line-height`, `img`'s `max-width: 100%`, and the whole
+  `prefers-reduced-motion` block.
+- Merged the `hr` and `ul`/`ol` character declarations into their single
+  base rule each, instead of a second declaration of the same element
+  160+ lines later relying on source order (THZ-M3).
+- Removed the forced-colors `#main-content` `outline-color` override: it
+  never painted anything of its own (`outline-style` is only ever set by
+  gala-base's `:focus-visible` rule) and is now redundant with it.
+
+### Changed (THZ-H2, 2026-09-25)
+
+- Added `background-image: none` to the `forced-colors` `hr` rule:
+  `background-image` paints over `background-color` and forced-colors
+  mode does not remove author gradients, so the `CanvasText` fallback
+  never actually rendered under Windows High Contrast and equivalent
+  modes.
+
+### Changed (THZ-H1, 2026-09-25)
+
+- Replaced the fixed-period `repeating-linear-gradient` band behind
+  `ul`/`ol` (which drifted out of sync with variable-height `<li>` rows
+  within two items) with a single consistent `border-inline-start` accent
+  on every `<li>` and a `color-surface-raised` background on the list
+  itself. Per-row `:nth-child` alternation is blocked on a gap in this
+  package's pinned conformance tooling (`check-css-hooks.mjs` only strips
+  trailing pseudo-_elements_, not pseudo-classes, before matching a
+  selector against the closed hook catalog), not on anything in this
+  repository — see the README "Visual character" section.
+
+### Changed (THZ-M1 + THZ-M2, 2026-09-25)
+
+- Widened `color-surface-raised` (light `#e3e3e3`->`#d3d3d3`, dark
+  `#232323`->`#333333`) and the dark palette's `color-accent`
+  (`#ffcf66`->`#e09a00`) so both the surface-vs-surface and
+  accent-vs-text relationships the theme's character depends on clear a
+  documented 1.3:1 floor in both palettes (previously 1.15:1 and,
+  measured correctly, 1.34:1 in the dark palette). See the README for the
+  measured ratios; the automated contrast gate does not yet check either
+  relationship (that runner lives in `@rathnasgala2/theme-tooling`).
+
+### Changed (THZ-L2, 2026-09-25)
+
+- Dropped internal task-packet/finding ids (`S2-T14`, `THD-H1`, `TPL-H2`,
+  `THD-C1`) from `components.css`/`tokens.css` comments; kept every
+  comment's actual explanation.
+
 ### Changed (THD-H1, 2026-09-25)
 
 - Removed the four inert `outline-color`/`outline-width` declaration pairs

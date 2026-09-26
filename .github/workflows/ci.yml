@@ -27,7 +27,7 @@ jobs:
         with:
           persist-credentials: false
 
-      # Pinned to the commit published as @rathnasgala2/template 2.0.0
+      # Pinned to the commit tagged @rathnasgala2/template 2.1.0 (unreleased)
       # (verified against the registry's gitHead metadata for that version).
       # `css:check`/`grammar:check` and the template-conformance tests read
       # this checkout by path (WORKSPACE_ROOT/template).
@@ -35,7 +35,7 @@ jobs:
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           repository: rathnasgala2/template
-          ref: 15142f8baebaff5e174ac07d784073d2d2163b88 # 2.0.0
+          ref: e66d8771189966db1f8f876b005ab59d4f676bcb # 2.1.0 (unreleased)
           path: template
           persist-credentials: false
 
@@ -48,7 +48,7 @@ jobs:
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           repository: rathnasgala2/theme-tooling
-          ref: 2e3142bad84530377288038badc67ad3de2482b1 # 0.1.0 (unpublished)
+          ref: 68dceb301c071f3a60c2bf4c4f3215a6c3478502 # 0.1.0 (unpublished)
           path: theme-tooling
           persist-credentials: false
 
@@ -96,7 +96,7 @@ jobs:
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           repository: rathnasgala2/theme-tooling
-          ref: 2e3142bad84530377288038badc67ad3de2482b1 # 0.1.0 (unpublished)
+          ref: 68dceb301c071f3a60c2bf4c4f3215a6c3478502 # 0.1.0 (unpublished)
           path: theme-tooling
           persist-credentials: false
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
