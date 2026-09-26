@@ -24,7 +24,7 @@
     padding: var(--gala-space-6) var(--gala-space-4);
   }
 
-  /* THM-M3: theme.json.slotHooks declares landmark-main-content
+  /* theme.json.slotHooks declares landmark-main-content
      (#main-content, the skip-link target) but nothing styled it, so the
      tooling's set-equality check between declared and CSS-matched hook
      IDs failed. This gives it a real, themed :focus-visible indicator
@@ -85,7 +85,7 @@
     color: var(--gala-color-accent);
   }
 
-  /* THD-H1: outline-color/outline-width are permanently inert (the closed
+  /* outline-color/outline-width are permanently inert (the closed
      CSS property grammar never admits outline-style/outline), so this
      :focus-visible indicator uses the admitted border-* properties
      instead -- the first real use of color-focus/focus-width. */
@@ -113,10 +113,10 @@
     padding: var(--gala-space-1) var(--gala-space-2);
   }
 
-  /* THZ-H1: true row alternation via :nth-child, the theme's signature,
+  /* True row alternation via :nth-child, the theme's signature,
      instead of a uniform per-row accent border. The surface/surface-raised
      pair clears the tooling's 1.3:1 decorative-adjacency floor in both
-     palettes (THZ-M1). */
+     palettes. */
   [data-gala-publication-root] li:nth-child(odd) {
     background-color: var(--gala-color-surface);
   }
@@ -286,7 +286,7 @@
     padding-top: var(--gala-space-4);
   }
 
-  /* THD-H8: one reference icon, an accent-coloured stripe mark echoing the
+  /* One reference icon, an accent-coloured stripe mark echoing the
      theme's row-alternation motif. mask-image resolves in alpha mode for
      a plain image source (not luminance), so one palette-neutral asset
      takes background-color: var(--gala-color-accent) and reads correctly
