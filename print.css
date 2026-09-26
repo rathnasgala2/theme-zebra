@@ -1,8 +1,8 @@
 @layer gala-print {
   @media print {
     [data-gala-publication-root] {
-      background-color: #ffffff;
-      color: #000000;
+      background-color: Canvas;
+      color: CanvasText;
     }
 
     [data-gala-publication-root] nav {
@@ -10,20 +10,22 @@
     }
 
     [data-gala-publication-root] header {
-      border-bottom: var(--gala-border-width) solid #000000;
+      border-bottom: var(--gala-border-width) solid CanvasText;
     }
 
     [data-gala-publication-root] footer {
-      border-top: var(--gala-border-width) solid #000000;
+      border-top: var(--gala-border-width) solid CanvasText;
     }
 
+    /* Only the colour differs from the screen `a` rule (components.css);
+       `text-decoration-line: underline` already holds there, so it is not
+       repeated here (THD-L2). */
     [data-gala-publication-root] a {
-      color: #000000;
-      text-decoration-line: underline;
+      color: CanvasText;
     }
 
     [data-gala-publication-root] pre {
-      border: var(--gala-border-width) solid #000000;
+      border: var(--gala-border-width) solid CanvasText;
     }
 
     [data-gala-publication-root] [data-gala-slot="header-actions"] {

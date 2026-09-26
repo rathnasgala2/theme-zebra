@@ -94,6 +94,14 @@ change to the token/CSS-hook contract).
   Playwright/axe-core was entirely out of scope, superseded by THD-M10's
   `visual:check` job).
 
+### Changed (THD-L2, 2026-09-25)
+
+- `print.css`: replaced hardcoded `#ffffff`/`#000000` with the `Canvas`/
+  `CanvasText` system colors (matching `theme-default`'s precedent), and
+  dropped the redundant `text-decoration-line: underline` from the print
+  `a` rule (already true from the screen `a` rule; only the color differs
+  under print).
+
 ### Changed (Contract 2.1.0 adoption, 2026-09-25)
 
 - `theme.json.contractVersion` bumped to `2.1.0` and `stylingContractDigest`
