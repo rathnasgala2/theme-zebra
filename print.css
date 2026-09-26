@@ -19,7 +19,7 @@
 
     /* Only the colour differs from the screen `a` rule (components.css);
        `text-decoration-line: underline` already holds there, so it is not
-       repeated here (THD-L2). */
+       repeated here. */
     [data-gala-publication-root] a {
       color: CanvasText;
     }

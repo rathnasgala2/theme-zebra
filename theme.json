@@ -254,15 +254,15 @@
     {
       "path": "components.css",
       "mediaType": "text/css",
-      "byteLength": "9816",
-      "sha256": "sha256:f7da156f78bff1a6c555262546544ac125dfa86d88d6985b2601ad3740867cc4",
+      "byteLength": "9775",
+      "sha256": "sha256:78603a8f34380c53f0b751370cea0921a0b17a4c0b9173e42065b6a02963f116",
       "license": "Apache-2.0"
     },
     {
       "path": "print.css",
       "mediaType": "text/css",
-      "byteLength": "883",
-      "sha256": "sha256:f3f47d9a4eef76d3e93230f81e8262e4b10e2c25be33c0798381664374ad2a98",
+      "byteLength": "874",
+      "sha256": "sha256:45577263f66d75771d5521d6041f9bbc3b59509999852436e1f3139a5dd51969",
       "license": "Apache-2.0"
     },
     {
@@ -281,13 +281,13 @@
     "fixture-token-catalog-contrast"
   ],
   "browserPolicyRef": "gala-theme-css-v2-20211224",
-  "integrity": "sha256:855d549dc730e95eee74e0ed60e68879594c60025fb68b1a7edf6d13a802c83b",
+  "integrity": "sha256:714e4b7f08f71eb91d1f73f962d26ed2d0216db097983e3c01ccec4cd8ee82d6",
   "budgets": {
     "maximumFileBytes": "16384",
     "maximumTotalBytes": "40960",
     "maximumFiles": 8
   },
   "fixtureDigest": "sha256:58869112bfea7303cd471030eaaab29cc08a44c38780209e0257495419ec9a01",
-  "evidenceDigest": "sha256:dc018d94a4266d5c81648f664f556a013a8f4eb6ed88919cf1875c3af1fcb7cd",
+  "evidenceDigest": "sha256:79f22f4499e445def3d7f04b83d19f95f4704ec6ab5e665d4bfcb031eb715ba8",
   "stylingContractDigest": "sha256:9abf99b73a20e034c784ec9648d1f96ea59b59b2ba89028b8c684d1b078275e4"
 }
