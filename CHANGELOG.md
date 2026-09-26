@@ -4,6 +4,55 @@ All notable changes to `@rathnasgala2/theme-zebra` are documented here.
 
 ## Unreleased
 
+2026-09-25 code-discipline review remediation (THD-H5): this file
+previously carried three dated sub-headings under `## Unreleased` above a
+`## 2.0.0 - 2026-09-22` heading, even though `2.0.0` has been on the
+registry since 2026-09-22 — a state that made no sense read either way
+(see the review's own explanation). The three dated entries below are
+folded into this one `Unreleased` section (Keep a Changelog: exactly one
+`Unreleased` section, dated headings below it), and `2.0.0`'s heading now
+carries its actual release date. Everything in this section ships as the
+next version; bumping `package.json`'s `version` for that release is an
+owner decision (recommended: `2.1.0`, since nothing below is a breaking
+change to the token/CSS-hook contract).
+
+### Changed (THD-H1, 2026-09-25)
+
+- Removed the four inert `outline-color`/`outline-width` declaration pairs
+  from `components.css` (`#main-content`, `a`, `select`) — `outline-style`
+  was never set alongside them, so they painted nothing (the initial value
+  of `outline-style` is `none`), and the previous README/CHANGELOG claim
+  that they produced a themed visible focus ring was false. A themed ring
+  needs `:focus-visible`, unavailable in this template contract version
+  (TPL-H2); a single comment in `components.css` documents where it will
+  be restored.
+
+### Changed (THD-C1, 2026-09-25)
+
+- Added a bare-root `[data-gala-publication-root]` block (light palette)
+  plus a `@media (prefers-color-scheme: dark)` override to `tokens.css`,
+  before the two resolved-mode blocks, so every `--gala-*` token still has
+  a real value when `data-gala-resolved-color-mode` is not set (no
+  JavaScript, a text-mode crawler, or a pre-hydration paint) — previously
+  the theme applied no styling at all in that case.
+
+### Changed (THD-M6, 2026-09-25)
+
+- Replaced this repository's own copy of `tooling/scripts`/`tooling/test`
+  (25 files, identical across all five theme repositories except one
+  package-name literal, and the `tooling-drift.test.mjs` guard that
+  skipped in every CI configuration these repositories had, THD-H3) with a
+  dependency on the new `@rathnasgala2/theme-tooling` repository, which
+  now implements every gate once. `tooling/` here carries only
+  `run.mjs` and a trimmed `package.json`. See
+  `../theme-tooling/CHANGELOG.md` for what moved and what changed in the
+  process (THD-H2/M2/M3/M4/M5).
+- Deleted the root `package-lock.json` (THD-L5): the published
+  `package.json` has never had a dependency for it to lock.
+- Widened the closed `package.json` shape to carry `repository` (THD-H6):
+  `npm publish --provenance` derives the source repository from that
+  field and refuses to build a provenance statement without it.
+
 ### Changed (SCHEMA-REPIN-2.11.0, 2026-09-22)
 
 - `tooling/package.json` re-pins `@rathnasgala2/schemas` from the LOCAL-1
@@ -58,11 +107,13 @@ All notable changes to `@rathnasgala2/theme-zebra` are documented here.
   51-hook `slotHooks` subset this theme's CSS uses, budgets, and the
   digest chain), `tokens.css`/`components.css`/`print.css`, and a
   compact-JCS `LICENSE` license-evidence file (SPDX `Apache-2.0`).
-- WCAG 2.2 AA contrast for every named token pair in both palettes, focus
-  visibility via `outline-color`/`outline-width` on every interactive hook
-  (no `outline-style` override, no `:focus` pseudo-class available in this
-  template contract version), `forced-colors: active` system-color
-  mappings, and a defensive `prefers-reduced-motion: reduce` rule.
+- WCAG 2.2 AA contrast for every named token pair in both palettes,
+  `outline-color`/`outline-width` on every interactive hook (no
+  `outline-style` override, no `:focus` pseudo-class available in this
+  template contract version — corrected 2026-09-25, THD-H1: these two
+  longhands alone never painted a visible ring, and were removed),
+  `forced-colors: active` system-color mappings, and a defensive
+  `prefers-reduced-motion: reduce` rule.
 - `tooling/` local dev/test/SBOM project (private, unpublished, its own
   lockfile) with the closed-hook CSS conformance test, the WCAG contrast
   test, the theme-contract schema test, the closed-package-file-set test,

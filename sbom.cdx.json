@@ -59,7 +59,7 @@
           "type": "library",
           "name": "cyclonedx-library",
           "group": "@cyclonedx",
-          "version": "10.2.0",
+          "version": "10.3.0",
           "author": "Jan Kowalleck",
           "description": "Core functionality of CycloneDX for JavaScript (Node.js or WebBrowser).",
           "licenses": [
@@ -101,8 +101,33 @@
       "group": "@rathnasgala2",
       "version": "2.0.0",
       "bom-ref": "@rathnasgala2/theme-zebra@2.0.0",
-      "description": "Unpublished local dev/test/SBOM tooling for the @rathnasgala2/theme-zebra repository. Never packed: this directory is not part of the parent package.json's `files` array.",
+      "description": "Shared dev/test/SBOM/release tooling for the five @rathnasgala2/theme-* packages (theme-default, theme-minimal, theme-amaze, theme-flashy, theme-zebra). Not yet published (OWNER-DECISION); consumed today via the GALA_THEME_TOOLING_DIR override documented in README.md.",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
       "purl": "pkg:npm/%40rathnasgala2/theme-zebra@2.0.0",
+      "externalReferences": [
+        {
+          "url": "git+https://github.com/rathnasgala2/theme-tooling.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/rathnasgala2/theme-tooling#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        },
+        {
+          "url": "https://github.com/rathnasgala2/theme-tooling/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        }
+      ],
       "properties": [
         {
           "name": "cdx:npm:package:constraint:engine:node",
@@ -111,10 +136,6 @@
         {
           "name": "cdx:npm:package:constraint:engine:npm",
           "value": "11.16.0"
-        },
-        {
-          "name": "cdx:npm:package:private",
-          "value": "true"
         },
         {
           "name": "cdx:npm:package:path",
@@ -129,7 +150,7 @@
       "name": "cyclonedx-npm",
       "group": "@cyclonedx",
       "version": "6.0.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@cyclonedx/cyclonedx-npm@6.0.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@cyclonedx/cyclonedx-npm@6.0.1",
       "licenses": [
         {
           "license": {
@@ -168,7 +189,7 @@
       "name": "js",
       "group": "@eslint",
       "version": "10.0.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@eslint/js@10.0.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@eslint/js@10.0.1",
       "licenses": [
         {
           "license": {
@@ -207,7 +228,7 @@
       "name": "schemas",
       "group": "@rathnasgala2",
       "version": "2.11.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@rathnasgala2/schemas@2.11.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@rathnasgala2/schemas@2.11.0",
       "licenses": [
         {
           "license": {
@@ -245,7 +266,7 @@
       "type": "library",
       "name": "eslint",
       "version": "10.10.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|eslint@10.10.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|eslint@10.10.0",
       "licenses": [
         {
           "license": {
@@ -283,7 +304,7 @@
           "type": "library",
           "name": "ajv",
           "version": "6.15.0",
-          "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|eslint@10.10.0|ajv@6.15.0",
+          "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|eslint@10.10.0|ajv@6.15.0",
           "licenses": [
             {
               "license": {
@@ -321,7 +342,7 @@
           "type": "library",
           "name": "json-schema-traverse",
           "version": "0.4.1",
-          "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|eslint@10.10.0|json-schema-traverse@0.4.1",
+          "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|eslint@10.10.0|json-schema-traverse@0.4.1",
           "licenses": [
             {
               "license": {
@@ -361,7 +382,7 @@
       "type": "library",
       "name": "globals",
       "version": "17.12.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|globals@17.12.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|globals@17.12.0",
       "licenses": [
         {
           "license": {
@@ -399,7 +420,7 @@
       "type": "library",
       "name": "jscpd",
       "version": "5.2.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|jscpd@5.2.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|jscpd@5.2.0",
       "licenses": [
         {
           "license": {
@@ -437,7 +458,7 @@
       "type": "library",
       "name": "postcss-selector-parser",
       "version": "7.1.6",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|postcss-selector-parser@7.1.6",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|postcss-selector-parser@7.1.6",
       "licenses": [
         {
           "license": {
@@ -475,7 +496,7 @@
       "type": "library",
       "name": "postcss",
       "version": "8.5.28",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|postcss@8.5.28",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|postcss@8.5.28",
       "licenses": [
         {
           "license": {
@@ -513,7 +534,7 @@
       "type": "library",
       "name": "prettier",
       "version": "3.9.6",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|prettier@3.9.6",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|prettier@3.9.6",
       "licenses": [
         {
           "license": {
@@ -551,8 +572,8 @@
       "type": "library",
       "name": "cyclonedx-library",
       "group": "@cyclonedx",
-      "version": "10.2.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@cyclonedx/cyclonedx-library@10.2.0",
+      "version": "10.3.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@cyclonedx/cyclonedx-library@10.3.0",
       "licenses": [
         {
           "license": {
@@ -561,15 +582,15 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40cyclonedx/cyclonedx-library@10.2.0",
+      "purl": "pkg:npm/%40cyclonedx/cyclonedx-library@10.3.0",
       "externalReferences": [
         {
-          "url": "https://registry.npmjs.org/@cyclonedx/cyclonedx-library/-/cyclonedx-library-10.2.0.tgz",
+          "url": "https://registry.npmjs.org/@cyclonedx/cyclonedx-library/-/cyclonedx-library-10.3.0.tgz",
           "type": "distribution",
           "hashes": [
             {
               "alg": "SHA-512",
-              "content": "8467a8d575ccd33b88793cb32628713f19c439e3419a0664b8f4664d1dbc464b6502a17dc4b9dea271d10b36a16472e00aafcb3a6b42b39bf2a232659e627cef"
+              "content": "4484f6f2ca755343c21da69e177c8d47093a26283f5c9f14b1801538c61a1d0fb45553afb23729d0f4d64052d4a89145f1732e77e29daba1bec2d0c087e40914"
             }
           ],
           "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
@@ -590,7 +611,7 @@
       "type": "library",
       "name": "ajv-formats-draft2019",
       "version": "1.6.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|ajv-formats-draft2019@1.6.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|ajv-formats-draft2019@1.6.1",
       "scope": "optional",
       "licenses": [
         {
@@ -629,7 +650,7 @@
       "type": "library",
       "name": "ajv-formats",
       "version": "3.0.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|ajv-formats@3.0.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|ajv-formats@3.0.1",
       "licenses": [
         {
           "license": {
@@ -667,7 +688,7 @@
       "type": "library",
       "name": "ajv",
       "version": "8.20.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|ajv@8.20.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|ajv@8.20.0",
       "licenses": [
         {
           "license": {
@@ -705,7 +726,7 @@
       "type": "library",
       "name": "commander",
       "version": "14.0.3",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|commander@14.0.3",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|commander@14.0.3",
       "licenses": [
         {
           "license": {
@@ -743,7 +764,7 @@
       "type": "library",
       "name": "libxmljs2",
       "version": "0.37.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|libxmljs2@0.37.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|libxmljs2@0.37.0",
       "scope": "optional",
       "licenses": [
         {
@@ -782,7 +803,7 @@
       "type": "library",
       "name": "normalize-package-data",
       "version": "8.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|normalize-package-data@8.0.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|normalize-package-data@8.0.0",
       "licenses": [
         {
           "license": {
@@ -820,7 +841,7 @@
       "type": "library",
       "name": "packageurl-js",
       "version": "2.0.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|packageurl-js@2.0.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|packageurl-js@2.0.1",
       "licenses": [
         {
           "license": {
@@ -858,7 +879,7 @@
       "type": "library",
       "name": "spdx-expression-parse",
       "version": "4.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|spdx-expression-parse@4.0.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|spdx-expression-parse@4.0.0",
       "licenses": [
         {
           "license": {
@@ -896,7 +917,7 @@
       "type": "library",
       "name": "xmlbuilder2",
       "version": "4.0.3",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|xmlbuilder2@4.0.3",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|xmlbuilder2@4.0.3",
       "licenses": [
         {
           "license": {
@@ -935,7 +956,7 @@
       "name": "eslint-utils",
       "group": "@eslint-community",
       "version": "4.10.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@eslint-community/eslint-utils@4.10.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@eslint-community/eslint-utils@4.10.1",
       "licenses": [
         {
           "license": {
@@ -973,7 +994,7 @@
           "type": "library",
           "name": "eslint-visitor-keys",
           "version": "3.4.3",
-          "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@eslint-community/eslint-utils@4.10.1|eslint-visitor-keys@3.4.3",
+          "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@eslint-community/eslint-utils@4.10.1|eslint-visitor-keys@3.4.3",
           "licenses": [
             {
               "license": {
@@ -1014,7 +1035,7 @@
       "name": "regexpp",
       "group": "@eslint-community",
       "version": "4.12.2",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@eslint-community/regexpp@4.12.2",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@eslint-community/regexpp@4.12.2",
       "licenses": [
         {
           "license": {
@@ -1053,7 +1074,7 @@
       "name": "config-array",
       "group": "@eslint",
       "version": "0.23.5",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@eslint/config-array@0.23.5",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@eslint/config-array@0.23.5",
       "licenses": [
         {
           "license": {
@@ -1092,7 +1113,7 @@
       "name": "config-helpers",
       "group": "@eslint",
       "version": "0.7.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@eslint/config-helpers@0.7.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@eslint/config-helpers@0.7.0",
       "licenses": [
         {
           "license": {
@@ -1131,7 +1152,7 @@
       "name": "core",
       "group": "@eslint",
       "version": "1.2.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@eslint/core@1.2.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@eslint/core@1.2.1",
       "licenses": [
         {
           "license": {
@@ -1170,7 +1191,7 @@
       "name": "plugin-kit",
       "group": "@eslint",
       "version": "0.7.3",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@eslint/plugin-kit@0.7.3",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@eslint/plugin-kit@0.7.3",
       "licenses": [
         {
           "license": {
@@ -1209,7 +1230,7 @@
       "name": "node",
       "group": "@humanfs",
       "version": "0.16.8",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@humanfs/node@0.16.8",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@humanfs/node@0.16.8",
       "licenses": [
         {
           "license": {
@@ -1248,7 +1269,7 @@
       "name": "module-importer",
       "group": "@humanwhocodes",
       "version": "1.0.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@humanwhocodes/module-importer@1.0.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@humanwhocodes/module-importer@1.0.1",
       "licenses": [
         {
           "license": {
@@ -1287,7 +1308,7 @@
       "name": "retry",
       "group": "@humanwhocodes",
       "version": "0.4.3",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@humanwhocodes/retry@0.4.3",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@humanwhocodes/retry@0.4.3",
       "licenses": [
         {
           "license": {
@@ -1326,7 +1347,7 @@
       "name": "estree",
       "group": "@types",
       "version": "1.0.9",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@types/estree@1.0.9",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@types/estree@1.0.9",
       "licenses": [
         {
           "license": {
@@ -1364,7 +1385,7 @@
       "type": "library",
       "name": "cross-spawn",
       "version": "7.0.6",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|cross-spawn@7.0.6",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|cross-spawn@7.0.6",
       "licenses": [
         {
           "license": {
@@ -1402,7 +1423,7 @@
       "type": "library",
       "name": "debug",
       "version": "4.4.3",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|debug@4.4.3",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|debug@4.4.3",
       "licenses": [
         {
           "license": {
@@ -1440,7 +1461,7 @@
       "type": "library",
       "name": "escape-string-regexp",
       "version": "4.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|escape-string-regexp@4.0.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|escape-string-regexp@4.0.0",
       "licenses": [
         {
           "license": {
@@ -1478,7 +1499,7 @@
       "type": "library",
       "name": "eslint-scope",
       "version": "9.1.2",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|eslint-scope@9.1.2",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|eslint-scope@9.1.2",
       "licenses": [
         {
           "license": {
@@ -1516,7 +1537,7 @@
       "type": "library",
       "name": "eslint-visitor-keys",
       "version": "5.0.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|eslint-visitor-keys@5.0.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|eslint-visitor-keys@5.0.1",
       "licenses": [
         {
           "license": {
@@ -1554,7 +1575,7 @@
       "type": "library",
       "name": "espree",
       "version": "11.2.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|espree@11.2.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|espree@11.2.0",
       "licenses": [
         {
           "license": {
@@ -1592,7 +1613,7 @@
       "type": "library",
       "name": "esquery",
       "version": "1.7.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|esquery@1.7.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|esquery@1.7.0",
       "licenses": [
         {
           "license": {
@@ -1630,7 +1651,7 @@
       "type": "library",
       "name": "esutils",
       "version": "2.0.3",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|esutils@2.0.3",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|esutils@2.0.3",
       "licenses": [
         {
           "license": {
@@ -1668,7 +1689,7 @@
       "type": "library",
       "name": "fast-deep-equal",
       "version": "3.1.3",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|fast-deep-equal@3.1.3",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|fast-deep-equal@3.1.3",
       "licenses": [
         {
           "license": {
@@ -1706,7 +1727,7 @@
       "type": "library",
       "name": "file-entry-cache",
       "version": "11.1.5",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|file-entry-cache@11.1.5",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|file-entry-cache@11.1.5",
       "licenses": [
         {
           "license": {
@@ -1744,7 +1765,7 @@
       "type": "library",
       "name": "find-up",
       "version": "5.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|find-up@5.0.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|find-up@5.0.0",
       "licenses": [
         {
           "license": {
@@ -1782,7 +1803,7 @@
       "type": "library",
       "name": "glob-parent",
       "version": "6.0.2",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|glob-parent@6.0.2",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|glob-parent@6.0.2",
       "licenses": [
         {
           "license": {
@@ -1820,7 +1841,7 @@
       "type": "library",
       "name": "ignore",
       "version": "5.3.2",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|ignore@5.3.2",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|ignore@5.3.2",
       "licenses": [
         {
           "license": {
@@ -1858,7 +1879,7 @@
       "type": "library",
       "name": "imurmurhash",
       "version": "0.1.4",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|imurmurhash@0.1.4",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|imurmurhash@0.1.4",
       "licenses": [
         {
           "license": {
@@ -1896,7 +1917,7 @@
       "type": "library",
       "name": "is-glob",
       "version": "4.0.3",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|is-glob@4.0.3",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|is-glob@4.0.3",
       "licenses": [
         {
           "license": {
@@ -1934,7 +1955,7 @@
       "type": "library",
       "name": "json-stable-stringify-without-jsonify",
       "version": "1.0.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|json-stable-stringify-without-jsonify@1.0.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|json-stable-stringify-without-jsonify@1.0.1",
       "licenses": [
         {
           "license": {
@@ -1972,7 +1993,7 @@
       "type": "library",
       "name": "minimatch",
       "version": "10.2.6",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|minimatch@10.2.6",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|minimatch@10.2.6",
       "licenses": [
         {
           "license": {
@@ -2010,7 +2031,7 @@
       "type": "library",
       "name": "natural-compare",
       "version": "1.4.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|natural-compare@1.4.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|natural-compare@1.4.0",
       "licenses": [
         {
           "license": {
@@ -2048,7 +2069,7 @@
       "type": "library",
       "name": "optionator",
       "version": "0.9.4",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|optionator@0.9.4",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|optionator@0.9.4",
       "licenses": [
         {
           "license": {
@@ -2086,7 +2107,7 @@
       "type": "library",
       "name": "jscpd-darwin-arm64",
       "version": "5.2.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|jscpd-darwin-arm64@5.2.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|jscpd-darwin-arm64@5.2.0",
       "scope": "optional",
       "licenses": [
         {
@@ -2125,7 +2146,7 @@
       "type": "library",
       "name": "jscpd-darwin-x64",
       "version": "5.2.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|jscpd-darwin-x64@5.2.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|jscpd-darwin-x64@5.2.0",
       "scope": "optional",
       "licenses": [
         {
@@ -2164,7 +2185,7 @@
       "type": "library",
       "name": "jscpd-linux-arm64-gnu",
       "version": "5.2.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|jscpd-linux-arm64-gnu@5.2.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|jscpd-linux-arm64-gnu@5.2.0",
       "scope": "optional",
       "licenses": [
         {
@@ -2203,7 +2224,7 @@
       "type": "library",
       "name": "jscpd-linux-arm64-musl",
       "version": "5.2.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|jscpd-linux-arm64-musl@5.2.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|jscpd-linux-arm64-musl@5.2.0",
       "scope": "optional",
       "licenses": [
         {
@@ -2242,7 +2263,7 @@
       "type": "library",
       "name": "jscpd-linux-x64-gnu",
       "version": "5.2.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|jscpd-linux-x64-gnu@5.2.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|jscpd-linux-x64-gnu@5.2.0",
       "scope": "optional",
       "licenses": [
         {
@@ -2281,7 +2302,7 @@
       "type": "library",
       "name": "jscpd-linux-x64-musl",
       "version": "5.2.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|jscpd-linux-x64-musl@5.2.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|jscpd-linux-x64-musl@5.2.0",
       "scope": "optional",
       "licenses": [
         {
@@ -2320,7 +2341,7 @@
       "type": "library",
       "name": "jscpd-windows-arm64-msvc",
       "version": "5.2.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|jscpd-windows-arm64-msvc@5.2.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|jscpd-windows-arm64-msvc@5.2.0",
       "scope": "optional",
       "licenses": [
         {
@@ -2359,7 +2380,7 @@
       "type": "library",
       "name": "jscpd-windows-x64-msvc",
       "version": "5.2.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|jscpd-windows-x64-msvc@5.2.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|jscpd-windows-x64-msvc@5.2.0",
       "scope": "optional",
       "licenses": [
         {
@@ -2398,7 +2419,7 @@
       "type": "library",
       "name": "cssesc",
       "version": "3.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|cssesc@3.0.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|cssesc@3.0.0",
       "licenses": [
         {
           "license": {
@@ -2436,7 +2457,7 @@
       "type": "library",
       "name": "util-deprecate",
       "version": "1.0.2",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|util-deprecate@1.0.2",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|util-deprecate@1.0.2",
       "licenses": [
         {
           "license": {
@@ -2474,7 +2495,7 @@
       "type": "library",
       "name": "nanoid",
       "version": "3.3.19",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|nanoid@3.3.19",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|nanoid@3.3.19",
       "licenses": [
         {
           "license": {
@@ -2512,7 +2533,7 @@
       "type": "library",
       "name": "picocolors",
       "version": "1.1.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|picocolors@1.1.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|picocolors@1.1.1",
       "licenses": [
         {
           "license": {
@@ -2550,7 +2571,7 @@
       "type": "library",
       "name": "source-map-js",
       "version": "1.2.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|source-map-js@1.2.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|source-map-js@1.2.1",
       "licenses": [
         {
           "license": {
@@ -2588,7 +2609,7 @@
       "type": "library",
       "name": "punycode",
       "version": "2.3.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|punycode@2.3.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|punycode@2.3.1",
       "licenses": [
         {
           "license": {
@@ -2626,7 +2647,7 @@
       "type": "library",
       "name": "schemes",
       "version": "1.4.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|schemes@1.4.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|schemes@1.4.0",
       "scope": "optional",
       "licenses": [
         {
@@ -2665,7 +2686,7 @@
       "type": "library",
       "name": "smtp-address-parser",
       "version": "1.1.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|smtp-address-parser@1.1.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|smtp-address-parser@1.1.0",
       "scope": "optional",
       "licenses": [
         {
@@ -2704,7 +2725,7 @@
       "type": "library",
       "name": "uri-js",
       "version": "4.4.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|uri-js@4.4.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|uri-js@4.4.1",
       "licenses": [
         {
           "license": {
@@ -2742,7 +2763,7 @@
       "type": "library",
       "name": "fast-uri",
       "version": "3.1.8",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|fast-uri@3.1.8",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|fast-uri@3.1.8",
       "licenses": [
         {
           "license": {
@@ -2780,7 +2801,7 @@
       "type": "library",
       "name": "json-schema-traverse",
       "version": "1.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|json-schema-traverse@1.0.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|json-schema-traverse@1.0.0",
       "licenses": [
         {
           "license": {
@@ -2818,7 +2839,7 @@
       "type": "library",
       "name": "require-from-string",
       "version": "2.0.2",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|require-from-string@2.0.2",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|require-from-string@2.0.2",
       "licenses": [
         {
           "license": {
@@ -2856,7 +2877,7 @@
       "type": "library",
       "name": "bindings",
       "version": "1.5.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|bindings@1.5.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|bindings@1.5.0",
       "scope": "optional",
       "licenses": [
         {
@@ -2895,7 +2916,7 @@
       "type": "library",
       "name": "nan",
       "version": "2.22.2",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|nan@2.22.2",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|nan@2.22.2",
       "scope": "optional",
       "licenses": [
         {
@@ -2934,7 +2955,7 @@
       "type": "library",
       "name": "node-gyp",
       "version": "11.5.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|node-gyp@11.5.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|node-gyp@11.5.0",
       "scope": "optional",
       "licenses": [
         {
@@ -2973,7 +2994,7 @@
           "type": "library",
           "name": "which",
           "version": "5.0.0",
-          "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|node-gyp@11.5.0|which@5.0.0",
+          "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|node-gyp@11.5.0|which@5.0.0",
           "scope": "optional",
           "licenses": [
             {
@@ -3012,7 +3033,7 @@
           "type": "library",
           "name": "isexe",
           "version": "3.1.5",
-          "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|node-gyp@11.5.0|isexe@3.1.5",
+          "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|node-gyp@11.5.0|isexe@3.1.5",
           "scope": "optional",
           "licenses": [
             {
@@ -3053,7 +3074,7 @@
       "type": "library",
       "name": "prebuild-install",
       "version": "7.1.3",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|prebuild-install@7.1.3",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|prebuild-install@7.1.3",
       "scope": "optional",
       "licenses": [
         {
@@ -3092,7 +3113,7 @@
       "type": "library",
       "name": "hosted-git-info",
       "version": "9.0.3",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|hosted-git-info@9.0.3",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|hosted-git-info@9.0.3",
       "licenses": [
         {
           "license": {
@@ -3129,8 +3150,8 @@
         {
           "type": "library",
           "name": "lru-cache",
-          "version": "11.5.2",
-          "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|hosted-git-info@9.0.3|lru-cache@11.5.2",
+          "version": "11.5.3",
+          "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|hosted-git-info@9.0.3|lru-cache@11.5.3",
           "licenses": [
             {
               "license": {
@@ -3139,15 +3160,15 @@
               }
             }
           ],
-          "purl": "pkg:npm/lru-cache@11.5.2",
+          "purl": "pkg:npm/lru-cache@11.5.3",
           "externalReferences": [
             {
-              "url": "https://registry.npmjs.org/lru-cache/-/lru-cache-11.5.2.tgz",
+              "url": "https://registry.npmjs.org/lru-cache/-/lru-cache-11.5.3.tgz",
               "type": "distribution",
               "hashes": [
                 {
                   "alg": "SHA-512",
-                  "content": "e297ccd457f4c79d28d2d4306f9b9cc3f4733720f4fd824c13a215712b5a959b8c5b176ddec47786e4ad4edc73e0f526bd97d182ebc37a36acbd0da489f475d6"
+                  "content": "53837c160ce65b173c935547f0aafa950835f14ec58ef6f2eb05c75515ff659ec8c166d1320ad16cfd16adbe6ae4d5629ebca9e1241a9a91ca76fb5e708b7152"
                 }
               ],
               "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
@@ -3170,7 +3191,7 @@
       "type": "library",
       "name": "semver",
       "version": "7.8.5",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|semver@7.8.5",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|semver@7.8.5",
       "licenses": [
         {
           "license": {
@@ -3208,7 +3229,7 @@
       "type": "library",
       "name": "validate-npm-package-license",
       "version": "3.0.4",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|validate-npm-package-license@3.0.4",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|validate-npm-package-license@3.0.4",
       "licenses": [
         {
           "license": {
@@ -3246,7 +3267,7 @@
           "type": "library",
           "name": "spdx-expression-parse",
           "version": "3.0.1",
-          "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|validate-npm-package-license@3.0.4|spdx-expression-parse@3.0.1",
+          "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|validate-npm-package-license@3.0.4|spdx-expression-parse@3.0.1",
           "licenses": [
             {
               "license": {
@@ -3286,7 +3307,7 @@
       "type": "library",
       "name": "spdx-exceptions",
       "version": "2.5.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|spdx-exceptions@2.5.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|spdx-exceptions@2.5.0",
       "licenses": [
         {
           "license": {
@@ -3323,8 +3344,8 @@
     {
       "type": "library",
       "name": "spdx-license-ids",
-      "version": "3.0.23",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|spdx-license-ids@3.0.23",
+      "version": "3.0.24",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|spdx-license-ids@3.0.24",
       "licenses": [
         {
           "license": {
@@ -3333,15 +3354,15 @@
           }
         }
       ],
-      "purl": "pkg:npm/spdx-license-ids@3.0.23",
+      "purl": "pkg:npm/spdx-license-ids@3.0.24",
       "externalReferences": [
         {
-          "url": "https://registry.npmjs.org/spdx-license-ids/-/spdx-license-ids-3.0.23.tgz",
+          "url": "https://registry.npmjs.org/spdx-license-ids/-/spdx-license-ids-3.0.24.tgz",
           "type": "distribution",
           "hashes": [
             {
               "alg": "SHA-512",
-              "content": "0962dc0821fb54bbb5dd380e1feafca753bf667c21aaffdd6dbea5a96cbaec6fa94f590799e0fff95dfa0156ffbeaf10308430552849e92b25e453e1d1fb9277"
+              "content": "70b4bd4ed5a42101722e4277ff968540038739229394eb3fed60eeb7f5cf49d8e89b57c98547647a978900a5daf58d39f8569b1ddd2cb62f84b79e7dbc3b64a5"
             }
           ],
           "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
@@ -3363,7 +3384,7 @@
       "name": "dom",
       "group": "@oozcitak",
       "version": "2.0.2",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@oozcitak/dom@2.0.2",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@oozcitak/dom@2.0.2",
       "licenses": [
         {
           "license": {
@@ -3402,7 +3423,7 @@
       "name": "infra",
       "group": "@oozcitak",
       "version": "2.0.2",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@oozcitak/infra@2.0.2",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@oozcitak/infra@2.0.2",
       "licenses": [
         {
           "license": {
@@ -3441,7 +3462,7 @@
       "name": "util",
       "group": "@oozcitak",
       "version": "10.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@oozcitak/util@10.0.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@oozcitak/util@10.0.0",
       "licenses": [
         {
           "license": {
@@ -3479,7 +3500,7 @@
       "type": "library",
       "name": "js-yaml",
       "version": "4.3.2",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|js-yaml@4.3.2",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|js-yaml@4.3.2",
       "licenses": [
         {
           "license": {
@@ -3518,7 +3539,7 @@
       "name": "object-schema",
       "group": "@eslint",
       "version": "3.0.5",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@eslint/object-schema@3.0.5",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@eslint/object-schema@3.0.5",
       "licenses": [
         {
           "license": {
@@ -3557,7 +3578,7 @@
       "name": "json-schema",
       "group": "@types",
       "version": "7.0.15",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@types/json-schema@7.0.15",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@types/json-schema@7.0.15",
       "licenses": [
         {
           "license": {
@@ -3595,7 +3616,7 @@
       "type": "library",
       "name": "levn",
       "version": "0.4.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|levn@0.4.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|levn@0.4.1",
       "licenses": [
         {
           "license": {
@@ -3634,7 +3655,7 @@
       "name": "core",
       "group": "@humanfs",
       "version": "0.19.2",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@humanfs/core@0.19.2",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@humanfs/core@0.19.2",
       "licenses": [
         {
           "license": {
@@ -3673,7 +3694,7 @@
       "name": "types",
       "group": "@humanfs",
       "version": "0.15.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@humanfs/types@0.15.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@humanfs/types@0.15.0",
       "licenses": [
         {
           "license": {
@@ -3711,7 +3732,7 @@
       "type": "library",
       "name": "fast-json-stable-stringify",
       "version": "2.1.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|fast-json-stable-stringify@2.1.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|fast-json-stable-stringify@2.1.0",
       "licenses": [
         {
           "license": {
@@ -3749,7 +3770,7 @@
       "type": "library",
       "name": "path-key",
       "version": "3.1.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|path-key@3.1.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|path-key@3.1.1",
       "licenses": [
         {
           "license": {
@@ -3787,7 +3808,7 @@
       "type": "library",
       "name": "shebang-command",
       "version": "2.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|shebang-command@2.0.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|shebang-command@2.0.0",
       "licenses": [
         {
           "license": {
@@ -3825,7 +3846,7 @@
       "type": "library",
       "name": "which",
       "version": "2.0.2",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|which@2.0.2",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|which@2.0.2",
       "licenses": [
         {
           "license": {
@@ -3863,7 +3884,7 @@
       "type": "library",
       "name": "ms",
       "version": "2.1.3",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|ms@2.1.3",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|ms@2.1.3",
       "licenses": [
         {
           "license": {
@@ -3902,7 +3923,7 @@
       "name": "esrecurse",
       "group": "@types",
       "version": "4.3.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@types/esrecurse@4.3.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@types/esrecurse@4.3.1",
       "licenses": [
         {
           "license": {
@@ -3940,7 +3961,7 @@
       "type": "library",
       "name": "esrecurse",
       "version": "4.3.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|esrecurse@4.3.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|esrecurse@4.3.0",
       "licenses": [
         {
           "license": {
@@ -3978,7 +3999,7 @@
       "type": "library",
       "name": "estraverse",
       "version": "5.3.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|estraverse@5.3.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|estraverse@5.3.0",
       "licenses": [
         {
           "license": {
@@ -4016,7 +4037,7 @@
       "type": "library",
       "name": "acorn-jsx",
       "version": "5.3.2",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|acorn-jsx@5.3.2",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|acorn-jsx@5.3.2",
       "licenses": [
         {
           "license": {
@@ -4054,7 +4075,7 @@
       "type": "library",
       "name": "acorn",
       "version": "8.18.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|acorn@8.18.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|acorn@8.18.0",
       "licenses": [
         {
           "license": {
@@ -4092,7 +4113,7 @@
       "type": "library",
       "name": "flat-cache",
       "version": "6.1.23",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|flat-cache@6.1.23",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|flat-cache@6.1.23",
       "licenses": [
         {
           "license": {
@@ -4130,7 +4151,7 @@
       "type": "library",
       "name": "locate-path",
       "version": "6.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|locate-path@6.0.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|locate-path@6.0.0",
       "licenses": [
         {
           "license": {
@@ -4168,7 +4189,7 @@
       "type": "library",
       "name": "path-exists",
       "version": "4.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|path-exists@4.0.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|path-exists@4.0.0",
       "licenses": [
         {
           "license": {
@@ -4206,7 +4227,7 @@
       "type": "library",
       "name": "is-extglob",
       "version": "2.1.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|is-extglob@2.1.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|is-extglob@2.1.1",
       "licenses": [
         {
           "license": {
@@ -4244,7 +4265,7 @@
       "type": "library",
       "name": "brace-expansion",
       "version": "5.0.12",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|brace-expansion@5.0.12",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|brace-expansion@5.0.12",
       "licenses": [
         {
           "license": {
@@ -4282,7 +4303,7 @@
       "type": "library",
       "name": "deep-is",
       "version": "0.1.4",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|deep-is@0.1.4",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|deep-is@0.1.4",
       "licenses": [
         {
           "license": {
@@ -4320,7 +4341,7 @@
       "type": "library",
       "name": "fast-levenshtein",
       "version": "2.0.6",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|fast-levenshtein@2.0.6",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|fast-levenshtein@2.0.6",
       "licenses": [
         {
           "license": {
@@ -4358,7 +4379,7 @@
       "type": "library",
       "name": "prelude-ls",
       "version": "1.2.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|prelude-ls@1.2.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|prelude-ls@1.2.1",
       "licenses": [
         {
           "license": {
@@ -4396,7 +4417,7 @@
       "type": "library",
       "name": "type-check",
       "version": "0.4.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|type-check@0.4.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|type-check@0.4.0",
       "licenses": [
         {
           "license": {
@@ -4434,7 +4455,7 @@
       "type": "library",
       "name": "word-wrap",
       "version": "1.2.5",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|word-wrap@1.2.5",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|word-wrap@1.2.5",
       "licenses": [
         {
           "license": {
@@ -4472,7 +4493,7 @@
       "type": "library",
       "name": "extend",
       "version": "3.0.2",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|extend@3.0.2",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|extend@3.0.2",
       "scope": "optional",
       "licenses": [
         {
@@ -4511,7 +4532,7 @@
       "type": "library",
       "name": "nearley",
       "version": "2.20.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|nearley@2.20.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|nearley@2.20.1",
       "scope": "optional",
       "licenses": [
         {
@@ -4550,7 +4571,7 @@
           "type": "library",
           "name": "commander",
           "version": "2.20.3",
-          "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|nearley@2.20.1|commander@2.20.3",
+          "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|nearley@2.20.1|commander@2.20.3",
           "scope": "optional",
           "licenses": [
             {
@@ -4591,7 +4612,7 @@
       "type": "library",
       "name": "file-uri-to-path",
       "version": "1.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|file-uri-to-path@1.0.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|file-uri-to-path@1.0.0",
       "scope": "optional",
       "licenses": [
         {
@@ -4630,7 +4651,7 @@
       "type": "library",
       "name": "env-paths",
       "version": "2.2.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|env-paths@2.2.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|env-paths@2.2.1",
       "scope": "optional",
       "licenses": [
         {
@@ -4669,7 +4690,7 @@
       "type": "library",
       "name": "exponential-backoff",
       "version": "3.1.3",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|exponential-backoff@3.1.3",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|exponential-backoff@3.1.3",
       "scope": "optional",
       "licenses": [
         {
@@ -4708,7 +4729,7 @@
       "type": "library",
       "name": "graceful-fs",
       "version": "4.2.11",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|graceful-fs@4.2.11",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|graceful-fs@4.2.11",
       "scope": "optional",
       "licenses": [
         {
@@ -4747,7 +4768,7 @@
       "type": "library",
       "name": "make-fetch-happen",
       "version": "14.0.3",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|make-fetch-happen@14.0.3",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|make-fetch-happen@14.0.3",
       "scope": "optional",
       "licenses": [
         {
@@ -4786,7 +4807,7 @@
       "type": "library",
       "name": "nopt",
       "version": "8.1.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|nopt@8.1.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|nopt@8.1.0",
       "scope": "optional",
       "licenses": [
         {
@@ -4825,7 +4846,7 @@
       "type": "library",
       "name": "proc-log",
       "version": "5.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|proc-log@5.0.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|proc-log@5.0.0",
       "scope": "optional",
       "licenses": [
         {
@@ -4864,7 +4885,7 @@
       "type": "library",
       "name": "tar",
       "version": "7.5.22",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|tar@7.5.22",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|tar@7.5.22",
       "scope": "optional",
       "licenses": [
         {
@@ -4903,7 +4924,7 @@
       "type": "library",
       "name": "tinyglobby",
       "version": "0.2.17",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|tinyglobby@0.2.17",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|tinyglobby@0.2.17",
       "scope": "optional",
       "licenses": [
         {
@@ -4942,7 +4963,7 @@
       "type": "library",
       "name": "detect-libc",
       "version": "2.1.2",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|detect-libc@2.1.2",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|detect-libc@2.1.2",
       "scope": "optional",
       "licenses": [
         {
@@ -4981,7 +5002,7 @@
       "type": "library",
       "name": "expand-template",
       "version": "2.0.3",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|expand-template@2.0.3",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|expand-template@2.0.3",
       "scope": "optional",
       "licenses": [
         {
@@ -5018,7 +5039,7 @@
       "type": "library",
       "name": "github-from-package",
       "version": "0.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|github-from-package@0.0.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|github-from-package@0.0.0",
       "scope": "optional",
       "licenses": [
         {
@@ -5057,7 +5078,7 @@
       "type": "library",
       "name": "minimist",
       "version": "1.2.8",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|minimist@1.2.8",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|minimist@1.2.8",
       "scope": "optional",
       "licenses": [
         {
@@ -5096,7 +5117,7 @@
       "type": "library",
       "name": "mkdirp-classic",
       "version": "0.5.3",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|mkdirp-classic@0.5.3",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|mkdirp-classic@0.5.3",
       "scope": "optional",
       "licenses": [
         {
@@ -5135,7 +5156,7 @@
       "type": "library",
       "name": "napi-build-utils",
       "version": "2.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|napi-build-utils@2.0.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|napi-build-utils@2.0.0",
       "scope": "optional",
       "licenses": [
         {
@@ -5174,7 +5195,7 @@
       "type": "library",
       "name": "node-abi",
       "version": "3.96.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|node-abi@3.96.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|node-abi@3.96.0",
       "scope": "optional",
       "licenses": [
         {
@@ -5213,7 +5234,7 @@
       "type": "library",
       "name": "pump",
       "version": "3.0.4",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|pump@3.0.4",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|pump@3.0.4",
       "scope": "optional",
       "licenses": [
         {
@@ -5252,7 +5273,7 @@
       "type": "library",
       "name": "rc",
       "version": "1.2.8",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|rc@1.2.8",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|rc@1.2.8",
       "scope": "optional",
       "licenses": [
         {
@@ -5289,7 +5310,7 @@
       "type": "library",
       "name": "simple-get",
       "version": "4.0.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|simple-get@4.0.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|simple-get@4.0.1",
       "scope": "optional",
       "licenses": [
         {
@@ -5328,7 +5349,7 @@
       "type": "library",
       "name": "tar-fs",
       "version": "2.1.5",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|tar-fs@2.1.5",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|tar-fs@2.1.5",
       "scope": "optional",
       "licenses": [
         {
@@ -5367,7 +5388,7 @@
           "type": "library",
           "name": "chownr",
           "version": "1.1.4",
-          "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|tar-fs@2.1.5|chownr@1.1.4",
+          "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|tar-fs@2.1.5|chownr@1.1.4",
           "scope": "optional",
           "licenses": [
             {
@@ -5408,7 +5429,7 @@
       "type": "library",
       "name": "tunnel-agent",
       "version": "0.6.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|tunnel-agent@0.6.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|tunnel-agent@0.6.0",
       "scope": "optional",
       "licenses": [
         {
@@ -5447,7 +5468,7 @@
       "type": "library",
       "name": "spdx-correct",
       "version": "3.2.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|spdx-correct@3.2.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|spdx-correct@3.2.0",
       "licenses": [
         {
           "license": {
@@ -5485,7 +5506,7 @@
           "type": "library",
           "name": "spdx-expression-parse",
           "version": "3.0.1",
-          "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|spdx-correct@3.2.0|spdx-expression-parse@3.0.1",
+          "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|spdx-correct@3.2.0|spdx-expression-parse@3.0.1",
           "licenses": [
             {
               "license": {
@@ -5526,7 +5547,7 @@
       "name": "url",
       "group": "@oozcitak",
       "version": "3.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@oozcitak/url@3.0.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@oozcitak/url@3.0.0",
       "licenses": [
         {
           "license": {
@@ -5564,7 +5585,7 @@
       "type": "library",
       "name": "argparse",
       "version": "2.0.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|argparse@2.0.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|argparse@2.0.1",
       "licenses": [
         {
           "license": {
@@ -5602,7 +5623,7 @@
       "type": "library",
       "name": "shebang-regex",
       "version": "3.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|shebang-regex@3.0.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|shebang-regex@3.0.0",
       "licenses": [
         {
           "license": {
@@ -5640,7 +5661,7 @@
       "type": "library",
       "name": "isexe",
       "version": "2.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|isexe@2.0.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|isexe@2.0.0",
       "licenses": [
         {
           "license": {
@@ -5678,7 +5699,7 @@
       "type": "library",
       "name": "cacheable",
       "version": "2.5.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|cacheable@2.5.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|cacheable@2.5.0",
       "licenses": [
         {
           "license": {
@@ -5716,7 +5737,7 @@
       "type": "library",
       "name": "flatted",
       "version": "3.4.4",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|flatted@3.4.4",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|flatted@3.4.4",
       "licenses": [
         {
           "license": {
@@ -5754,7 +5775,7 @@
       "type": "library",
       "name": "hookified",
       "version": "1.15.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|hookified@1.15.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|hookified@1.15.1",
       "licenses": [
         {
           "license": {
@@ -5792,7 +5813,7 @@
       "type": "library",
       "name": "p-locate",
       "version": "5.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|p-locate@5.0.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|p-locate@5.0.0",
       "licenses": [
         {
           "license": {
@@ -5830,7 +5851,7 @@
       "type": "library",
       "name": "balanced-match",
       "version": "4.0.4",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|balanced-match@4.0.4",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|balanced-match@4.0.4",
       "licenses": [
         {
           "license": {
@@ -5868,7 +5889,7 @@
       "type": "library",
       "name": "moo",
       "version": "0.5.3",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|moo@0.5.3",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|moo@0.5.3",
       "scope": "optional",
       "licenses": [
         {
@@ -5907,7 +5928,7 @@
       "type": "library",
       "name": "railroad-diagrams",
       "version": "1.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|railroad-diagrams@1.0.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|railroad-diagrams@1.0.0",
       "scope": "optional",
       "licenses": [
         {
@@ -5946,7 +5967,7 @@
       "type": "library",
       "name": "randexp",
       "version": "0.4.6",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|randexp@0.4.6",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|randexp@0.4.6",
       "scope": "optional",
       "licenses": [
         {
@@ -5986,7 +6007,7 @@
       "name": "agent",
       "group": "@npmcli",
       "version": "3.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@npmcli/agent@3.0.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@npmcli/agent@3.0.0",
       "scope": "optional",
       "licenses": [
         {
@@ -6025,7 +6046,7 @@
       "type": "library",
       "name": "cacache",
       "version": "19.0.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|cacache@19.0.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|cacache@19.0.1",
       "scope": "optional",
       "licenses": [
         {
@@ -6064,7 +6085,7 @@
       "type": "library",
       "name": "http-cache-semantics",
       "version": "4.2.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|http-cache-semantics@4.2.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|http-cache-semantics@4.2.0",
       "scope": "optional",
       "licenses": [
         {
@@ -6103,7 +6124,7 @@
       "type": "library",
       "name": "minipass-fetch",
       "version": "4.0.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-fetch@4.0.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|minipass-fetch@4.0.1",
       "scope": "optional",
       "licenses": [
         {
@@ -6142,7 +6163,7 @@
       "type": "library",
       "name": "minipass-flush",
       "version": "1.0.7",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-flush@1.0.7",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|minipass-flush@1.0.7",
       "scope": "optional",
       "licenses": [
         {
@@ -6181,7 +6202,7 @@
           "type": "library",
           "name": "minipass",
           "version": "3.3.6",
-          "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-flush@1.0.7|minipass@3.3.6",
+          "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|minipass-flush@1.0.7|minipass@3.3.6",
           "scope": "optional",
           "licenses": [
             {
@@ -6220,7 +6241,7 @@
           "type": "library",
           "name": "yallist",
           "version": "4.0.0",
-          "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-flush@1.0.7|yallist@4.0.0",
+          "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|minipass-flush@1.0.7|yallist@4.0.0",
           "scope": "optional",
           "licenses": [
             {
@@ -6261,7 +6282,7 @@
       "type": "library",
       "name": "minipass-pipeline",
       "version": "1.2.4",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-pipeline@1.2.4",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|minipass-pipeline@1.2.4",
       "scope": "optional",
       "licenses": [
         {
@@ -6300,7 +6321,7 @@
           "type": "library",
           "name": "minipass",
           "version": "3.3.6",
-          "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-pipeline@1.2.4|minipass@3.3.6",
+          "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|minipass-pipeline@1.2.4|minipass@3.3.6",
           "scope": "optional",
           "licenses": [
             {
@@ -6339,7 +6360,7 @@
           "type": "library",
           "name": "yallist",
           "version": "4.0.0",
-          "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-pipeline@1.2.4|yallist@4.0.0",
+          "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|minipass-pipeline@1.2.4|yallist@4.0.0",
           "scope": "optional",
           "licenses": [
             {
@@ -6380,7 +6401,7 @@
       "type": "library",
       "name": "minipass",
       "version": "7.1.3",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass@7.1.3",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|minipass@7.1.3",
       "scope": "optional",
       "licenses": [
         {
@@ -6419,7 +6440,7 @@
       "type": "library",
       "name": "negotiator",
       "version": "1.1.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|negotiator@1.1.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|negotiator@1.1.0",
       "scope": "optional",
       "licenses": [
         {
@@ -6458,7 +6479,7 @@
       "type": "library",
       "name": "promise-retry",
       "version": "2.0.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|promise-retry@2.0.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|promise-retry@2.0.1",
       "scope": "optional",
       "licenses": [
         {
@@ -6497,7 +6518,7 @@
       "type": "library",
       "name": "ssri",
       "version": "12.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|ssri@12.0.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|ssri@12.0.0",
       "scope": "optional",
       "licenses": [
         {
@@ -6536,7 +6557,7 @@
       "type": "library",
       "name": "abbrev",
       "version": "3.0.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|abbrev@3.0.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|abbrev@3.0.1",
       "scope": "optional",
       "licenses": [
         {
@@ -6576,7 +6597,7 @@
       "name": "fs-minipass",
       "group": "@isaacs",
       "version": "4.0.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@isaacs/fs-minipass@4.0.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@isaacs/fs-minipass@4.0.1",
       "scope": "optional",
       "licenses": [
         {
@@ -6615,7 +6636,7 @@
       "type": "library",
       "name": "chownr",
       "version": "3.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|chownr@3.0.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|chownr@3.0.0",
       "scope": "optional",
       "licenses": [
         {
@@ -6654,7 +6675,7 @@
       "type": "library",
       "name": "minizlib",
       "version": "3.1.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|minizlib@3.1.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|minizlib@3.1.0",
       "scope": "optional",
       "licenses": [
         {
@@ -6693,7 +6714,7 @@
       "type": "library",
       "name": "yallist",
       "version": "5.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|yallist@5.0.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|yallist@5.0.0",
       "scope": "optional",
       "licenses": [
         {
@@ -6732,7 +6753,7 @@
       "type": "library",
       "name": "fdir",
       "version": "6.5.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|fdir@6.5.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|fdir@6.5.0",
       "scope": "optional",
       "licenses": [
         {
@@ -6771,7 +6792,7 @@
       "type": "library",
       "name": "picomatch",
       "version": "4.0.7",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|picomatch@4.0.7",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|picomatch@4.0.7",
       "scope": "optional",
       "licenses": [
         {
@@ -6810,7 +6831,7 @@
       "type": "library",
       "name": "end-of-stream",
       "version": "1.4.5",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|end-of-stream@1.4.5",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|end-of-stream@1.4.5",
       "scope": "optional",
       "licenses": [
         {
@@ -6849,7 +6870,7 @@
       "type": "library",
       "name": "once",
       "version": "1.4.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|once@1.4.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|once@1.4.0",
       "scope": "optional",
       "licenses": [
         {
@@ -6888,7 +6909,7 @@
       "type": "library",
       "name": "deep-extend",
       "version": "0.6.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|deep-extend@0.6.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|deep-extend@0.6.0",
       "scope": "optional",
       "licenses": [
         {
@@ -6927,7 +6948,7 @@
       "type": "library",
       "name": "ini",
       "version": "1.3.8",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|ini@1.3.8",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|ini@1.3.8",
       "scope": "optional",
       "licenses": [
         {
@@ -6966,7 +6987,7 @@
       "type": "library",
       "name": "strip-json-comments",
       "version": "2.0.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|strip-json-comments@2.0.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|strip-json-comments@2.0.1",
       "scope": "optional",
       "licenses": [
         {
@@ -7005,7 +7026,7 @@
       "type": "library",
       "name": "decompress-response",
       "version": "6.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|decompress-response@6.0.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|decompress-response@6.0.0",
       "scope": "optional",
       "licenses": [
         {
@@ -7044,7 +7065,7 @@
       "type": "library",
       "name": "simple-concat",
       "version": "1.0.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|simple-concat@1.0.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|simple-concat@1.0.1",
       "scope": "optional",
       "licenses": [
         {
@@ -7083,7 +7104,7 @@
       "type": "library",
       "name": "tar-stream",
       "version": "2.2.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|tar-stream@2.2.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|tar-stream@2.2.0",
       "scope": "optional",
       "licenses": [
         {
@@ -7122,7 +7143,7 @@
       "type": "library",
       "name": "safe-buffer",
       "version": "5.2.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|safe-buffer@5.2.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|safe-buffer@5.2.1",
       "scope": "optional",
       "licenses": [
         {
@@ -7162,7 +7183,7 @@
       "name": "memory",
       "group": "@cacheable",
       "version": "2.2.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@cacheable/memory@2.2.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@cacheable/memory@2.2.0",
       "licenses": [
         {
           "license": {
@@ -7201,7 +7222,7 @@
       "name": "utils",
       "group": "@cacheable",
       "version": "2.5.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@cacheable/utils@2.5.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@cacheable/utils@2.5.0",
       "licenses": [
         {
           "license": {
@@ -7239,7 +7260,7 @@
       "type": "library",
       "name": "keyv",
       "version": "5.6.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|keyv@5.6.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|keyv@5.6.0",
       "licenses": [
         {
           "license": {
@@ -7277,7 +7298,7 @@
       "type": "library",
       "name": "qified",
       "version": "0.10.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|qified@0.10.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|qified@0.10.1",
       "licenses": [
         {
           "license": {
@@ -7315,7 +7336,7 @@
           "type": "library",
           "name": "hookified",
           "version": "2.2.0",
-          "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|qified@0.10.1|hookified@2.2.0",
+          "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|qified@0.10.1|hookified@2.2.0",
           "licenses": [
             {
               "license": {
@@ -7355,7 +7376,7 @@
       "type": "library",
       "name": "p-limit",
       "version": "3.1.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|p-limit@3.1.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|p-limit@3.1.0",
       "licenses": [
         {
           "license": {
@@ -7393,7 +7414,7 @@
       "type": "library",
       "name": "discontinuous-range",
       "version": "1.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|discontinuous-range@1.0.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|discontinuous-range@1.0.0",
       "scope": "optional",
       "licenses": [
         {
@@ -7432,7 +7453,7 @@
       "type": "library",
       "name": "ret",
       "version": "0.1.15",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|ret@0.1.15",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|ret@0.1.15",
       "scope": "optional",
       "licenses": [
         {
@@ -7471,7 +7492,7 @@
       "type": "library",
       "name": "agent-base",
       "version": "7.1.4",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|agent-base@7.1.4",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|agent-base@7.1.4",
       "scope": "optional",
       "licenses": [
         {
@@ -7510,7 +7531,7 @@
       "type": "library",
       "name": "http-proxy-agent",
       "version": "7.0.2",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|http-proxy-agent@7.0.2",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|http-proxy-agent@7.0.2",
       "scope": "optional",
       "licenses": [
         {
@@ -7549,7 +7570,7 @@
       "type": "library",
       "name": "https-proxy-agent",
       "version": "7.0.6",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|https-proxy-agent@7.0.6",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|https-proxy-agent@7.0.6",
       "scope": "optional",
       "licenses": [
         {
@@ -7588,7 +7609,7 @@
       "type": "library",
       "name": "lru-cache",
       "version": "10.4.3",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|lru-cache@10.4.3",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|lru-cache@10.4.3",
       "scope": "optional",
       "licenses": [
         {
@@ -7627,7 +7648,7 @@
       "type": "library",
       "name": "socks-proxy-agent",
       "version": "8.0.5",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|socks-proxy-agent@8.0.5",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|socks-proxy-agent@8.0.5",
       "scope": "optional",
       "licenses": [
         {
@@ -7667,7 +7688,7 @@
       "name": "fs",
       "group": "@npmcli",
       "version": "4.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@npmcli/fs@4.0.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@npmcli/fs@4.0.0",
       "scope": "optional",
       "licenses": [
         {
@@ -7706,7 +7727,7 @@
       "type": "library",
       "name": "fs-minipass",
       "version": "3.0.3",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|fs-minipass@3.0.3",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|fs-minipass@3.0.3",
       "scope": "optional",
       "licenses": [
         {
@@ -7745,7 +7766,7 @@
       "type": "library",
       "name": "glob",
       "version": "10.5.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|glob@10.5.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|glob@10.5.0",
       "scope": "optional",
       "licenses": [
         {
@@ -7784,7 +7805,7 @@
           "type": "library",
           "name": "minimatch",
           "version": "9.0.9",
-          "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|glob@10.5.0|minimatch@9.0.9",
+          "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|glob@10.5.0|minimatch@9.0.9",
           "scope": "optional",
           "licenses": [
             {
@@ -7823,7 +7844,7 @@
           "type": "library",
           "name": "brace-expansion",
           "version": "2.1.7",
-          "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|glob@10.5.0|brace-expansion@2.1.7",
+          "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|glob@10.5.0|brace-expansion@2.1.7",
           "scope": "optional",
           "licenses": [
             {
@@ -7862,7 +7883,7 @@
           "type": "library",
           "name": "balanced-match",
           "version": "1.0.2",
-          "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|glob@10.5.0|balanced-match@1.0.2",
+          "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|glob@10.5.0|balanced-match@1.0.2",
           "scope": "optional",
           "licenses": [
             {
@@ -7903,7 +7924,7 @@
       "type": "library",
       "name": "minipass-collect",
       "version": "2.0.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-collect@2.0.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|minipass-collect@2.0.1",
       "scope": "optional",
       "licenses": [
         {
@@ -7942,7 +7963,7 @@
       "type": "library",
       "name": "p-map",
       "version": "7.0.8",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|p-map@7.0.8",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|p-map@7.0.8",
       "scope": "optional",
       "licenses": [
         {
@@ -7981,7 +8002,7 @@
       "type": "library",
       "name": "unique-filename",
       "version": "4.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|unique-filename@4.0.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|unique-filename@4.0.0",
       "scope": "optional",
       "licenses": [
         {
@@ -8020,7 +8041,7 @@
       "type": "library",
       "name": "encoding",
       "version": "0.1.13",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|encoding@0.1.13",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|encoding@0.1.13",
       "scope": "optional",
       "licenses": [
         {
@@ -8059,7 +8080,7 @@
       "type": "library",
       "name": "minipass-sized",
       "version": "1.0.3",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-sized@1.0.3",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|minipass-sized@1.0.3",
       "scope": "optional",
       "licenses": [
         {
@@ -8098,7 +8119,7 @@
           "type": "library",
           "name": "minipass",
           "version": "3.3.6",
-          "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-sized@1.0.3|minipass@3.3.6",
+          "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|minipass-sized@1.0.3|minipass@3.3.6",
           "scope": "optional",
           "licenses": [
             {
@@ -8137,7 +8158,7 @@
           "type": "library",
           "name": "yallist",
           "version": "4.0.0",
-          "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-sized@1.0.3|yallist@4.0.0",
+          "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|minipass-sized@1.0.3|yallist@4.0.0",
           "scope": "optional",
           "licenses": [
             {
@@ -8178,7 +8199,7 @@
       "type": "library",
       "name": "content-type",
       "version": "2.1.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|content-type@2.1.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|content-type@2.1.0",
       "scope": "optional",
       "licenses": [
         {
@@ -8217,7 +8238,7 @@
       "type": "library",
       "name": "err-code",
       "version": "2.0.3",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|err-code@2.0.3",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|err-code@2.0.3",
       "scope": "optional",
       "licenses": [
         {
@@ -8256,7 +8277,7 @@
       "type": "library",
       "name": "retry",
       "version": "0.12.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|retry@0.12.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|retry@0.12.0",
       "scope": "optional",
       "licenses": [
         {
@@ -8295,7 +8316,7 @@
       "type": "library",
       "name": "wrappy",
       "version": "1.0.2",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|wrappy@1.0.2",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|wrappy@1.0.2",
       "scope": "optional",
       "licenses": [
         {
@@ -8334,7 +8355,7 @@
       "type": "library",
       "name": "mimic-response",
       "version": "3.1.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|mimic-response@3.1.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|mimic-response@3.1.0",
       "scope": "optional",
       "licenses": [
         {
@@ -8373,7 +8394,7 @@
       "type": "library",
       "name": "bl",
       "version": "4.1.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|bl@4.1.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|bl@4.1.0",
       "scope": "optional",
       "licenses": [
         {
@@ -8412,7 +8433,7 @@
       "type": "library",
       "name": "fs-constants",
       "version": "1.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|fs-constants@1.0.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|fs-constants@1.0.0",
       "scope": "optional",
       "licenses": [
         {
@@ -8451,7 +8472,7 @@
       "type": "library",
       "name": "inherits",
       "version": "2.0.4",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|inherits@2.0.4",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|inherits@2.0.4",
       "scope": "optional",
       "licenses": [
         {
@@ -8490,7 +8511,7 @@
       "type": "library",
       "name": "readable-stream",
       "version": "3.6.2",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|readable-stream@3.6.2",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|readable-stream@3.6.2",
       "scope": "optional",
       "licenses": [
         {
@@ -8530,7 +8551,7 @@
       "name": "bigmap",
       "group": "@keyv",
       "version": "1.3.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@keyv/bigmap@1.3.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@keyv/bigmap@1.3.1",
       "licenses": [
         {
           "license": {
@@ -8568,7 +8589,7 @@
       "type": "library",
       "name": "hashery",
       "version": "1.5.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|hashery@1.5.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|hashery@1.5.1",
       "licenses": [
         {
           "license": {
@@ -8607,7 +8628,7 @@
       "name": "serialize",
       "group": "@keyv",
       "version": "1.1.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@keyv/serialize@1.1.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@keyv/serialize@1.1.1",
       "licenses": [
         {
           "license": {
@@ -8645,7 +8666,7 @@
       "type": "library",
       "name": "yocto-queue",
       "version": "0.1.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|yocto-queue@0.1.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|yocto-queue@0.1.0",
       "licenses": [
         {
           "license": {
@@ -8683,7 +8704,7 @@
       "type": "library",
       "name": "socks",
       "version": "2.8.10",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|socks@2.8.10",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|socks@2.8.10",
       "scope": "optional",
       "licenses": [
         {
@@ -8722,7 +8743,7 @@
       "type": "library",
       "name": "foreground-child",
       "version": "3.3.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|foreground-child@3.3.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|foreground-child@3.3.1",
       "scope": "optional",
       "licenses": [
         {
@@ -8761,7 +8782,7 @@
       "type": "library",
       "name": "jackspeak",
       "version": "3.4.3",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|jackspeak@3.4.3",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|jackspeak@3.4.3",
       "scope": "optional",
       "licenses": [
         {
@@ -8800,7 +8821,7 @@
       "type": "library",
       "name": "package-json-from-dist",
       "version": "1.0.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|package-json-from-dist@1.0.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|package-json-from-dist@1.0.1",
       "scope": "optional",
       "licenses": [
         {
@@ -8839,7 +8860,7 @@
       "type": "library",
       "name": "path-scurry",
       "version": "1.11.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|path-scurry@1.11.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|path-scurry@1.11.1",
       "scope": "optional",
       "licenses": [
         {
@@ -8878,7 +8899,7 @@
       "type": "library",
       "name": "unique-slug",
       "version": "5.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|unique-slug@5.0.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|unique-slug@5.0.0",
       "scope": "optional",
       "licenses": [
         {
@@ -8917,7 +8938,7 @@
       "type": "library",
       "name": "iconv-lite",
       "version": "0.6.3",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|iconv-lite@0.6.3",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|iconv-lite@0.6.3",
       "scope": "optional",
       "licenses": [
         {
@@ -8956,7 +8977,7 @@
       "type": "library",
       "name": "buffer",
       "version": "5.7.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|buffer@5.7.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|buffer@5.7.1",
       "scope": "optional",
       "licenses": [
         {
@@ -8995,7 +9016,7 @@
       "type": "library",
       "name": "string_decoder",
       "version": "1.3.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|string_decoder@1.3.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|string_decoder@1.3.0",
       "scope": "optional",
       "licenses": [
         {
@@ -9034,7 +9055,7 @@
       "type": "library",
       "name": "ip-address",
       "version": "10.7.2",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|ip-address@10.7.2",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|ip-address@10.7.2",
       "scope": "optional",
       "licenses": [
         {
@@ -9073,7 +9094,7 @@
       "type": "library",
       "name": "smart-buffer",
       "version": "4.2.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|smart-buffer@4.2.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|smart-buffer@4.2.0",
       "scope": "optional",
       "licenses": [
         {
@@ -9112,7 +9133,7 @@
       "type": "library",
       "name": "signal-exit",
       "version": "4.1.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|signal-exit@4.1.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|signal-exit@4.1.0",
       "scope": "optional",
       "licenses": [
         {
@@ -9152,7 +9173,7 @@
       "name": "cliui",
       "group": "@isaacs",
       "version": "8.0.2",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@isaacs/cliui@8.0.2",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@isaacs/cliui@8.0.2",
       "scope": "optional",
       "licenses": [
         {
@@ -9192,7 +9213,7 @@
       "name": "parseargs",
       "group": "@pkgjs",
       "version": "0.11.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@pkgjs/parseargs@0.11.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|@pkgjs/parseargs@0.11.0",
       "scope": "optional",
       "licenses": [
         {
@@ -9231,7 +9252,7 @@
       "type": "library",
       "name": "safer-buffer",
       "version": "2.1.2",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|safer-buffer@2.1.2",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|safer-buffer@2.1.2",
       "scope": "optional",
       "licenses": [
         {
@@ -9270,7 +9291,7 @@
       "type": "library",
       "name": "base64-js",
       "version": "1.5.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|base64-js@1.5.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|base64-js@1.5.1",
       "scope": "optional",
       "licenses": [
         {
@@ -9309,7 +9330,7 @@
       "type": "library",
       "name": "ieee754",
       "version": "1.2.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|ieee754@1.2.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|ieee754@1.2.1",
       "scope": "optional",
       "licenses": [
         {
@@ -9348,7 +9369,7 @@
       "type": "library",
       "name": "string-width",
       "version": "4.2.3",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|string-width@4.2.3",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|string-width@4.2.3",
       "scope": "optional",
       "licenses": [
         {
@@ -9387,7 +9408,7 @@
           "type": "library",
           "name": "emoji-regex",
           "version": "8.0.0",
-          "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|string-width@4.2.3|emoji-regex@8.0.0",
+          "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|string-width@4.2.3|emoji-regex@8.0.0",
           "scope": "optional",
           "licenses": [
             {
@@ -9426,7 +9447,7 @@
           "type": "library",
           "name": "strip-ansi",
           "version": "6.0.1",
-          "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|string-width@4.2.3|strip-ansi@6.0.1",
+          "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|string-width@4.2.3|strip-ansi@6.0.1",
           "scope": "optional",
           "licenses": [
             {
@@ -9465,7 +9486,7 @@
           "type": "library",
           "name": "ansi-regex",
           "version": "5.0.1",
-          "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|string-width@4.2.3|ansi-regex@5.0.1",
+          "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|string-width@4.2.3|ansi-regex@5.0.1",
           "scope": "optional",
           "licenses": [
             {
@@ -9506,7 +9527,7 @@
       "type": "library",
       "name": "string-width",
       "version": "5.1.2",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|string-width@5.1.2",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|string-width@5.1.2",
       "scope": "optional",
       "licenses": [
         {
@@ -9545,7 +9566,7 @@
       "type": "library",
       "name": "strip-ansi",
       "version": "6.0.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|strip-ansi@6.0.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|strip-ansi@6.0.1",
       "scope": "optional",
       "licenses": [
         {
@@ -9584,7 +9605,7 @@
           "type": "library",
           "name": "ansi-regex",
           "version": "5.0.1",
-          "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|strip-ansi@6.0.1|ansi-regex@5.0.1",
+          "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|strip-ansi@6.0.1|ansi-regex@5.0.1",
           "scope": "optional",
           "licenses": [
             {
@@ -9625,7 +9646,7 @@
       "type": "library",
       "name": "strip-ansi",
       "version": "7.2.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|strip-ansi@7.2.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|strip-ansi@7.2.0",
       "scope": "optional",
       "licenses": [
         {
@@ -9664,7 +9685,7 @@
       "type": "library",
       "name": "wrap-ansi",
       "version": "7.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|wrap-ansi@7.0.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|wrap-ansi@7.0.0",
       "scope": "optional",
       "licenses": [
         {
@@ -9703,7 +9724,7 @@
           "type": "library",
           "name": "ansi-styles",
           "version": "4.3.0",
-          "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|wrap-ansi@7.0.0|ansi-styles@4.3.0",
+          "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|wrap-ansi@7.0.0|ansi-styles@4.3.0",
           "scope": "optional",
           "licenses": [
             {
@@ -9742,7 +9763,7 @@
           "type": "library",
           "name": "string-width",
           "version": "4.2.3",
-          "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|wrap-ansi@7.0.0|string-width@4.2.3",
+          "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|wrap-ansi@7.0.0|string-width@4.2.3",
           "scope": "optional",
           "licenses": [
             {
@@ -9781,7 +9802,7 @@
           "type": "library",
           "name": "strip-ansi",
           "version": "6.0.1",
-          "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|wrap-ansi@7.0.0|strip-ansi@6.0.1",
+          "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|wrap-ansi@7.0.0|strip-ansi@6.0.1",
           "scope": "optional",
           "licenses": [
             {
@@ -9820,7 +9841,7 @@
           "type": "library",
           "name": "emoji-regex",
           "version": "8.0.0",
-          "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|wrap-ansi@7.0.0|emoji-regex@8.0.0",
+          "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|wrap-ansi@7.0.0|emoji-regex@8.0.0",
           "scope": "optional",
           "licenses": [
             {
@@ -9859,7 +9880,7 @@
           "type": "library",
           "name": "ansi-regex",
           "version": "5.0.1",
-          "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|wrap-ansi@7.0.0|ansi-regex@5.0.1",
+          "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|wrap-ansi@7.0.0|ansi-regex@5.0.1",
           "scope": "optional",
           "licenses": [
             {
@@ -9900,7 +9921,7 @@
       "type": "library",
       "name": "wrap-ansi",
       "version": "8.1.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|wrap-ansi@8.1.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|wrap-ansi@8.1.0",
       "scope": "optional",
       "licenses": [
         {
@@ -9939,7 +9960,7 @@
       "type": "library",
       "name": "is-fullwidth-code-point",
       "version": "3.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|is-fullwidth-code-point@3.0.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|is-fullwidth-code-point@3.0.0",
       "scope": "optional",
       "licenses": [
         {
@@ -9978,7 +9999,7 @@
       "type": "library",
       "name": "eastasianwidth",
       "version": "0.2.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|eastasianwidth@0.2.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|eastasianwidth@0.2.0",
       "scope": "optional",
       "licenses": [
         {
@@ -10017,7 +10038,7 @@
       "type": "library",
       "name": "emoji-regex",
       "version": "9.2.2",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|emoji-regex@9.2.2",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|emoji-regex@9.2.2",
       "scope": "optional",
       "licenses": [
         {
@@ -10056,7 +10077,7 @@
       "type": "library",
       "name": "ansi-regex",
       "version": "6.3.0",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|ansi-regex@6.3.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|ansi-regex@6.3.0",
       "scope": "optional",
       "licenses": [
         {
@@ -10095,7 +10116,7 @@
       "type": "library",
       "name": "ansi-styles",
       "version": "6.2.3",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|ansi-styles@6.2.3",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|ansi-styles@6.2.3",
       "scope": "optional",
       "licenses": [
         {
@@ -10134,7 +10155,7 @@
       "type": "library",
       "name": "color-convert",
       "version": "2.0.1",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|color-convert@2.0.1",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|color-convert@2.0.1",
       "scope": "optional",
       "licenses": [
         {
@@ -10173,7 +10194,7 @@
       "type": "library",
       "name": "color-name",
       "version": "1.1.4",
-      "bom-ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|color-name@1.1.4",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|color-name@1.1.4",
       "scope": "optional",
       "licenses": [
         {
@@ -10213,1409 +10234,1409 @@
     {
       "ref": "@rathnasgala2/theme-zebra@2.0.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@cyclonedx/cyclonedx-npm@6.0.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@eslint/js@10.0.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@rathnasgala2/schemas@2.11.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|eslint@10.10.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|globals@17.12.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|jscpd@5.2.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|postcss-selector-parser@7.1.6",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|postcss@8.5.28",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|prettier@3.9.6"
+        "@rathnasgala2/theme-tooling@0.1.0|@cyclonedx/cyclonedx-npm@6.0.1",
+        "@rathnasgala2/theme-tooling@0.1.0|@eslint/js@10.0.1",
+        "@rathnasgala2/theme-tooling@0.1.0|@rathnasgala2/schemas@2.11.0",
+        "@rathnasgala2/theme-tooling@0.1.0|eslint@10.10.0",
+        "@rathnasgala2/theme-tooling@0.1.0|globals@17.12.0",
+        "@rathnasgala2/theme-tooling@0.1.0|jscpd@5.2.0",
+        "@rathnasgala2/theme-tooling@0.1.0|postcss-selector-parser@7.1.6",
+        "@rathnasgala2/theme-tooling@0.1.0|postcss@8.5.28",
+        "@rathnasgala2/theme-tooling@0.1.0|prettier@3.9.6"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@cyclonedx/cyclonedx-npm@6.0.1",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@cyclonedx/cyclonedx-npm@6.0.1",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@cyclonedx/cyclonedx-library@10.2.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|ajv-formats-draft2019@1.6.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|ajv-formats@3.0.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|ajv@8.20.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|commander@14.0.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|libxmljs2@0.37.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|normalize-package-data@8.0.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|packageurl-js@2.0.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|spdx-expression-parse@4.0.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|xmlbuilder2@4.0.3"
+        "@rathnasgala2/theme-tooling@0.1.0|@cyclonedx/cyclonedx-library@10.3.0",
+        "@rathnasgala2/theme-tooling@0.1.0|ajv-formats-draft2019@1.6.1",
+        "@rathnasgala2/theme-tooling@0.1.0|ajv-formats@3.0.1",
+        "@rathnasgala2/theme-tooling@0.1.0|ajv@8.20.0",
+        "@rathnasgala2/theme-tooling@0.1.0|commander@14.0.3",
+        "@rathnasgala2/theme-tooling@0.1.0|libxmljs2@0.37.0",
+        "@rathnasgala2/theme-tooling@0.1.0|normalize-package-data@8.0.0",
+        "@rathnasgala2/theme-tooling@0.1.0|packageurl-js@2.0.1",
+        "@rathnasgala2/theme-tooling@0.1.0|spdx-expression-parse@4.0.0",
+        "@rathnasgala2/theme-tooling@0.1.0|xmlbuilder2@4.0.3"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@eslint/js@10.0.1",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@eslint/js@10.0.1",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|eslint@10.10.0"
+        "@rathnasgala2/theme-tooling@0.1.0|eslint@10.10.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@rathnasgala2/schemas@2.11.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@rathnasgala2/schemas@2.11.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|ajv-formats@3.0.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|ajv@8.20.0"
+        "@rathnasgala2/theme-tooling@0.1.0|ajv-formats@3.0.1",
+        "@rathnasgala2/theme-tooling@0.1.0|ajv@8.20.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|eslint@10.10.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|eslint@10.10.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@eslint-community/eslint-utils@4.10.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@eslint-community/regexpp@4.12.2",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@eslint/config-array@0.23.5",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@eslint/config-helpers@0.7.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@eslint/core@1.2.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@eslint/plugin-kit@0.7.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@humanfs/node@0.16.8",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@humanwhocodes/module-importer@1.0.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@humanwhocodes/retry@0.4.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@types/estree@1.0.9",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|eslint@10.10.0|ajv@6.15.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|cross-spawn@7.0.6",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|debug@4.4.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|escape-string-regexp@4.0.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|eslint-scope@9.1.2",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|eslint-visitor-keys@5.0.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|espree@11.2.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|esquery@1.7.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|esutils@2.0.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|fast-deep-equal@3.1.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|file-entry-cache@11.1.5",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|find-up@5.0.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|glob-parent@6.0.2",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|ignore@5.3.2",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|imurmurhash@0.1.4",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|is-glob@4.0.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|json-stable-stringify-without-jsonify@1.0.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|minimatch@10.2.6",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|natural-compare@1.4.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|optionator@0.9.4"
+        "@rathnasgala2/theme-tooling@0.1.0|@eslint-community/eslint-utils@4.10.1",
+        "@rathnasgala2/theme-tooling@0.1.0|@eslint-community/regexpp@4.12.2",
+        "@rathnasgala2/theme-tooling@0.1.0|@eslint/config-array@0.23.5",
+        "@rathnasgala2/theme-tooling@0.1.0|@eslint/config-helpers@0.7.0",
+        "@rathnasgala2/theme-tooling@0.1.0|@eslint/core@1.2.1",
+        "@rathnasgala2/theme-tooling@0.1.0|@eslint/plugin-kit@0.7.3",
+        "@rathnasgala2/theme-tooling@0.1.0|@humanfs/node@0.16.8",
+        "@rathnasgala2/theme-tooling@0.1.0|@humanwhocodes/module-importer@1.0.1",
+        "@rathnasgala2/theme-tooling@0.1.0|@humanwhocodes/retry@0.4.3",
+        "@rathnasgala2/theme-tooling@0.1.0|@types/estree@1.0.9",
+        "@rathnasgala2/theme-tooling@0.1.0|eslint@10.10.0|ajv@6.15.0",
+        "@rathnasgala2/theme-tooling@0.1.0|cross-spawn@7.0.6",
+        "@rathnasgala2/theme-tooling@0.1.0|debug@4.4.3",
+        "@rathnasgala2/theme-tooling@0.1.0|escape-string-regexp@4.0.0",
+        "@rathnasgala2/theme-tooling@0.1.0|eslint-scope@9.1.2",
+        "@rathnasgala2/theme-tooling@0.1.0|eslint-visitor-keys@5.0.1",
+        "@rathnasgala2/theme-tooling@0.1.0|espree@11.2.0",
+        "@rathnasgala2/theme-tooling@0.1.0|esquery@1.7.0",
+        "@rathnasgala2/theme-tooling@0.1.0|esutils@2.0.3",
+        "@rathnasgala2/theme-tooling@0.1.0|fast-deep-equal@3.1.3",
+        "@rathnasgala2/theme-tooling@0.1.0|file-entry-cache@11.1.5",
+        "@rathnasgala2/theme-tooling@0.1.0|find-up@5.0.0",
+        "@rathnasgala2/theme-tooling@0.1.0|glob-parent@6.0.2",
+        "@rathnasgala2/theme-tooling@0.1.0|ignore@5.3.2",
+        "@rathnasgala2/theme-tooling@0.1.0|imurmurhash@0.1.4",
+        "@rathnasgala2/theme-tooling@0.1.0|is-glob@4.0.3",
+        "@rathnasgala2/theme-tooling@0.1.0|json-stable-stringify-without-jsonify@1.0.1",
+        "@rathnasgala2/theme-tooling@0.1.0|minimatch@10.2.6",
+        "@rathnasgala2/theme-tooling@0.1.0|natural-compare@1.4.0",
+        "@rathnasgala2/theme-tooling@0.1.0|optionator@0.9.4"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|eslint@10.10.0|ajv@6.15.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|eslint@10.10.0|ajv@6.15.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|fast-deep-equal@3.1.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|fast-json-stable-stringify@2.1.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|eslint@10.10.0|json-schema-traverse@0.4.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|uri-js@4.4.1"
+        "@rathnasgala2/theme-tooling@0.1.0|fast-deep-equal@3.1.3",
+        "@rathnasgala2/theme-tooling@0.1.0|fast-json-stable-stringify@2.1.0",
+        "@rathnasgala2/theme-tooling@0.1.0|eslint@10.10.0|json-schema-traverse@0.4.1",
+        "@rathnasgala2/theme-tooling@0.1.0|uri-js@4.4.1"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|eslint@10.10.0|json-schema-traverse@0.4.1"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|eslint@10.10.0|json-schema-traverse@0.4.1"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|globals@17.12.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|globals@17.12.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|jscpd@5.2.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|jscpd@5.2.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|jscpd-darwin-arm64@5.2.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|jscpd-darwin-x64@5.2.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|jscpd-linux-arm64-gnu@5.2.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|jscpd-linux-arm64-musl@5.2.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|jscpd-linux-x64-gnu@5.2.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|jscpd-linux-x64-musl@5.2.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|jscpd-windows-arm64-msvc@5.2.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|jscpd-windows-x64-msvc@5.2.0"
+        "@rathnasgala2/theme-tooling@0.1.0|jscpd-darwin-arm64@5.2.0",
+        "@rathnasgala2/theme-tooling@0.1.0|jscpd-darwin-x64@5.2.0",
+        "@rathnasgala2/theme-tooling@0.1.0|jscpd-linux-arm64-gnu@5.2.0",
+        "@rathnasgala2/theme-tooling@0.1.0|jscpd-linux-arm64-musl@5.2.0",
+        "@rathnasgala2/theme-tooling@0.1.0|jscpd-linux-x64-gnu@5.2.0",
+        "@rathnasgala2/theme-tooling@0.1.0|jscpd-linux-x64-musl@5.2.0",
+        "@rathnasgala2/theme-tooling@0.1.0|jscpd-windows-arm64-msvc@5.2.0",
+        "@rathnasgala2/theme-tooling@0.1.0|jscpd-windows-x64-msvc@5.2.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|postcss-selector-parser@7.1.6",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|postcss-selector-parser@7.1.6",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|cssesc@3.0.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|util-deprecate@1.0.2"
+        "@rathnasgala2/theme-tooling@0.1.0|cssesc@3.0.0",
+        "@rathnasgala2/theme-tooling@0.1.0|util-deprecate@1.0.2"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|postcss@8.5.28",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|postcss@8.5.28",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|nanoid@3.3.19",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|picocolors@1.1.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|source-map-js@1.2.1"
+        "@rathnasgala2/theme-tooling@0.1.0|nanoid@3.3.19",
+        "@rathnasgala2/theme-tooling@0.1.0|picocolors@1.1.1",
+        "@rathnasgala2/theme-tooling@0.1.0|source-map-js@1.2.1"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|prettier@3.9.6"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|prettier@3.9.6"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@cyclonedx/cyclonedx-library@10.2.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@cyclonedx/cyclonedx-library@10.3.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|ajv-formats-draft2019@1.6.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|ajv-formats@3.0.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|ajv@8.20.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|libxmljs2@0.37.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|packageurl-js@2.0.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|spdx-expression-parse@4.0.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|xmlbuilder2@4.0.3"
+        "@rathnasgala2/theme-tooling@0.1.0|ajv-formats-draft2019@1.6.1",
+        "@rathnasgala2/theme-tooling@0.1.0|ajv-formats@3.0.1",
+        "@rathnasgala2/theme-tooling@0.1.0|ajv@8.20.0",
+        "@rathnasgala2/theme-tooling@0.1.0|libxmljs2@0.37.0",
+        "@rathnasgala2/theme-tooling@0.1.0|packageurl-js@2.0.1",
+        "@rathnasgala2/theme-tooling@0.1.0|spdx-expression-parse@4.0.0",
+        "@rathnasgala2/theme-tooling@0.1.0|xmlbuilder2@4.0.3"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|ajv-formats-draft2019@1.6.1",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|ajv-formats-draft2019@1.6.1",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|ajv@8.20.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|punycode@2.3.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|schemes@1.4.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|smtp-address-parser@1.1.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|uri-js@4.4.1"
+        "@rathnasgala2/theme-tooling@0.1.0|ajv@8.20.0",
+        "@rathnasgala2/theme-tooling@0.1.0|punycode@2.3.1",
+        "@rathnasgala2/theme-tooling@0.1.0|schemes@1.4.0",
+        "@rathnasgala2/theme-tooling@0.1.0|smtp-address-parser@1.1.0",
+        "@rathnasgala2/theme-tooling@0.1.0|uri-js@4.4.1"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|ajv-formats@3.0.1",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|ajv-formats@3.0.1",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|ajv@8.20.0"
+        "@rathnasgala2/theme-tooling@0.1.0|ajv@8.20.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|ajv@8.20.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|ajv@8.20.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|fast-deep-equal@3.1.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|fast-uri@3.1.8",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|json-schema-traverse@1.0.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|require-from-string@2.0.2"
+        "@rathnasgala2/theme-tooling@0.1.0|fast-deep-equal@3.1.3",
+        "@rathnasgala2/theme-tooling@0.1.0|fast-uri@3.1.8",
+        "@rathnasgala2/theme-tooling@0.1.0|json-schema-traverse@1.0.0",
+        "@rathnasgala2/theme-tooling@0.1.0|require-from-string@2.0.2"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|commander@14.0.3"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|commander@14.0.3"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|libxmljs2@0.37.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|libxmljs2@0.37.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|bindings@1.5.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|nan@2.22.2",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|node-gyp@11.5.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|prebuild-install@7.1.3"
+        "@rathnasgala2/theme-tooling@0.1.0|bindings@1.5.0",
+        "@rathnasgala2/theme-tooling@0.1.0|nan@2.22.2",
+        "@rathnasgala2/theme-tooling@0.1.0|node-gyp@11.5.0",
+        "@rathnasgala2/theme-tooling@0.1.0|prebuild-install@7.1.3"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|normalize-package-data@8.0.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|normalize-package-data@8.0.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|hosted-git-info@9.0.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|semver@7.8.5",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|validate-npm-package-license@3.0.4"
+        "@rathnasgala2/theme-tooling@0.1.0|hosted-git-info@9.0.3",
+        "@rathnasgala2/theme-tooling@0.1.0|semver@7.8.5",
+        "@rathnasgala2/theme-tooling@0.1.0|validate-npm-package-license@3.0.4"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|packageurl-js@2.0.1"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|packageurl-js@2.0.1"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|spdx-expression-parse@4.0.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|spdx-expression-parse@4.0.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|spdx-exceptions@2.5.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|spdx-license-ids@3.0.23"
+        "@rathnasgala2/theme-tooling@0.1.0|spdx-exceptions@2.5.0",
+        "@rathnasgala2/theme-tooling@0.1.0|spdx-license-ids@3.0.24"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|xmlbuilder2@4.0.3",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|xmlbuilder2@4.0.3",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@oozcitak/dom@2.0.2",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@oozcitak/infra@2.0.2",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@oozcitak/util@10.0.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|js-yaml@4.3.2"
+        "@rathnasgala2/theme-tooling@0.1.0|@oozcitak/dom@2.0.2",
+        "@rathnasgala2/theme-tooling@0.1.0|@oozcitak/infra@2.0.2",
+        "@rathnasgala2/theme-tooling@0.1.0|@oozcitak/util@10.0.0",
+        "@rathnasgala2/theme-tooling@0.1.0|js-yaml@4.3.2"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@eslint-community/eslint-utils@4.10.1",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@eslint-community/eslint-utils@4.10.1",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@eslint-community/eslint-utils@4.10.1|eslint-visitor-keys@3.4.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|eslint@10.10.0"
+        "@rathnasgala2/theme-tooling@0.1.0|@eslint-community/eslint-utils@4.10.1|eslint-visitor-keys@3.4.3",
+        "@rathnasgala2/theme-tooling@0.1.0|eslint@10.10.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@eslint-community/eslint-utils@4.10.1|eslint-visitor-keys@3.4.3"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@eslint-community/eslint-utils@4.10.1|eslint-visitor-keys@3.4.3"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@eslint-community/regexpp@4.12.2"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@eslint-community/regexpp@4.12.2"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@eslint/config-array@0.23.5",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@eslint/config-array@0.23.5",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@eslint/object-schema@3.0.5",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|debug@4.4.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|minimatch@10.2.6"
+        "@rathnasgala2/theme-tooling@0.1.0|@eslint/object-schema@3.0.5",
+        "@rathnasgala2/theme-tooling@0.1.0|debug@4.4.3",
+        "@rathnasgala2/theme-tooling@0.1.0|minimatch@10.2.6"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@eslint/config-helpers@0.7.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@eslint/config-helpers@0.7.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@eslint/core@1.2.1"
+        "@rathnasgala2/theme-tooling@0.1.0|@eslint/core@1.2.1"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@eslint/core@1.2.1",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@eslint/core@1.2.1",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@types/json-schema@7.0.15"
+        "@rathnasgala2/theme-tooling@0.1.0|@types/json-schema@7.0.15"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@eslint/plugin-kit@0.7.3",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@eslint/plugin-kit@0.7.3",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@eslint/core@1.2.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|levn@0.4.1"
+        "@rathnasgala2/theme-tooling@0.1.0|@eslint/core@1.2.1",
+        "@rathnasgala2/theme-tooling@0.1.0|levn@0.4.1"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@humanfs/node@0.16.8",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@humanfs/node@0.16.8",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@humanfs/core@0.19.2",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@humanfs/types@0.15.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@humanwhocodes/retry@0.4.3"
+        "@rathnasgala2/theme-tooling@0.1.0|@humanfs/core@0.19.2",
+        "@rathnasgala2/theme-tooling@0.1.0|@humanfs/types@0.15.0",
+        "@rathnasgala2/theme-tooling@0.1.0|@humanwhocodes/retry@0.4.3"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@humanwhocodes/module-importer@1.0.1"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@humanwhocodes/module-importer@1.0.1"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@humanwhocodes/retry@0.4.3"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@humanwhocodes/retry@0.4.3"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@types/estree@1.0.9"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@types/estree@1.0.9"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|cross-spawn@7.0.6",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|cross-spawn@7.0.6",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|path-key@3.1.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|shebang-command@2.0.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|which@2.0.2"
+        "@rathnasgala2/theme-tooling@0.1.0|path-key@3.1.1",
+        "@rathnasgala2/theme-tooling@0.1.0|shebang-command@2.0.0",
+        "@rathnasgala2/theme-tooling@0.1.0|which@2.0.2"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|debug@4.4.3",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|debug@4.4.3",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|ms@2.1.3"
+        "@rathnasgala2/theme-tooling@0.1.0|ms@2.1.3"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|escape-string-regexp@4.0.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|escape-string-regexp@4.0.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|eslint-scope@9.1.2",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|eslint-scope@9.1.2",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@types/esrecurse@4.3.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@types/estree@1.0.9",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|esrecurse@4.3.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|estraverse@5.3.0"
+        "@rathnasgala2/theme-tooling@0.1.0|@types/esrecurse@4.3.1",
+        "@rathnasgala2/theme-tooling@0.1.0|@types/estree@1.0.9",
+        "@rathnasgala2/theme-tooling@0.1.0|esrecurse@4.3.0",
+        "@rathnasgala2/theme-tooling@0.1.0|estraverse@5.3.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|eslint-visitor-keys@5.0.1"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|eslint-visitor-keys@5.0.1"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|espree@11.2.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|espree@11.2.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|acorn-jsx@5.3.2",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|acorn@8.18.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|eslint-visitor-keys@5.0.1"
+        "@rathnasgala2/theme-tooling@0.1.0|acorn-jsx@5.3.2",
+        "@rathnasgala2/theme-tooling@0.1.0|acorn@8.18.0",
+        "@rathnasgala2/theme-tooling@0.1.0|eslint-visitor-keys@5.0.1"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|esquery@1.7.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|esquery@1.7.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|estraverse@5.3.0"
+        "@rathnasgala2/theme-tooling@0.1.0|estraverse@5.3.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|esutils@2.0.3"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|esutils@2.0.3"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|fast-deep-equal@3.1.3"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|fast-deep-equal@3.1.3"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|file-entry-cache@11.1.5",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|file-entry-cache@11.1.5",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|flat-cache@6.1.23"
+        "@rathnasgala2/theme-tooling@0.1.0|flat-cache@6.1.23"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|find-up@5.0.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|find-up@5.0.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|locate-path@6.0.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|path-exists@4.0.0"
+        "@rathnasgala2/theme-tooling@0.1.0|locate-path@6.0.0",
+        "@rathnasgala2/theme-tooling@0.1.0|path-exists@4.0.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|glob-parent@6.0.2",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|glob-parent@6.0.2",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|is-glob@4.0.3"
+        "@rathnasgala2/theme-tooling@0.1.0|is-glob@4.0.3"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|ignore@5.3.2"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|ignore@5.3.2"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|imurmurhash@0.1.4"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|imurmurhash@0.1.4"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|is-glob@4.0.3",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|is-glob@4.0.3",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|is-extglob@2.1.1"
+        "@rathnasgala2/theme-tooling@0.1.0|is-extglob@2.1.1"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|json-stable-stringify-without-jsonify@1.0.1"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|json-stable-stringify-without-jsonify@1.0.1"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|minimatch@10.2.6",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|minimatch@10.2.6",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|brace-expansion@5.0.12"
+        "@rathnasgala2/theme-tooling@0.1.0|brace-expansion@5.0.12"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|natural-compare@1.4.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|natural-compare@1.4.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|optionator@0.9.4",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|optionator@0.9.4",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|deep-is@0.1.4",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|fast-levenshtein@2.0.6",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|levn@0.4.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|prelude-ls@1.2.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|type-check@0.4.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|word-wrap@1.2.5"
+        "@rathnasgala2/theme-tooling@0.1.0|deep-is@0.1.4",
+        "@rathnasgala2/theme-tooling@0.1.0|fast-levenshtein@2.0.6",
+        "@rathnasgala2/theme-tooling@0.1.0|levn@0.4.1",
+        "@rathnasgala2/theme-tooling@0.1.0|prelude-ls@1.2.1",
+        "@rathnasgala2/theme-tooling@0.1.0|type-check@0.4.0",
+        "@rathnasgala2/theme-tooling@0.1.0|word-wrap@1.2.5"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|jscpd-darwin-arm64@5.2.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|jscpd-darwin-arm64@5.2.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|jscpd-darwin-x64@5.2.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|jscpd-darwin-x64@5.2.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|jscpd-linux-arm64-gnu@5.2.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|jscpd-linux-arm64-gnu@5.2.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|jscpd-linux-arm64-musl@5.2.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|jscpd-linux-arm64-musl@5.2.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|jscpd-linux-x64-gnu@5.2.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|jscpd-linux-x64-gnu@5.2.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|jscpd-linux-x64-musl@5.2.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|jscpd-linux-x64-musl@5.2.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|jscpd-windows-arm64-msvc@5.2.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|jscpd-windows-arm64-msvc@5.2.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|jscpd-windows-x64-msvc@5.2.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|jscpd-windows-x64-msvc@5.2.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|cssesc@3.0.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|cssesc@3.0.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|util-deprecate@1.0.2"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|util-deprecate@1.0.2"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|nanoid@3.3.19"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|nanoid@3.3.19"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|picocolors@1.1.1"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|picocolors@1.1.1"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|source-map-js@1.2.1"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|source-map-js@1.2.1"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|punycode@2.3.1"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|punycode@2.3.1"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|schemes@1.4.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|schemes@1.4.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|extend@3.0.2"
+        "@rathnasgala2/theme-tooling@0.1.0|extend@3.0.2"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|smtp-address-parser@1.1.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|smtp-address-parser@1.1.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|nearley@2.20.1"
+        "@rathnasgala2/theme-tooling@0.1.0|nearley@2.20.1"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|uri-js@4.4.1",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|uri-js@4.4.1",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|punycode@2.3.1"
+        "@rathnasgala2/theme-tooling@0.1.0|punycode@2.3.1"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|fast-uri@3.1.8"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|fast-uri@3.1.8"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|json-schema-traverse@1.0.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|json-schema-traverse@1.0.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|require-from-string@2.0.2"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|require-from-string@2.0.2"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|bindings@1.5.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|bindings@1.5.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|file-uri-to-path@1.0.0"
+        "@rathnasgala2/theme-tooling@0.1.0|file-uri-to-path@1.0.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|nan@2.22.2"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|nan@2.22.2"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|node-gyp@11.5.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|node-gyp@11.5.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|env-paths@2.2.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|exponential-backoff@3.1.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|graceful-fs@4.2.11",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|make-fetch-happen@14.0.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|nopt@8.1.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|proc-log@5.0.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|semver@7.8.5",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|tar@7.5.22",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|tinyglobby@0.2.17",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|node-gyp@11.5.0|which@5.0.0"
+        "@rathnasgala2/theme-tooling@0.1.0|env-paths@2.2.1",
+        "@rathnasgala2/theme-tooling@0.1.0|exponential-backoff@3.1.3",
+        "@rathnasgala2/theme-tooling@0.1.0|graceful-fs@4.2.11",
+        "@rathnasgala2/theme-tooling@0.1.0|make-fetch-happen@14.0.3",
+        "@rathnasgala2/theme-tooling@0.1.0|nopt@8.1.0",
+        "@rathnasgala2/theme-tooling@0.1.0|proc-log@5.0.0",
+        "@rathnasgala2/theme-tooling@0.1.0|semver@7.8.5",
+        "@rathnasgala2/theme-tooling@0.1.0|tar@7.5.22",
+        "@rathnasgala2/theme-tooling@0.1.0|tinyglobby@0.2.17",
+        "@rathnasgala2/theme-tooling@0.1.0|node-gyp@11.5.0|which@5.0.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|node-gyp@11.5.0|which@5.0.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|node-gyp@11.5.0|which@5.0.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|node-gyp@11.5.0|isexe@3.1.5"
+        "@rathnasgala2/theme-tooling@0.1.0|node-gyp@11.5.0|isexe@3.1.5"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|node-gyp@11.5.0|isexe@3.1.5"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|node-gyp@11.5.0|isexe@3.1.5"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|prebuild-install@7.1.3",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|prebuild-install@7.1.3",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|detect-libc@2.1.2",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|expand-template@2.0.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|github-from-package@0.0.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|minimist@1.2.8",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|mkdirp-classic@0.5.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|napi-build-utils@2.0.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|node-abi@3.96.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|pump@3.0.4",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|rc@1.2.8",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|simple-get@4.0.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|tar-fs@2.1.5",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|tunnel-agent@0.6.0"
+        "@rathnasgala2/theme-tooling@0.1.0|detect-libc@2.1.2",
+        "@rathnasgala2/theme-tooling@0.1.0|expand-template@2.0.3",
+        "@rathnasgala2/theme-tooling@0.1.0|github-from-package@0.0.0",
+        "@rathnasgala2/theme-tooling@0.1.0|minimist@1.2.8",
+        "@rathnasgala2/theme-tooling@0.1.0|mkdirp-classic@0.5.3",
+        "@rathnasgala2/theme-tooling@0.1.0|napi-build-utils@2.0.0",
+        "@rathnasgala2/theme-tooling@0.1.0|node-abi@3.96.0",
+        "@rathnasgala2/theme-tooling@0.1.0|pump@3.0.4",
+        "@rathnasgala2/theme-tooling@0.1.0|rc@1.2.8",
+        "@rathnasgala2/theme-tooling@0.1.0|simple-get@4.0.1",
+        "@rathnasgala2/theme-tooling@0.1.0|tar-fs@2.1.5",
+        "@rathnasgala2/theme-tooling@0.1.0|tunnel-agent@0.6.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|hosted-git-info@9.0.3",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|hosted-git-info@9.0.3",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|hosted-git-info@9.0.3|lru-cache@11.5.2"
+        "@rathnasgala2/theme-tooling@0.1.0|hosted-git-info@9.0.3|lru-cache@11.5.3"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|hosted-git-info@9.0.3|lru-cache@11.5.2"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|hosted-git-info@9.0.3|lru-cache@11.5.3"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|semver@7.8.5"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|semver@7.8.5"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|validate-npm-package-license@3.0.4",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|validate-npm-package-license@3.0.4",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|spdx-correct@3.2.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|validate-npm-package-license@3.0.4|spdx-expression-parse@3.0.1"
+        "@rathnasgala2/theme-tooling@0.1.0|spdx-correct@3.2.0",
+        "@rathnasgala2/theme-tooling@0.1.0|validate-npm-package-license@3.0.4|spdx-expression-parse@3.0.1"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|validate-npm-package-license@3.0.4|spdx-expression-parse@3.0.1",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|validate-npm-package-license@3.0.4|spdx-expression-parse@3.0.1",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|spdx-exceptions@2.5.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|spdx-license-ids@3.0.23"
+        "@rathnasgala2/theme-tooling@0.1.0|spdx-exceptions@2.5.0",
+        "@rathnasgala2/theme-tooling@0.1.0|spdx-license-ids@3.0.24"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|spdx-exceptions@2.5.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|spdx-exceptions@2.5.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|spdx-license-ids@3.0.23"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|spdx-license-ids@3.0.24"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@oozcitak/dom@2.0.2",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@oozcitak/dom@2.0.2",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@oozcitak/infra@2.0.2",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@oozcitak/url@3.0.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@oozcitak/util@10.0.0"
+        "@rathnasgala2/theme-tooling@0.1.0|@oozcitak/infra@2.0.2",
+        "@rathnasgala2/theme-tooling@0.1.0|@oozcitak/url@3.0.0",
+        "@rathnasgala2/theme-tooling@0.1.0|@oozcitak/util@10.0.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@oozcitak/infra@2.0.2",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@oozcitak/infra@2.0.2",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@oozcitak/util@10.0.0"
+        "@rathnasgala2/theme-tooling@0.1.0|@oozcitak/util@10.0.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@oozcitak/util@10.0.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@oozcitak/util@10.0.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|js-yaml@4.3.2",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|js-yaml@4.3.2",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|argparse@2.0.1"
+        "@rathnasgala2/theme-tooling@0.1.0|argparse@2.0.1"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@eslint/object-schema@3.0.5"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@eslint/object-schema@3.0.5"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@types/json-schema@7.0.15"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@types/json-schema@7.0.15"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|levn@0.4.1",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|levn@0.4.1",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|prelude-ls@1.2.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|type-check@0.4.0"
+        "@rathnasgala2/theme-tooling@0.1.0|prelude-ls@1.2.1",
+        "@rathnasgala2/theme-tooling@0.1.0|type-check@0.4.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@humanfs/core@0.19.2",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@humanfs/core@0.19.2",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@humanfs/types@0.15.0"
+        "@rathnasgala2/theme-tooling@0.1.0|@humanfs/types@0.15.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@humanfs/types@0.15.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@humanfs/types@0.15.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|fast-json-stable-stringify@2.1.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|fast-json-stable-stringify@2.1.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|path-key@3.1.1"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|path-key@3.1.1"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|shebang-command@2.0.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|shebang-command@2.0.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|shebang-regex@3.0.0"
+        "@rathnasgala2/theme-tooling@0.1.0|shebang-regex@3.0.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|which@2.0.2",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|which@2.0.2",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|isexe@2.0.0"
+        "@rathnasgala2/theme-tooling@0.1.0|isexe@2.0.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|ms@2.1.3"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|ms@2.1.3"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@types/esrecurse@4.3.1"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@types/esrecurse@4.3.1"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|esrecurse@4.3.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|esrecurse@4.3.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|estraverse@5.3.0"
+        "@rathnasgala2/theme-tooling@0.1.0|estraverse@5.3.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|estraverse@5.3.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|estraverse@5.3.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|acorn-jsx@5.3.2",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|acorn-jsx@5.3.2",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|acorn@8.18.0"
+        "@rathnasgala2/theme-tooling@0.1.0|acorn@8.18.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|acorn@8.18.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|acorn@8.18.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|flat-cache@6.1.23",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|flat-cache@6.1.23",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|cacheable@2.5.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|flatted@3.4.4",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|hookified@1.15.1"
+        "@rathnasgala2/theme-tooling@0.1.0|cacheable@2.5.0",
+        "@rathnasgala2/theme-tooling@0.1.0|flatted@3.4.4",
+        "@rathnasgala2/theme-tooling@0.1.0|hookified@1.15.1"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|locate-path@6.0.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|locate-path@6.0.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|p-locate@5.0.0"
+        "@rathnasgala2/theme-tooling@0.1.0|p-locate@5.0.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|path-exists@4.0.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|path-exists@4.0.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|is-extglob@2.1.1"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|is-extglob@2.1.1"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|brace-expansion@5.0.12",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|brace-expansion@5.0.12",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|balanced-match@4.0.4"
+        "@rathnasgala2/theme-tooling@0.1.0|balanced-match@4.0.4"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|deep-is@0.1.4"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|deep-is@0.1.4"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|fast-levenshtein@2.0.6"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|fast-levenshtein@2.0.6"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|prelude-ls@1.2.1"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|prelude-ls@1.2.1"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|type-check@0.4.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|type-check@0.4.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|prelude-ls@1.2.1"
+        "@rathnasgala2/theme-tooling@0.1.0|prelude-ls@1.2.1"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|word-wrap@1.2.5"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|word-wrap@1.2.5"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|extend@3.0.2"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|extend@3.0.2"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|nearley@2.20.1",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|nearley@2.20.1",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|nearley@2.20.1|commander@2.20.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|moo@0.5.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|railroad-diagrams@1.0.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|randexp@0.4.6"
+        "@rathnasgala2/theme-tooling@0.1.0|nearley@2.20.1|commander@2.20.3",
+        "@rathnasgala2/theme-tooling@0.1.0|moo@0.5.3",
+        "@rathnasgala2/theme-tooling@0.1.0|railroad-diagrams@1.0.0",
+        "@rathnasgala2/theme-tooling@0.1.0|randexp@0.4.6"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|nearley@2.20.1|commander@2.20.3"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|nearley@2.20.1|commander@2.20.3"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|file-uri-to-path@1.0.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|file-uri-to-path@1.0.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|env-paths@2.2.1"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|env-paths@2.2.1"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|exponential-backoff@3.1.3"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|exponential-backoff@3.1.3"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|graceful-fs@4.2.11"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|graceful-fs@4.2.11"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|make-fetch-happen@14.0.3",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|make-fetch-happen@14.0.3",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@npmcli/agent@3.0.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|cacache@19.0.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|http-cache-semantics@4.2.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-fetch@4.0.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-flush@1.0.7",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-pipeline@1.2.4",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass@7.1.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|negotiator@1.1.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|proc-log@5.0.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|promise-retry@2.0.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|ssri@12.0.0"
+        "@rathnasgala2/theme-tooling@0.1.0|@npmcli/agent@3.0.0",
+        "@rathnasgala2/theme-tooling@0.1.0|cacache@19.0.1",
+        "@rathnasgala2/theme-tooling@0.1.0|http-cache-semantics@4.2.0",
+        "@rathnasgala2/theme-tooling@0.1.0|minipass-fetch@4.0.1",
+        "@rathnasgala2/theme-tooling@0.1.0|minipass-flush@1.0.7",
+        "@rathnasgala2/theme-tooling@0.1.0|minipass-pipeline@1.2.4",
+        "@rathnasgala2/theme-tooling@0.1.0|minipass@7.1.3",
+        "@rathnasgala2/theme-tooling@0.1.0|negotiator@1.1.0",
+        "@rathnasgala2/theme-tooling@0.1.0|proc-log@5.0.0",
+        "@rathnasgala2/theme-tooling@0.1.0|promise-retry@2.0.1",
+        "@rathnasgala2/theme-tooling@0.1.0|ssri@12.0.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|nopt@8.1.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|nopt@8.1.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|abbrev@3.0.1"
+        "@rathnasgala2/theme-tooling@0.1.0|abbrev@3.0.1"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|proc-log@5.0.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|proc-log@5.0.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|tar@7.5.22",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|tar@7.5.22",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@isaacs/fs-minipass@4.0.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|chownr@3.0.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass@7.1.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|minizlib@3.1.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|yallist@5.0.0"
+        "@rathnasgala2/theme-tooling@0.1.0|@isaacs/fs-minipass@4.0.1",
+        "@rathnasgala2/theme-tooling@0.1.0|chownr@3.0.0",
+        "@rathnasgala2/theme-tooling@0.1.0|minipass@7.1.3",
+        "@rathnasgala2/theme-tooling@0.1.0|minizlib@3.1.0",
+        "@rathnasgala2/theme-tooling@0.1.0|yallist@5.0.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|tinyglobby@0.2.17",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|tinyglobby@0.2.17",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|fdir@6.5.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|picomatch@4.0.7"
+        "@rathnasgala2/theme-tooling@0.1.0|fdir@6.5.0",
+        "@rathnasgala2/theme-tooling@0.1.0|picomatch@4.0.7"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|detect-libc@2.1.2"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|detect-libc@2.1.2"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|expand-template@2.0.3"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|expand-template@2.0.3"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|github-from-package@0.0.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|github-from-package@0.0.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|minimist@1.2.8"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|minimist@1.2.8"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|mkdirp-classic@0.5.3"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|mkdirp-classic@0.5.3"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|napi-build-utils@2.0.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|napi-build-utils@2.0.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|node-abi@3.96.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|node-abi@3.96.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|semver@7.8.5"
+        "@rathnasgala2/theme-tooling@0.1.0|semver@7.8.5"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|pump@3.0.4",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|pump@3.0.4",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|end-of-stream@1.4.5",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|once@1.4.0"
+        "@rathnasgala2/theme-tooling@0.1.0|end-of-stream@1.4.5",
+        "@rathnasgala2/theme-tooling@0.1.0|once@1.4.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|rc@1.2.8",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|rc@1.2.8",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|deep-extend@0.6.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|ini@1.3.8",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|minimist@1.2.8",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|strip-json-comments@2.0.1"
+        "@rathnasgala2/theme-tooling@0.1.0|deep-extend@0.6.0",
+        "@rathnasgala2/theme-tooling@0.1.0|ini@1.3.8",
+        "@rathnasgala2/theme-tooling@0.1.0|minimist@1.2.8",
+        "@rathnasgala2/theme-tooling@0.1.0|strip-json-comments@2.0.1"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|simple-get@4.0.1",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|simple-get@4.0.1",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|decompress-response@6.0.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|once@1.4.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|simple-concat@1.0.1"
+        "@rathnasgala2/theme-tooling@0.1.0|decompress-response@6.0.0",
+        "@rathnasgala2/theme-tooling@0.1.0|once@1.4.0",
+        "@rathnasgala2/theme-tooling@0.1.0|simple-concat@1.0.1"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|tar-fs@2.1.5",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|tar-fs@2.1.5",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|tar-fs@2.1.5|chownr@1.1.4",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|mkdirp-classic@0.5.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|pump@3.0.4",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|tar-stream@2.2.0"
+        "@rathnasgala2/theme-tooling@0.1.0|tar-fs@2.1.5|chownr@1.1.4",
+        "@rathnasgala2/theme-tooling@0.1.0|mkdirp-classic@0.5.3",
+        "@rathnasgala2/theme-tooling@0.1.0|pump@3.0.4",
+        "@rathnasgala2/theme-tooling@0.1.0|tar-stream@2.2.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|tar-fs@2.1.5|chownr@1.1.4"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|tar-fs@2.1.5|chownr@1.1.4"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|tunnel-agent@0.6.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|tunnel-agent@0.6.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|safe-buffer@5.2.1"
+        "@rathnasgala2/theme-tooling@0.1.0|safe-buffer@5.2.1"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|spdx-correct@3.2.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|spdx-correct@3.2.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|spdx-correct@3.2.0|spdx-expression-parse@3.0.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|spdx-license-ids@3.0.23"
+        "@rathnasgala2/theme-tooling@0.1.0|spdx-correct@3.2.0|spdx-expression-parse@3.0.1",
+        "@rathnasgala2/theme-tooling@0.1.0|spdx-license-ids@3.0.24"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|spdx-correct@3.2.0|spdx-expression-parse@3.0.1",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|spdx-correct@3.2.0|spdx-expression-parse@3.0.1",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|spdx-exceptions@2.5.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|spdx-license-ids@3.0.23"
+        "@rathnasgala2/theme-tooling@0.1.0|spdx-exceptions@2.5.0",
+        "@rathnasgala2/theme-tooling@0.1.0|spdx-license-ids@3.0.24"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@oozcitak/url@3.0.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@oozcitak/url@3.0.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@oozcitak/infra@2.0.2",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@oozcitak/util@10.0.0"
+        "@rathnasgala2/theme-tooling@0.1.0|@oozcitak/infra@2.0.2",
+        "@rathnasgala2/theme-tooling@0.1.0|@oozcitak/util@10.0.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|argparse@2.0.1"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|argparse@2.0.1"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|shebang-regex@3.0.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|shebang-regex@3.0.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|isexe@2.0.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|isexe@2.0.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|cacheable@2.5.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|cacheable@2.5.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@cacheable/memory@2.2.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@cacheable/utils@2.5.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|hookified@1.15.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|keyv@5.6.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|qified@0.10.1"
+        "@rathnasgala2/theme-tooling@0.1.0|@cacheable/memory@2.2.0",
+        "@rathnasgala2/theme-tooling@0.1.0|@cacheable/utils@2.5.0",
+        "@rathnasgala2/theme-tooling@0.1.0|hookified@1.15.1",
+        "@rathnasgala2/theme-tooling@0.1.0|keyv@5.6.0",
+        "@rathnasgala2/theme-tooling@0.1.0|qified@0.10.1"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|flatted@3.4.4"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|flatted@3.4.4"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|hookified@1.15.1"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|hookified@1.15.1"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|p-locate@5.0.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|p-locate@5.0.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|p-limit@3.1.0"
+        "@rathnasgala2/theme-tooling@0.1.0|p-limit@3.1.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|balanced-match@4.0.4"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|balanced-match@4.0.4"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|moo@0.5.3"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|moo@0.5.3"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|railroad-diagrams@1.0.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|railroad-diagrams@1.0.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|randexp@0.4.6",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|randexp@0.4.6",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|discontinuous-range@1.0.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|ret@0.1.15"
+        "@rathnasgala2/theme-tooling@0.1.0|discontinuous-range@1.0.0",
+        "@rathnasgala2/theme-tooling@0.1.0|ret@0.1.15"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@npmcli/agent@3.0.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@npmcli/agent@3.0.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|agent-base@7.1.4",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|http-proxy-agent@7.0.2",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|https-proxy-agent@7.0.6",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|lru-cache@10.4.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|socks-proxy-agent@8.0.5"
+        "@rathnasgala2/theme-tooling@0.1.0|agent-base@7.1.4",
+        "@rathnasgala2/theme-tooling@0.1.0|http-proxy-agent@7.0.2",
+        "@rathnasgala2/theme-tooling@0.1.0|https-proxy-agent@7.0.6",
+        "@rathnasgala2/theme-tooling@0.1.0|lru-cache@10.4.3",
+        "@rathnasgala2/theme-tooling@0.1.0|socks-proxy-agent@8.0.5"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|cacache@19.0.1",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|cacache@19.0.1",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@npmcli/fs@4.0.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|fs-minipass@3.0.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|glob@10.5.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|lru-cache@10.4.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-collect@2.0.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-flush@1.0.7",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-pipeline@1.2.4",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass@7.1.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|p-map@7.0.8",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|ssri@12.0.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|tar@7.5.22",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|unique-filename@4.0.0"
+        "@rathnasgala2/theme-tooling@0.1.0|@npmcli/fs@4.0.0",
+        "@rathnasgala2/theme-tooling@0.1.0|fs-minipass@3.0.3",
+        "@rathnasgala2/theme-tooling@0.1.0|glob@10.5.0",
+        "@rathnasgala2/theme-tooling@0.1.0|lru-cache@10.4.3",
+        "@rathnasgala2/theme-tooling@0.1.0|minipass-collect@2.0.1",
+        "@rathnasgala2/theme-tooling@0.1.0|minipass-flush@1.0.7",
+        "@rathnasgala2/theme-tooling@0.1.0|minipass-pipeline@1.2.4",
+        "@rathnasgala2/theme-tooling@0.1.0|minipass@7.1.3",
+        "@rathnasgala2/theme-tooling@0.1.0|p-map@7.0.8",
+        "@rathnasgala2/theme-tooling@0.1.0|ssri@12.0.0",
+        "@rathnasgala2/theme-tooling@0.1.0|tar@7.5.22",
+        "@rathnasgala2/theme-tooling@0.1.0|unique-filename@4.0.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|http-cache-semantics@4.2.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|http-cache-semantics@4.2.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-fetch@4.0.1",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|minipass-fetch@4.0.1",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|encoding@0.1.13",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-sized@1.0.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass@7.1.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|minizlib@3.1.0"
+        "@rathnasgala2/theme-tooling@0.1.0|encoding@0.1.13",
+        "@rathnasgala2/theme-tooling@0.1.0|minipass-sized@1.0.3",
+        "@rathnasgala2/theme-tooling@0.1.0|minipass@7.1.3",
+        "@rathnasgala2/theme-tooling@0.1.0|minizlib@3.1.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-flush@1.0.7",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|minipass-flush@1.0.7",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-flush@1.0.7|minipass@3.3.6"
+        "@rathnasgala2/theme-tooling@0.1.0|minipass-flush@1.0.7|minipass@3.3.6"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-flush@1.0.7|minipass@3.3.6",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|minipass-flush@1.0.7|minipass@3.3.6",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-flush@1.0.7|yallist@4.0.0"
+        "@rathnasgala2/theme-tooling@0.1.0|minipass-flush@1.0.7|yallist@4.0.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-flush@1.0.7|yallist@4.0.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|minipass-flush@1.0.7|yallist@4.0.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-pipeline@1.2.4",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|minipass-pipeline@1.2.4",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-pipeline@1.2.4|minipass@3.3.6"
+        "@rathnasgala2/theme-tooling@0.1.0|minipass-pipeline@1.2.4|minipass@3.3.6"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-pipeline@1.2.4|minipass@3.3.6",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|minipass-pipeline@1.2.4|minipass@3.3.6",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-pipeline@1.2.4|yallist@4.0.0"
+        "@rathnasgala2/theme-tooling@0.1.0|minipass-pipeline@1.2.4|yallist@4.0.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-pipeline@1.2.4|yallist@4.0.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|minipass-pipeline@1.2.4|yallist@4.0.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass@7.1.3"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|minipass@7.1.3"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|negotiator@1.1.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|negotiator@1.1.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|content-type@2.1.0"
+        "@rathnasgala2/theme-tooling@0.1.0|content-type@2.1.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|promise-retry@2.0.1",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|promise-retry@2.0.1",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|err-code@2.0.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|retry@0.12.0"
+        "@rathnasgala2/theme-tooling@0.1.0|err-code@2.0.3",
+        "@rathnasgala2/theme-tooling@0.1.0|retry@0.12.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|ssri@12.0.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|ssri@12.0.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass@7.1.3"
+        "@rathnasgala2/theme-tooling@0.1.0|minipass@7.1.3"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|abbrev@3.0.1"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|abbrev@3.0.1"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@isaacs/fs-minipass@4.0.1",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@isaacs/fs-minipass@4.0.1",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass@7.1.3"
+        "@rathnasgala2/theme-tooling@0.1.0|minipass@7.1.3"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|chownr@3.0.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|chownr@3.0.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|minizlib@3.1.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|minizlib@3.1.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass@7.1.3"
+        "@rathnasgala2/theme-tooling@0.1.0|minipass@7.1.3"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|yallist@5.0.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|yallist@5.0.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|fdir@6.5.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|fdir@6.5.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|picomatch@4.0.7"
+        "@rathnasgala2/theme-tooling@0.1.0|picomatch@4.0.7"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|picomatch@4.0.7"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|picomatch@4.0.7"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|end-of-stream@1.4.5",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|end-of-stream@1.4.5",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|once@1.4.0"
+        "@rathnasgala2/theme-tooling@0.1.0|once@1.4.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|once@1.4.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|once@1.4.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|wrappy@1.0.2"
+        "@rathnasgala2/theme-tooling@0.1.0|wrappy@1.0.2"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|deep-extend@0.6.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|deep-extend@0.6.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|ini@1.3.8"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|ini@1.3.8"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|strip-json-comments@2.0.1"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|strip-json-comments@2.0.1"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|decompress-response@6.0.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|decompress-response@6.0.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|mimic-response@3.1.0"
+        "@rathnasgala2/theme-tooling@0.1.0|mimic-response@3.1.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|simple-concat@1.0.1"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|simple-concat@1.0.1"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|tar-stream@2.2.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|tar-stream@2.2.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|bl@4.1.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|end-of-stream@1.4.5",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|fs-constants@1.0.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|inherits@2.0.4",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|readable-stream@3.6.2"
+        "@rathnasgala2/theme-tooling@0.1.0|bl@4.1.0",
+        "@rathnasgala2/theme-tooling@0.1.0|end-of-stream@1.4.5",
+        "@rathnasgala2/theme-tooling@0.1.0|fs-constants@1.0.0",
+        "@rathnasgala2/theme-tooling@0.1.0|inherits@2.0.4",
+        "@rathnasgala2/theme-tooling@0.1.0|readable-stream@3.6.2"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|safe-buffer@5.2.1"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|safe-buffer@5.2.1"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@cacheable/memory@2.2.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@cacheable/memory@2.2.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@cacheable/utils@2.5.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@keyv/bigmap@1.3.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|hookified@1.15.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|keyv@5.6.0"
+        "@rathnasgala2/theme-tooling@0.1.0|@cacheable/utils@2.5.0",
+        "@rathnasgala2/theme-tooling@0.1.0|@keyv/bigmap@1.3.1",
+        "@rathnasgala2/theme-tooling@0.1.0|hookified@1.15.1",
+        "@rathnasgala2/theme-tooling@0.1.0|keyv@5.6.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@cacheable/utils@2.5.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@cacheable/utils@2.5.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|hashery@1.5.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|keyv@5.6.0"
+        "@rathnasgala2/theme-tooling@0.1.0|hashery@1.5.1",
+        "@rathnasgala2/theme-tooling@0.1.0|keyv@5.6.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|keyv@5.6.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|keyv@5.6.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@keyv/serialize@1.1.1"
+        "@rathnasgala2/theme-tooling@0.1.0|@keyv/serialize@1.1.1"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|qified@0.10.1",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|qified@0.10.1",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|qified@0.10.1|hookified@2.2.0"
+        "@rathnasgala2/theme-tooling@0.1.0|qified@0.10.1|hookified@2.2.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|qified@0.10.1|hookified@2.2.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|qified@0.10.1|hookified@2.2.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|p-limit@3.1.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|p-limit@3.1.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|yocto-queue@0.1.0"
+        "@rathnasgala2/theme-tooling@0.1.0|yocto-queue@0.1.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|discontinuous-range@1.0.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|discontinuous-range@1.0.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|ret@0.1.15"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|ret@0.1.15"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|agent-base@7.1.4"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|agent-base@7.1.4"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|http-proxy-agent@7.0.2",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|http-proxy-agent@7.0.2",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|agent-base@7.1.4",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|debug@4.4.3"
+        "@rathnasgala2/theme-tooling@0.1.0|agent-base@7.1.4",
+        "@rathnasgala2/theme-tooling@0.1.0|debug@4.4.3"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|https-proxy-agent@7.0.6",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|https-proxy-agent@7.0.6",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|agent-base@7.1.4",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|debug@4.4.3"
+        "@rathnasgala2/theme-tooling@0.1.0|agent-base@7.1.4",
+        "@rathnasgala2/theme-tooling@0.1.0|debug@4.4.3"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|lru-cache@10.4.3"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|lru-cache@10.4.3"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|socks-proxy-agent@8.0.5",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|socks-proxy-agent@8.0.5",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|agent-base@7.1.4",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|debug@4.4.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|socks@2.8.10"
+        "@rathnasgala2/theme-tooling@0.1.0|agent-base@7.1.4",
+        "@rathnasgala2/theme-tooling@0.1.0|debug@4.4.3",
+        "@rathnasgala2/theme-tooling@0.1.0|socks@2.8.10"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@npmcli/fs@4.0.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@npmcli/fs@4.0.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|semver@7.8.5"
+        "@rathnasgala2/theme-tooling@0.1.0|semver@7.8.5"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|fs-minipass@3.0.3",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|fs-minipass@3.0.3",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass@7.1.3"
+        "@rathnasgala2/theme-tooling@0.1.0|minipass@7.1.3"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|glob@10.5.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|glob@10.5.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|foreground-child@3.3.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|jackspeak@3.4.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|glob@10.5.0|minimatch@9.0.9",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass@7.1.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|package-json-from-dist@1.0.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|path-scurry@1.11.1"
+        "@rathnasgala2/theme-tooling@0.1.0|foreground-child@3.3.1",
+        "@rathnasgala2/theme-tooling@0.1.0|jackspeak@3.4.3",
+        "@rathnasgala2/theme-tooling@0.1.0|glob@10.5.0|minimatch@9.0.9",
+        "@rathnasgala2/theme-tooling@0.1.0|minipass@7.1.3",
+        "@rathnasgala2/theme-tooling@0.1.0|package-json-from-dist@1.0.1",
+        "@rathnasgala2/theme-tooling@0.1.0|path-scurry@1.11.1"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|glob@10.5.0|minimatch@9.0.9",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|glob@10.5.0|minimatch@9.0.9",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|glob@10.5.0|brace-expansion@2.1.7"
+        "@rathnasgala2/theme-tooling@0.1.0|glob@10.5.0|brace-expansion@2.1.7"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|glob@10.5.0|brace-expansion@2.1.7",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|glob@10.5.0|brace-expansion@2.1.7",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|glob@10.5.0|balanced-match@1.0.2"
+        "@rathnasgala2/theme-tooling@0.1.0|glob@10.5.0|balanced-match@1.0.2"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|glob@10.5.0|balanced-match@1.0.2"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|glob@10.5.0|balanced-match@1.0.2"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-collect@2.0.1",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|minipass-collect@2.0.1",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass@7.1.3"
+        "@rathnasgala2/theme-tooling@0.1.0|minipass@7.1.3"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|p-map@7.0.8"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|p-map@7.0.8"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|unique-filename@4.0.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|unique-filename@4.0.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|unique-slug@5.0.0"
+        "@rathnasgala2/theme-tooling@0.1.0|unique-slug@5.0.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|encoding@0.1.13",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|encoding@0.1.13",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|iconv-lite@0.6.3"
+        "@rathnasgala2/theme-tooling@0.1.0|iconv-lite@0.6.3"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-sized@1.0.3",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|minipass-sized@1.0.3",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-sized@1.0.3|minipass@3.3.6"
+        "@rathnasgala2/theme-tooling@0.1.0|minipass-sized@1.0.3|minipass@3.3.6"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-sized@1.0.3|minipass@3.3.6",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|minipass-sized@1.0.3|minipass@3.3.6",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-sized@1.0.3|yallist@4.0.0"
+        "@rathnasgala2/theme-tooling@0.1.0|minipass-sized@1.0.3|yallist@4.0.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass-sized@1.0.3|yallist@4.0.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|minipass-sized@1.0.3|yallist@4.0.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|content-type@2.1.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|content-type@2.1.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|err-code@2.0.3"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|err-code@2.0.3"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|retry@0.12.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|retry@0.12.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|wrappy@1.0.2"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|wrappy@1.0.2"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|mimic-response@3.1.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|mimic-response@3.1.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|bl@4.1.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|bl@4.1.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|buffer@5.7.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|inherits@2.0.4",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|readable-stream@3.6.2"
+        "@rathnasgala2/theme-tooling@0.1.0|buffer@5.7.1",
+        "@rathnasgala2/theme-tooling@0.1.0|inherits@2.0.4",
+        "@rathnasgala2/theme-tooling@0.1.0|readable-stream@3.6.2"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|fs-constants@1.0.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|fs-constants@1.0.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|inherits@2.0.4"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|inherits@2.0.4"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|readable-stream@3.6.2",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|readable-stream@3.6.2",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|inherits@2.0.4",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|string_decoder@1.3.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|util-deprecate@1.0.2"
+        "@rathnasgala2/theme-tooling@0.1.0|inherits@2.0.4",
+        "@rathnasgala2/theme-tooling@0.1.0|string_decoder@1.3.0",
+        "@rathnasgala2/theme-tooling@0.1.0|util-deprecate@1.0.2"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@keyv/bigmap@1.3.1",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@keyv/bigmap@1.3.1",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|hashery@1.5.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|hookified@1.15.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|keyv@5.6.0"
+        "@rathnasgala2/theme-tooling@0.1.0|hashery@1.5.1",
+        "@rathnasgala2/theme-tooling@0.1.0|hookified@1.15.1",
+        "@rathnasgala2/theme-tooling@0.1.0|keyv@5.6.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|hashery@1.5.1",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|hashery@1.5.1",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|hookified@1.15.1"
+        "@rathnasgala2/theme-tooling@0.1.0|hookified@1.15.1"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@keyv/serialize@1.1.1"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@keyv/serialize@1.1.1"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|yocto-queue@0.1.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|yocto-queue@0.1.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|socks@2.8.10",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|socks@2.8.10",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|ip-address@10.7.2",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|smart-buffer@4.2.0"
+        "@rathnasgala2/theme-tooling@0.1.0|ip-address@10.7.2",
+        "@rathnasgala2/theme-tooling@0.1.0|smart-buffer@4.2.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|foreground-child@3.3.1",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|foreground-child@3.3.1",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|cross-spawn@7.0.6",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|signal-exit@4.1.0"
+        "@rathnasgala2/theme-tooling@0.1.0|cross-spawn@7.0.6",
+        "@rathnasgala2/theme-tooling@0.1.0|signal-exit@4.1.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|jackspeak@3.4.3",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|jackspeak@3.4.3",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@isaacs/cliui@8.0.2",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|@pkgjs/parseargs@0.11.0"
+        "@rathnasgala2/theme-tooling@0.1.0|@isaacs/cliui@8.0.2",
+        "@rathnasgala2/theme-tooling@0.1.0|@pkgjs/parseargs@0.11.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|package-json-from-dist@1.0.1"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|package-json-from-dist@1.0.1"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|path-scurry@1.11.1",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|path-scurry@1.11.1",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|lru-cache@10.4.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|minipass@7.1.3"
+        "@rathnasgala2/theme-tooling@0.1.0|lru-cache@10.4.3",
+        "@rathnasgala2/theme-tooling@0.1.0|minipass@7.1.3"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|unique-slug@5.0.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|unique-slug@5.0.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|imurmurhash@0.1.4"
+        "@rathnasgala2/theme-tooling@0.1.0|imurmurhash@0.1.4"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|iconv-lite@0.6.3",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|iconv-lite@0.6.3",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|safer-buffer@2.1.2"
+        "@rathnasgala2/theme-tooling@0.1.0|safer-buffer@2.1.2"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|buffer@5.7.1",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|buffer@5.7.1",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|base64-js@1.5.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|ieee754@1.2.1"
+        "@rathnasgala2/theme-tooling@0.1.0|base64-js@1.5.1",
+        "@rathnasgala2/theme-tooling@0.1.0|ieee754@1.2.1"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|string_decoder@1.3.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|string_decoder@1.3.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|safe-buffer@5.2.1"
+        "@rathnasgala2/theme-tooling@0.1.0|safe-buffer@5.2.1"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|ip-address@10.7.2"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|ip-address@10.7.2"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|smart-buffer@4.2.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|smart-buffer@4.2.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|signal-exit@4.1.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|signal-exit@4.1.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@isaacs/cliui@8.0.2",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@isaacs/cliui@8.0.2",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|string-width@4.2.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|string-width@5.1.2",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|strip-ansi@6.0.1",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|strip-ansi@7.2.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|wrap-ansi@7.0.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|wrap-ansi@8.1.0"
+        "@rathnasgala2/theme-tooling@0.1.0|string-width@4.2.3",
+        "@rathnasgala2/theme-tooling@0.1.0|string-width@5.1.2",
+        "@rathnasgala2/theme-tooling@0.1.0|strip-ansi@6.0.1",
+        "@rathnasgala2/theme-tooling@0.1.0|strip-ansi@7.2.0",
+        "@rathnasgala2/theme-tooling@0.1.0|wrap-ansi@7.0.0",
+        "@rathnasgala2/theme-tooling@0.1.0|wrap-ansi@8.1.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|@pkgjs/parseargs@0.11.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|@pkgjs/parseargs@0.11.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|safer-buffer@2.1.2"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|safer-buffer@2.1.2"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|base64-js@1.5.1"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|base64-js@1.5.1"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|ieee754@1.2.1"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|ieee754@1.2.1"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|string-width@4.2.3",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|string-width@4.2.3",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|string-width@4.2.3|emoji-regex@8.0.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|is-fullwidth-code-point@3.0.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|string-width@4.2.3|strip-ansi@6.0.1"
+        "@rathnasgala2/theme-tooling@0.1.0|string-width@4.2.3|emoji-regex@8.0.0",
+        "@rathnasgala2/theme-tooling@0.1.0|is-fullwidth-code-point@3.0.0",
+        "@rathnasgala2/theme-tooling@0.1.0|string-width@4.2.3|strip-ansi@6.0.1"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|string-width@4.2.3|emoji-regex@8.0.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|string-width@4.2.3|emoji-regex@8.0.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|string-width@4.2.3|strip-ansi@6.0.1",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|string-width@4.2.3|strip-ansi@6.0.1",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|string-width@4.2.3|ansi-regex@5.0.1"
+        "@rathnasgala2/theme-tooling@0.1.0|string-width@4.2.3|ansi-regex@5.0.1"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|string-width@4.2.3|ansi-regex@5.0.1"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|string-width@4.2.3|ansi-regex@5.0.1"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|string-width@5.1.2",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|string-width@5.1.2",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|eastasianwidth@0.2.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|emoji-regex@9.2.2",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|strip-ansi@7.2.0"
+        "@rathnasgala2/theme-tooling@0.1.0|eastasianwidth@0.2.0",
+        "@rathnasgala2/theme-tooling@0.1.0|emoji-regex@9.2.2",
+        "@rathnasgala2/theme-tooling@0.1.0|strip-ansi@7.2.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|strip-ansi@6.0.1",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|strip-ansi@6.0.1",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|strip-ansi@6.0.1|ansi-regex@5.0.1"
+        "@rathnasgala2/theme-tooling@0.1.0|strip-ansi@6.0.1|ansi-regex@5.0.1"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|strip-ansi@6.0.1|ansi-regex@5.0.1"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|strip-ansi@6.0.1|ansi-regex@5.0.1"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|strip-ansi@7.2.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|strip-ansi@7.2.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|ansi-regex@6.3.0"
+        "@rathnasgala2/theme-tooling@0.1.0|ansi-regex@6.3.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|wrap-ansi@7.0.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|wrap-ansi@7.0.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|wrap-ansi@7.0.0|ansi-styles@4.3.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|wrap-ansi@7.0.0|string-width@4.2.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|wrap-ansi@7.0.0|strip-ansi@6.0.1"
+        "@rathnasgala2/theme-tooling@0.1.0|wrap-ansi@7.0.0|ansi-styles@4.3.0",
+        "@rathnasgala2/theme-tooling@0.1.0|wrap-ansi@7.0.0|string-width@4.2.3",
+        "@rathnasgala2/theme-tooling@0.1.0|wrap-ansi@7.0.0|strip-ansi@6.0.1"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|wrap-ansi@7.0.0|ansi-styles@4.3.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|wrap-ansi@7.0.0|ansi-styles@4.3.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|color-convert@2.0.1"
+        "@rathnasgala2/theme-tooling@0.1.0|color-convert@2.0.1"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|wrap-ansi@7.0.0|string-width@4.2.3",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|wrap-ansi@7.0.0|string-width@4.2.3",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|wrap-ansi@7.0.0|emoji-regex@8.0.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|is-fullwidth-code-point@3.0.0",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|wrap-ansi@7.0.0|strip-ansi@6.0.1"
+        "@rathnasgala2/theme-tooling@0.1.0|wrap-ansi@7.0.0|emoji-regex@8.0.0",
+        "@rathnasgala2/theme-tooling@0.1.0|is-fullwidth-code-point@3.0.0",
+        "@rathnasgala2/theme-tooling@0.1.0|wrap-ansi@7.0.0|strip-ansi@6.0.1"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|wrap-ansi@7.0.0|strip-ansi@6.0.1",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|wrap-ansi@7.0.0|strip-ansi@6.0.1",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|wrap-ansi@7.0.0|ansi-regex@5.0.1"
+        "@rathnasgala2/theme-tooling@0.1.0|wrap-ansi@7.0.0|ansi-regex@5.0.1"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|wrap-ansi@7.0.0|emoji-regex@8.0.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|wrap-ansi@7.0.0|emoji-regex@8.0.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|wrap-ansi@7.0.0|ansi-regex@5.0.1"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|wrap-ansi@7.0.0|ansi-regex@5.0.1"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|wrap-ansi@8.1.0",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|wrap-ansi@8.1.0",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|ansi-styles@6.2.3",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|string-width@5.1.2",
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|strip-ansi@7.2.0"
+        "@rathnasgala2/theme-tooling@0.1.0|ansi-styles@6.2.3",
+        "@rathnasgala2/theme-tooling@0.1.0|string-width@5.1.2",
+        "@rathnasgala2/theme-tooling@0.1.0|strip-ansi@7.2.0"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|is-fullwidth-code-point@3.0.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|is-fullwidth-code-point@3.0.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|eastasianwidth@0.2.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|eastasianwidth@0.2.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|emoji-regex@9.2.2"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|emoji-regex@9.2.2"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|ansi-regex@6.3.0"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|ansi-regex@6.3.0"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|ansi-styles@6.2.3"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|ansi-styles@6.2.3"
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|color-convert@2.0.1",
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|color-convert@2.0.1",
       "dependsOn": [
-        "@rathnasgala2/theme-zebra-tooling@0.0.0|color-name@1.1.4"
+        "@rathnasgala2/theme-tooling@0.1.0|color-name@1.1.4"
       ]
     },
     {
-      "ref": "@rathnasgala2/theme-zebra-tooling@0.0.0|color-name@1.1.4"
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|color-name@1.1.4"
     }
   ]
 }
