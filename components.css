@@ -75,19 +75,16 @@
 
   [data-gala-publication-root] ul,
   [data-gala-publication-root] ol {
-    background-image: repeating-linear-gradient(
-      to bottom,
-      var(--gala-color-surface) 0,
-      var(--gala-color-surface) 1.5rem,
-      var(--gala-color-surface-raised) 1.5rem,
-      var(--gala-color-surface-raised) 3rem
-    );
+    background-color: var(--gala-color-surface-raised);
     color: var(--gala-color-text);
     margin: var(--gala-space-4) 0;
     padding-inline-start: var(--gala-space-6);
   }
 
+  /* Character: a row-level accent rule instead of a fixed-period
+     background band, which never lined up with variable-height rows. */
   [data-gala-publication-root] li {
+    border-inline-start: var(--gala-border-width) solid var(--gala-color-accent);
     margin: 0;
     padding: var(--gala-space-1) var(--gala-space-2);
   }
