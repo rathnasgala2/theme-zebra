@@ -28,7 +28,8 @@ jobs:
           persist-credentials: false
 
       # Pinned to the commit tagged @rathnasgala2/template 2.1.0 (unreleased)
-      # (verified against the registry's gitHead metadata for that version).
+      # (not yet published to the registry; see the template's own
+      # CHANGELOG.md Unreleased section, recommended release 2.1.0).
       # `css:check`/`grammar:check` and the template-conformance tests read
       # this checkout by path (WORKSPACE_ROOT/template).
       - name: Check out the template sibling repository

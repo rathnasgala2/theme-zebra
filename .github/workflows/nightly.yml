@@ -28,7 +28,8 @@ jobs:
           persist-credentials: false
 
       # Pinned to the commit tagged @rathnasgala2/template 2.1.0 (unreleased)
-      # (verified against the registry's gitHead metadata for that version).
+      # (not yet published to the registry; see the template's own
+      # CHANGELOG.md Unreleased section, recommended release 2.1.0).
       # `css:check`/`grammar:check` read this checkout by path
       # (WORKSPACE_ROOT/template) for the S2-T12 theme-styling hook
       # contract, so `npm run verify` needs it present in CI.
@@ -36,7 +37,7 @@ jobs:
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           repository: rathnasgala2/template
-          ref: e66d8771189966db1f8f876b005ab59d4f676bcb # 2.1.0 (unreleased)
+          ref: d2b2f0ffc38407851e293e5a8a92d8863a0182d1 # 2.1.0 (unreleased)
           path: template
           persist-credentials: false
 
