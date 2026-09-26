@@ -24,6 +24,16 @@
     padding: var(--gala-space-6) var(--gala-space-4);
   }
 
+  /* THM-M3: theme.json.slotHooks declares landmark-main-content
+     (#main-content, the skip-link target) but nothing styled it, so the
+     tooling's set-equality check between declared and CSS-matched hook
+     IDs failed. This gives it a real, themed :focus-visible indicator
+     (the skip link lands here), genuinely using color-focus/focus-width
+     rather than declaring the hook and never rendering it. */
+  [data-gala-publication-root] #main-content:focus-visible {
+    border-top: var(--gala-focus-width) solid var(--gala-color-focus);
+  }
+
   [data-gala-publication-root] footer {
     background-color: var(--gala-color-surface);
     border-top: var(--gala-border-width) solid var(--gala-color-border);

@@ -39,6 +39,26 @@ change to the token/CSS-hook contract).
   pseudo-class between a hook atom and any trailing pseudo-element. The
   `border-inline-start` accent is kept on every `<li>`.
 
+### Changed (THM-M3, contrast retune, 2026-09-25)
+
+- `check-css-hooks.mjs` now asserts `theme.json.slotHooks` set-equality
+  against the hook IDs the CSS actually matches in both directions
+  (THM-M3): added a real `#main-content:focus-visible` rule so the
+  already-declared `landmark-main-content` hook is genuinely used,
+  reconciling the one direction that was failing.
+- Retuned `color-accent` from `#7a5205`/`#e09a00` to `#8f5a00`/`#bd7800`
+  (light/dark) so the tooling's three new contrast pairs
+  (`color-accent`/`color-text` ≥ 3:1, `color-accent`/`color-surface`
+  ≥ 3:1, `color-surface-raised`/`color-surface` ≥ 1.3:1 — the last already
+  cleared without change) pass in both palettes; `color-focus` mirrors
+  `color-accent` in the light palette and moved with it.
+- Confirmed THZ-M2's `color-accent`/`color-text` pair, now a default
+  tooling pair rather than a theme-documented-only floor, passes at the
+  retuned value.
+- `theme.json` digest cycle regenerated: this is the first commit since
+  THZ-H1 where the contrast gate passes, so this is also where
+  `components.css`'s asset digest catches up to that commit's bytes.
+
 ### Changed (Contract 2.1.0 adoption, 2026-09-25)
 
 - `theme.json.contractVersion` bumped to `2.1.0` and `stylingContractDigest`

@@ -69,21 +69,27 @@ pseudo-class between a hook atom and any trailing pseudo-element, so this
 row alternation — previously blocked by the tooling, see the CHANGELOG —
 is reachable today.
 
-Two decorative-surface floors are enforced by choice of palette value
-(not yet by an automated gate; the contrast runner in
-`@rathnasgala2/theme-tooling` only checks text-against-background pairs
-today):
+Three decorative/non-text-UI adjacency floors are enforced by choice of
+palette value **and** asserted by `@rathnasgala2/theme-tooling`'s
+`contrast:check` (`scripts/contrast-pairs.json`):
 
-- **`color-surface-raised` against `color-surface`/`color-canvas`** is
-  kept at or above **1.3:1** in both palettes (currently 1.34:1 light,
-  1.43:1 dark) — the WCAG 3:1 non-text threshold does not apply, since
-  this is a decorative surface distinction rather than a UI-component
-  boundary, but a floor still keeps a future palette edit from collapsing
-  it to indistinguishable.
-- **`color-accent` against `color-text`** (the `hr` stripe's two colours)
-  is kept at or above **1.3:1** in both palettes (currently 2.79:1 light,
-  2.19:1 dark) so the divider reads as two colours, not one, in either
-  palette.
+- **`color-surface-raised` against `color-surface`** ≥ **1.3:1** in both
+  palettes (1.34:1 light, 1.43:1 dark) — the WCAG 3:1 non-text threshold
+  does not apply, since this is a decorative surface distinction rather
+  than a UI-component boundary, but a floor still keeps a future palette
+  edit from collapsing the two stripe colours into indistinguishable.
+- **`color-accent` against `color-text`** ≥ **3:1** in both palettes
+  (3.17:1 light, 3.29:1 dark) — the `hr` stripe's two colours, and the
+  accent `border-inline-start`/icon read against body text.
+- **`color-accent` against `color-surface`** ≥ **3:1** in both palettes
+  (5.45:1 light, 5.04:1 dark) — the accent border/icon read against the
+  raised list stripe.
+
+`color-accent` (and `color-focus`, which mirrors it in the light palette)
+was retuned from the previous revision's `#7a5205`/`#e09a00` to
+`#8f5a00`/`#bd7800` to clear the new accent/text floor introduced above;
+every other token pair this theme relied on still clears its own floor at
+the new value (see `tokens-contrast.test.mjs`/`contrast:check` output).
 
 See `tokens.css` for every token value and `components.css` for the
 character-specific component rules; every other component rule is the
@@ -190,23 +196,30 @@ closed 64-entry `publicThemeSlotHooks` catalog from
 landmark/heading/prose/code/control/media/page-kind/slot hooks, always
 scoped under the required root compound `[data-gala-publication-root]` (or
 its resolved-palette variant), joined only by the contract's four closed
-combinators (` `, `>`, `+`, `~`). This version of the template's
-styling contract publishes an empty `pseudoClasses` set (no `:focus`/
-`:hover`/etc. selector is available to a theme at all in this template
-version), so focus-ring color/width customization uses only the
-`outline-color`/`outline-width` longhands (never `outline-style`, which
-this theme never sets) on interactive hooks — combining with whatever
-`:focus-visible` behavior the template's own base layer or the browser's
-UA stylesheet supplies, and never suppressing it. `theme.json.slotHooks` is
-the exact sorted set of the 51 hook IDs this CSS actually uses (not the
-whole 64-hook catalog — only the subset a theme actually styles is
-declared, per the S2 brief).
+combinators (` `, `>`, `+`, `~`). Contract 2.1.0 publishes a closed
+pseudo-class catalog (`:hover`, `:focus-visible`, `:active`, `:visited`,
+`:disabled`) and the functional `:nth-child`/`:nth-last-child` pair
+(keyword arguments `even`/`odd`, or a non-negative An+B expression), which
+this theme uses for `li:nth-child(odd)`/`li:nth-child(even)` row
+alternation and, elsewhere, `a:visited`/`a:hover`/`:focus-visible`.
+Focus-ring color/width customization still cannot use the
+`outline-color`/`outline-width` longhands directly (the closed CSS
+property grammar never admits `outline-style`/`outline`, so those two
+longhands are permanently inert, THD-H1); `#main-content:focus-visible`
+instead uses the admitted `border-top` property (see "Accessibility
+posture" below). `theme.json.slotHooks` is the exact sorted set of the 51
+hook IDs this CSS actually uses (not the whole 64-hook catalog — only the
+subset a theme actually styles is declared, per the S2 brief); a
+pseudo-class-suffixed selector (e.g. `li:nth-child(even)`) counts toward
+the same hook ID as its bare form.
 
 `tooling/test/css-hooks.test.mjs` parses every stylesheet with `postcss` (a pinned
 exact version) and `postcss-selector-parser`, and fails the build if any
 selector uses an attribute/class/id/type atom that is not one of the
-template's published 64 `publicThemeSlotHooks` selector atoms or the
-required root/palette scoping compounds.
+template's published 64 `publicThemeSlotHooks` selector atoms, an
+admitted pseudo-class/pseudo-element, or the required root/palette
+scoping compounds — and if `theme.json.slotHooks` and the hook IDs the CSS
+actually matches ever diverge in either direction (THM-M3).
 
 `components.css`'s `::selection` rule (THD-M9), where this theme declares
 one, is scoped to the root compound only

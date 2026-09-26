@@ -65,8 +65,8 @@
     {
       "key": "color-accent",
       "type": "color",
-      "light": "#7a5205",
-      "dark": "#e09a00"
+      "light": "#8f5a00",
+      "dark": "#bd7800"
     },
     {
       "key": "color-border",
@@ -101,7 +101,7 @@
     {
       "key": "color-focus",
       "type": "color",
-      "light": "#7a5205",
+      "light": "#8f5a00",
       "dark": "#ffcf66"
     },
     {
@@ -248,14 +248,14 @@
       "path": "tokens.css",
       "mediaType": "text/css",
       "byteLength": "5994",
-      "sha256": "sha256:39ea0f859e9a325fd10982da8f661d84460e6aae8f947a8c30ba67404abb3271",
+      "sha256": "sha256:0f396a53bfc68ae27967a7595d40447207b5ed663a09fde042595a6f10d45fe1",
       "license": "Apache-2.0"
     },
     {
       "path": "components.css",
       "mediaType": "text/css",
-      "byteLength": "7493",
-      "sha256": "sha256:c480a256615666a0c3d26def794100cab08d6102ae3bee438b0b02dea15ce4a7",
+      "byteLength": "8318",
+      "sha256": "sha256:291146fd5413cbdd67c4df47edbeae229d0975fc5658c84ee6180d0f704d7191",
       "license": "Apache-2.0"
     },
     {
@@ -274,13 +274,13 @@
     "fixture-token-catalog-contrast"
   ],
   "browserPolicyRef": "gala-theme-css-v2-20211224",
-  "integrity": "sha256:c0f9b02e93cb2a42fc5dedc4f9466d19f365f2a6f2ef9fa17fcd10f4e7525538",
+  "integrity": "sha256:3373ae59d21d995c8be162f70fbf11b71e5d38159560541048abddfb38be6650",
   "budgets": {
     "maximumFileBytes": "16384",
     "maximumTotalBytes": "40960",
     "maximumFiles": 8
   },
-  "fixtureDigest": "sha256:391253bd4336e245bf892017b88f56f0c9f70802f4525fe1b812f5d0f4f5c4e6",
-  "evidenceDigest": "sha256:1d52fbd52d95af06a7810649dd600520610fd4f43e92d6c5ba21c12a43dcbda8",
+  "fixtureDigest": "sha256:58869112bfea7303cd471030eaaab29cc08a44c38780209e0257495419ec9a01",
+  "evidenceDigest": "sha256:aa30ff6996b6ea85a1851ce7be6061f3e794723ff2f95b3b268cf0cd7da5f959",
   "stylingContractDigest": "sha256:9abf99b73a20e034c784ec9648d1f96ea59b59b2ba89028b8c684d1b078275e4"
 }

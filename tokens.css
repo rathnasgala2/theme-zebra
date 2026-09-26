@@ -12,13 +12,13 @@
    */
   [data-gala-publication-root] {
     --gala-border-width: 2px;
-    --gala-color-accent: #7a5205;
+    --gala-color-accent: #8f5a00;
     --gala-color-border: #4a4a4a;
     --gala-color-canvas: #ffffff;
     --gala-color-code-canvas: #f2f2f2;
     --gala-color-code-text: #0e0e0e;
     --gala-color-danger: #a8241c;
-    --gala-color-focus: #7a5205;
+    --gala-color-focus: #8f5a00;
     --gala-color-link: #0e0e0e;
     --gala-color-link-visited: #4a4a4a;
     --gala-color-on-accent: #ffffff;
@@ -50,7 +50,7 @@
   @media (prefers-color-scheme: dark) {
     [data-gala-publication-root] {
       --gala-border-width: 2px;
-      --gala-color-accent: #e09a00;
+      --gala-color-accent: #bd7800;
       --gala-color-border: #8a8a8a;
       --gala-color-canvas: #050505;
       --gala-color-code-canvas: #161616;
@@ -88,13 +88,13 @@
   }
   [data-gala-publication-root][data-gala-resolved-color-mode="light"] {
     --gala-border-width: 2px;
-    --gala-color-accent: #7a5205;
+    --gala-color-accent: #8f5a00;
     --gala-color-border: #4a4a4a;
     --gala-color-canvas: #ffffff;
     --gala-color-code-canvas: #f2f2f2;
     --gala-color-code-text: #0e0e0e;
     --gala-color-danger: #a8241c;
-    --gala-color-focus: #7a5205;
+    --gala-color-focus: #8f5a00;
     --gala-color-link: #0e0e0e;
     --gala-color-link-visited: #4a4a4a;
     --gala-color-on-accent: #ffffff;
@@ -125,7 +125,7 @@
   }
   [data-gala-publication-root][data-gala-resolved-color-mode="dark"] {
     --gala-border-width: 2px;
-    --gala-color-accent: #e09a00;
+    --gala-color-accent: #bd7800;
     --gala-color-border: #8a8a8a;
     --gala-color-canvas: #050505;
     --gala-color-code-canvas: #161616;
