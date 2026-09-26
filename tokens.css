@@ -1,6 +1,6 @@
 @layer gala-tokens {
   /**
-   * THD-C1: without script, `data-gala-resolved-color-mode` is never
+   * Without script, `data-gala-resolved-color-mode` is never
    * set (it is written only by the template's browser bootstrap), so
    * neither resolved-mode block below ever matches and no `--gala-*`
    * property is defined at all. This bare-root block plus the
