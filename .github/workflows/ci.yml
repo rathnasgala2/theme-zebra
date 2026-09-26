@@ -48,7 +48,7 @@ jobs:
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           repository: rathnasgala2/theme-tooling
-          ref: ae2ee4979a4e5f6a4335c99b869f80eacd359788 # 0.1.0 (unpublished)
+          ref: 0ca3c5b21b1ac0ac7903880b80615d530c9f5705 # 0.1.0 (unpublished)
           path: theme-tooling
           persist-credentials: false
 
@@ -108,7 +108,7 @@ jobs:
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           repository: rathnasgala2/theme-tooling
-          ref: ae2ee4979a4e5f6a4335c99b869f80eacd359788 # 0.1.0 (unpublished)
+          ref: 0ca3c5b21b1ac0ac7903880b80615d530c9f5705 # 0.1.0 (unpublished)
           path: theme-tooling
           persist-credentials: false
 
@@ -158,7 +158,7 @@ jobs:
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           repository: rathnasgala2/theme-tooling
-          ref: ae2ee4979a4e5f6a4335c99b869f80eacd359788 # 0.1.0 (unpublished)
+          ref: 0ca3c5b21b1ac0ac7903880b80615d530c9f5705 # 0.1.0 (unpublished)
           path: theme-tooling
           persist-credentials: false
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
