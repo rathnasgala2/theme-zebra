@@ -7,6 +7,7 @@
     "url": "https://github.com/rathnasgala2/theme-zebra.git"
   },
   "files": [
+    "assets/stripe-mark.svg",
     "components.css",
     "print.css",
     "theme.json",

@@ -264,6 +264,23 @@
     padding-top: var(--gala-space-4);
   }
 
+  /* THD-H8: one reference icon, an accent-coloured stripe mark echoing the
+     theme's row-alternation motif. mask-image resolves in alpha mode for
+     a plain image source (not luminance), so one palette-neutral asset
+     takes background-color: var(--gala-color-accent) and reads correctly
+     in both palettes from a single file. */
+  [data-gala-publication-root] [data-gala-slot="article-end"]::before {
+    background-color: var(--gala-color-accent);
+    content: "";
+    display: block;
+    height: var(--gala-space-2);
+    margin: 0 0 var(--gala-space-2);
+    mask-image: url("assets/stripe-mark.svg");
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    width: var(--gala-space-8);
+  }
+
   [data-gala-publication-root] [data-gala-page-kind="error"] {
     color: var(--gala-color-danger);
   }

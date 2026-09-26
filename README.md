@@ -95,6 +95,22 @@ See `tokens.css` for every token value and `components.css` for the
 character-specific component rules; every other component rule is the
 same token-driven structure `@rathnasgala2/theme-default` uses.
 
+### Iconography: the one reference asset (THD-H8)
+
+`assets/stripe-mark.svg` (three horizontal bars, 294 bytes, sanitiser-clean
+against the template's closed SVG admission grammar) is this theme's one
+reference passive asset, declared in `theme.json.assets` and
+`package.json.files`. `[data-gala-slot="article-end"]::before` renders it
+as a `mask-image` (not a `background-image`): a mask resolves in alpha
+mode for a plain image source (not luminance), so the flat black-on-
+transparent asset takes `background-color: var(--gala-color-accent)` and
+reads correctly in both palettes from one file, sized with `width`/
+`height` and `mask-size: contain`/`mask-repeat: no-repeat` — the icon
+property set contract 2.1.0's closed CSS grammar admits
+(`content: ""`, `background-size`/`position`/`repeat`,
+`width`/`height`/`inline-size`/`block-size`, `mask-image`/`mask-repeat`/
+`mask-size`).
+
 ## Toolchain and how to run locally
 
 Node `24.18.0` / npm `11.16.0` exactly (`.nvmrc`/`.node-version` at the repo

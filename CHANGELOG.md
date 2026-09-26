@@ -59,6 +59,16 @@ change to the token/CSS-hook contract).
   THZ-H1 where the contrast gate passes, so this is also where
   `components.css`'s asset digest catches up to that commit's bytes.
 
+### Changed (THD-H8, 2026-09-25)
+
+- Added `assets/stripe-mark.svg` (three horizontal bars, 294 bytes,
+  sanitiser-clean) as this theme's one reference icon, declared in
+  `theme.json.assets`/`package.json.files`.
+  `[data-gala-slot="article-end"]::before` renders it as an
+  accent-colored `mask-image` (alpha-mode for a plain image source, so
+  one palette-neutral asset works in both palettes), sized with
+  `width`/`height` and `mask-size: contain`.
+
 ### Changed (Contract 2.1.0 adoption, 2026-09-25)
 
 - `theme.json.contractVersion` bumped to `2.1.0` and `stylingContractDigest`

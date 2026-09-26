@@ -254,8 +254,8 @@
     {
       "path": "components.css",
       "mediaType": "text/css",
-      "byteLength": "8318",
-      "sha256": "sha256:291146fd5413cbdd67c4df47edbeae229d0975fc5658c84ee6180d0f704d7191",
+      "byteLength": "9022",
+      "sha256": "sha256:4d310943300cfb80bc006a747dce8f792fced2feabcfcb72235682ff27bb8cfe",
       "license": "Apache-2.0"
     },
     {
@@ -263,6 +263,13 @@
       "mediaType": "text/css",
       "byteLength": "725",
       "sha256": "sha256:c8c85ada0cb6c824d550f55ee4edc6a366241461850dd5c4ffa0d184fe7fc5c0",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "assets/stripe-mark.svg",
+      "mediaType": "image/svg+xml",
+      "byteLength": "294",
+      "sha256": "sha256:ed81f823de4c5924e89b92e87584aa17de5796a46fd01d8aca37b627982c9d02",
       "license": "Apache-2.0"
     }
   ],
@@ -274,13 +281,13 @@
     "fixture-token-catalog-contrast"
   ],
   "browserPolicyRef": "gala-theme-css-v2-20211224",
-  "integrity": "sha256:3373ae59d21d995c8be162f70fbf11b71e5d38159560541048abddfb38be6650",
+  "integrity": "sha256:85430680d2241f8bbd504ef8819bd14999164cede16a42ef07542beb18388360",
   "budgets": {
     "maximumFileBytes": "16384",
     "maximumTotalBytes": "40960",
     "maximumFiles": 8
   },
   "fixtureDigest": "sha256:58869112bfea7303cd471030eaaab29cc08a44c38780209e0257495419ec9a01",
-  "evidenceDigest": "sha256:aa30ff6996b6ea85a1851ce7be6061f3e794723ff2f95b3b268cf0cd7da5f959",
+  "evidenceDigest": "sha256:ba6d751894e76ebc18b49925f6a61a5ebc4e465bbb56ef78a4fceacd21346621",
   "stylingContractDigest": "sha256:9abf99b73a20e034c784ec9648d1f96ea59b59b2ba89028b8c684d1b078275e4"
 }
