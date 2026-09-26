@@ -102,6 +102,14 @@ change to the token/CSS-hook contract).
   `a` rule (already true from the screen `a` rule; only the color differs
   under print).
 
+### Changed (THD-L5, 2026-09-25)
+
+- The dead root `package-lock.json` was already deleted in an earlier
+  pass (see the THD-M6 entry below); confirmed no lockfile has returned.
+  Widened `.github/workflows/release.yaml`'s `paths` filter to add
+  `assets/**`, so a change to the new `assets/stripe-mark.svg` (THD-H8)
+  triggers a release the same way a stylesheet change does.
+
 ### Changed (Contract 2.1.0 adoption, 2026-09-25)
 
 - `theme.json.contractVersion` bumped to `2.1.0` and `stylingContractDigest`

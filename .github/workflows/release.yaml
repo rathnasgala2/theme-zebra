@@ -5,6 +5,7 @@ on:
     branches:
       - main
     paths:
+      - assets/**
       - components.css
       - print.css
       - theme.json
