@@ -2,8 +2,8 @@
   "schemaId": "urn:gala:schema:theme-contract:2.0.0",
   "schemaVersion": "2.0.0",
   "themeId": "zebra",
-  "package": "@rathnasgala2/theme-zebra@2.0.0",
-  "contractVersion": "2.0.0",
+  "package": "@rathnasgala2/theme-zebra@2.1.0",
+  "contractVersion": "2.1.0",
   "templateRange": "^2.0.0",
   "stylesheets": ["tokens.css", "components.css", "print.css"],
   "cssLayers": ["gala-tokens", "gala-components", "gala-print"],
@@ -65,8 +65,8 @@
     {
       "key": "color-accent",
       "type": "color",
-      "light": "#7a5205",
-      "dark": "#ffcf66"
+      "light": "#8f5a00",
+      "dark": "#bd7800"
     },
     {
       "key": "color-border",
@@ -101,7 +101,7 @@
     {
       "key": "color-focus",
       "type": "color",
-      "light": "#7a5205",
+      "light": "#8f5a00",
       "dark": "#ffcf66"
     },
     {
@@ -143,8 +143,8 @@
     {
       "key": "color-surface-raised",
       "type": "color",
-      "light": "#e3e3e3",
-      "dark": "#232323"
+      "light": "#d3d3d3",
+      "dark": "#333333"
     },
     {
       "key": "color-text",
@@ -247,22 +247,29 @@
     {
       "path": "tokens.css",
       "mediaType": "text/css",
-      "byteLength": "2692",
-      "sha256": "sha256:856dfbb46d2e0e7c58b02a59f05dc0099308f8d70a59026366373c345a5a0c4c",
+      "byteLength": "5994",
+      "sha256": "sha256:0f396a53bfc68ae27967a7595d40447207b5ed663a09fde042595a6f10d45fe1",
       "license": "Apache-2.0"
     },
     {
       "path": "components.css",
       "mediaType": "text/css",
-      "byteLength": "8664",
-      "sha256": "sha256:4bdd11acb29301aeebd18ae0070eb4bed52c5e218d1689b079478ef3d86e95cd",
+      "byteLength": "9775",
+      "sha256": "sha256:78603a8f34380c53f0b751370cea0921a0b17a4c0b9173e42065b6a02963f116",
       "license": "Apache-2.0"
     },
     {
       "path": "print.css",
       "mediaType": "text/css",
-      "byteLength": "725",
-      "sha256": "sha256:c8c85ada0cb6c824d550f55ee4edc6a366241461850dd5c4ffa0d184fe7fc5c0",
+      "byteLength": "874",
+      "sha256": "sha256:45577263f66d75771d5521d6041f9bbc3b59509999852436e1f3139a5dd51969",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "assets/stripe-mark.svg",
+      "mediaType": "image/svg+xml",
+      "byteLength": "294",
+      "sha256": "sha256:ed81f823de4c5924e89b92e87584aa17de5796a46fd01d8aca37b627982c9d02",
       "license": "Apache-2.0"
     }
   ],
@@ -274,13 +281,13 @@
     "fixture-token-catalog-contrast"
   ],
   "browserPolicyRef": "gala-theme-css-v2-20211224",
-  "integrity": "sha256:491983ae858b2a84b7bbfc7f4ff3b1883ada4136095cfb19a282fed782302846",
+  "integrity": "sha256:8731c797efdacf8f9c61e33726bef25d5cafa01c3992a9030cdf14826f697d26",
   "budgets": {
     "maximumFileBytes": "16384",
     "maximumTotalBytes": "40960",
     "maximumFiles": 8
   },
-  "fixtureDigest": "sha256:3a3eeafe9962e316d65bdebd8240d2379243079e4010d9d7be7a621507d718fc",
-  "evidenceDigest": "sha256:9d8acd022123036eca5190f7d202796f5a05f07116bcb54bdf34a6dcdbc2db70",
-  "stylingContractDigest": "sha256:46b43a6d1775f88bf2ded331512bd0cf27d232e256e40a89bda773e50897877f"
+  "fixtureDigest": "sha256:42ac8f857fb188b6e645f2d422fd87584f4a6273daaf1d0245a85698bd2a181a",
+  "evidenceDigest": "sha256:8fbc2f40bbf0afcedaec43ab1ca4d40e252e1e017b467b9ed8d124ad0e5be567",
+  "stylingContractDigest": "sha256:4aca7e9794bddfb2c3afd22f4efd078e7dcf69dde9d62ce52d28cec19aef8b91"
 }
