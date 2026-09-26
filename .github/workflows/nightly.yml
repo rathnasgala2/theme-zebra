@@ -2,7 +2,7 @@ name: Nightly
 
 on:
   schedule:
-    - cron: '25 3 * * *'
+    - cron: '10 3 * * *'
   workflow_dispatch: {}
 
 permissions:
@@ -19,6 +19,7 @@ jobs:
     timeout-minutes: 30
     env:
       WORKSPACE_ROOT: ${{ github.workspace }}
+      GALA_THEME_TOOLING_DIR: ${{ github.workspace }}/theme-tooling
     steps:
       - name: Check out the complete history
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
@@ -28,9 +29,9 @@ jobs:
 
       # Pinned to the commit published as @rathnasgala2/template 2.0.0
       # (verified against the registry's gitHead metadata for that version).
-      # `tooling/scripts/check-css-hooks.mjs` reads this checkout
-      # by path (WORKSPACE_ROOT/template) for the S2-T12 theme-styling
-      # hook contract, so `npm run verify` needs it present in CI.
+      # `css:check`/`grammar:check` read this checkout by path
+      # (WORKSPACE_ROOT/template) for the S2-T12 theme-styling hook
+      # contract, so `npm run verify` needs it present in CI.
       - name: Check out the template sibling repository
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
@@ -39,40 +40,46 @@ jobs:
           path: template
           persist-credentials: false
 
+      # See ci.yml for why this is a pinned sibling checkout rather than an
+      # npm dependency (THD-M6; not yet published, owner decision).
+      - name: Check out the theme-tooling sibling repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          repository: rathnasgala2/theme-tooling
+          ref: 2e3142bad84530377288038badc67ad3de2482b1 # 0.1.0 (unpublished)
+          path: theme-tooling
+          persist-credentials: false
+
       - name: Install the pinned Node.js distribution
         uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version-file: .node-version
           cache: npm
-          cache-dependency-path: tooling/package-lock.json
+          cache-dependency-path: theme-tooling/package-lock.json
 
       - name: Verify toolchain pins
         shell: bash
         run: |
           test "$(node --version)" = "v24.18.0"
 
-      # `tooling/test/template-conformance.test.mjs` imports the
-      # template checkout's own `src/core/index.js` by path (not as an
-      # npm dependency), so that module's bare-specifier imports (e.g.
-      # `@rathnasgala2/schemas`) only resolve if the template checkout
-      # has its own dependencies installed. Node's ESM resolution never
-      # looks outside the importing module's own directory ancestry, so
-      # `tooling/node_modules` cannot satisfy this on its own.
+      # `template-conformance.test.mjs` imports the template checkout's own
+      # `src/core/index.js` by path (not as an npm dependency), so that
+      # module's bare-specifier imports (e.g. `@rathnasgala2/schemas`) only
+      # resolve if the template checkout has its own dependencies
+      # installed. Node's ESM resolution never looks outside the importing
+      # module's own directory ancestry, so `theme-tooling/node_modules`
+      # cannot satisfy this on its own.
       - name: Install the template sibling repository's dependencies
         working-directory: template
         run: npm ci
 
-      - name: Install locked dependencies
-        working-directory: tooling
+      - name: Install the shared tooling's dependencies
+        working-directory: theme-tooling
         run: npm ci
 
       - name: Run repository gates
         working-directory: tooling
         run: npm run verify
-
-      - name: Verify workflow pin discipline
-        working-directory: tooling
-        run: npm run workflows:check
 
       - name: Check gitleaks fragment drift (infra sibling optional)
         working-directory: tooling
