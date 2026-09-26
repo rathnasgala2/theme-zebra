@@ -194,13 +194,27 @@ color, in **both** palettes independently (passing one palette never
 substitutes for the other, per the brief). All body/link/status/code text
 pairs clear 4.5:1; the non-text border/focus pairs clear 3:1.
 
-Eight of the 35 tokens (`color-accent`, `color-link-visited`,
-`color-on-accent`, `color-success`, `color-surface-raised`, `color-warning`,
-`space-3`, `space-8`) may be declared but never referenced in a given
-theme's own `components.css`/`print.css` (2026-09-25 review, THD-M1). A
-theme is permitted to declare a token it does not itself consume — nothing
-in the contract requires every declared token to appear in that same
-theme's CSS.
+A theme is permitted to declare a token it does not itself consume —
+nothing in the contract requires every declared token to appear in that
+same theme's CSS (2026-09-25 review, THD-M1). This theme now references
+`color-accent`, `color-link-visited`, `color-surface-raised`,
+`color-focus`, `focus-width` and `space-8` for real (the row-alternation
+stripes, the `a:visited`/`a:hover`/`:focus-visible` rules, and the
+article-end icon above). Four tokens remain declared but unreferenced,
+documented rather than left silent:
+
+- **`color-on-accent`** — the pairing partner of `color-accent` for
+  text/icon content painted directly on an accent-colored surface (e.g. a
+  button label). This theme paints no such surface; `color-accent` here is
+  only ever a border, a small icon mask, or link/hover text on the
+  page's own canvas/surface colors.
+- **`color-success`**/**`color-warning`** — status colors for a
+  success/warning UI state. This theme's component set has no such state
+  (only `page-error` uses `color-danger`).
+- **`space-3`** — this theme's spacing scale only needed `space-1`,
+  `space-2`, `space-4`, `space-6` and `space-8` for its own component
+  rules; `space-3` has no rule that falls between `space-2` and
+  `space-4`.
 
 ## CSS and the 64-hook styling contract
 
@@ -261,23 +275,27 @@ declaration block existed.
 
 ## Accessibility posture
 
-- **Contrast**: see above; asserted by test, both palettes, WCAG 2.2 AA.
-- **Focus visibility**: no `outline: none`/`outline-style: none` anywhere.
-  Previous revisions of this file additionally claimed that
-  `outline-color`/`outline-width` on the interactive hooks produced a
-  themed visible ring; that was false (2026-09-25 review, THD-H1):
-  `outline-style`'s initial value is `none`, so those two longhands paint
-  nothing on their own, and with the UA's own `:focus-visible { outline:
-auto }` supplying `outline-style: auto`, browsers deliberately ignore
-  author `outline-color`/`outline-width` and draw their own platform ring
-  — `--gala-color-focus`/`--gala-focus-width` had no visible effect. The
-  four inert declaration pairs have been removed rather than left as a
-  claim the CSS did not back up. Restoring a real themed ring needs
-  `:focus-visible`, which this contract version does not expose (TPL-H2);
-  until it does, the single hook for that restoration is the now-empty
-  `outline-color`/`outline-width` slot in each of the four rules named
-  above (`#main-content`, `a`, `select`, `#gala-appearance-color-mode` in
-  `components.css`).
+- **Contrast**: see above; asserted by test, both palettes, WCAG 2.2 AA,
+  including the three decorative-adjacency floors `@rathnasgala2/theme-tooling`
+  now enforces (`color-surface-raised`/`color-surface` ≥ 1.3:1,
+  `color-accent`/`color-text` ≥ 3:1, `color-accent`/`color-surface` ≥ 3:1).
+- **Link states**: `a:visited` uses `color-link-visited`; `a:hover` uses
+  `color-accent` (both clear their own 4.5:1 text floor against
+  `color-canvas`/`color-surface` — see `tokens-contrast.test.mjs`).
+- **Focus visibility**: no `outline: none`/`outline-style: none` anywhere,
+  and no inert `outline-color`/`outline-width` declaration either — the
+  closed CSS property grammar admits those two longhands but never
+  `outline-style`/`outline`, so any theme-authored outline is permanently
+  inert (THD-H1, previously misdescribed here as producing a visible ring).
+  Contract 2.1.0 publishes `:focus-visible`, so this theme instead draws a
+  real, themed indicator with properties the grammar does admit:
+  `a:focus-visible` and `#main-content:focus-visible` (the skip-link
+  target) get a `border-bottom`/`border-top` in `--gala-color-focus` at
+  `--gala-focus-width`, and `select:focus-visible`/
+  `#gala-appearance-color-mode:focus-visible` recolor their existing border
+  to `--gala-color-focus` — genuinely referencing both tokens for the first
+  time (closing the THD-M1 gap for these two), on top of whatever
+  `:focus-visible` ring the browser's own UA stylesheet still draws.
 - **`forced-colors: active`**: `components.css` maps links, the main-content
   focus ring, select borders and the divider rule to system colors
   (`LinkText`, `Highlight`, `ButtonBorder`, `CanvasText`) so meaning survives

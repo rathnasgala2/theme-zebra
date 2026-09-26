@@ -69,6 +69,20 @@ change to the token/CSS-hook contract).
   one palette-neutral asset works in both palettes), sized with
   `width`/`height` and `mask-size: contain`.
 
+### Changed (THD-M1 remainder + pseudo-classes, 2026-09-25)
+
+- Added `a:visited` (`color-link-visited`) and `a:hover`
+  (`color-accent`).
+- Added a real `:focus-visible` indicator using the admitted CSS grammar
+  (`border-bottom`/`border-color`, never the permanently-inert
+  `outline-color`/`outline-width`, THD-H1) on `a`, `select` and
+  `#gala-appearance-color-mode` — referencing `color-focus`/`focus-width`
+  for the first time on these rules (`#main-content` already got its own
+  `:focus-visible` rule in the THM-M3 commit above).
+- Documented the four tokens still declared but unreferenced
+  (`color-on-accent`, `color-success`, `color-warning`, `space-3`) in the
+  README, each with why.
+
 ### Changed (Contract 2.1.0 adoption, 2026-09-25)
 
 - `theme.json.contractVersion` bumped to `2.1.0` and `stylingContractDigest`

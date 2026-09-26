@@ -76,6 +76,22 @@
     text-decoration-line: underline;
   }
 
+  [data-gala-publication-root] a:visited {
+    color: var(--gala-color-link-visited);
+  }
+
+  [data-gala-publication-root] a:hover {
+    color: var(--gala-color-accent);
+  }
+
+  /* THD-H1: outline-color/outline-width are permanently inert (the closed
+     CSS property grammar never admits outline-style/outline), so this
+     :focus-visible indicator uses the admitted border-* properties
+     instead -- the first real use of color-focus/focus-width. */
+  [data-gala-publication-root] a:focus-visible {
+    border-bottom: var(--gala-focus-width) solid var(--gala-color-focus);
+  }
+
   [data-gala-publication-root] blockquote {
     border-inline-start: var(--gala-border-width) solid var(--gala-color-border);
     color: var(--gala-color-text-muted);
@@ -230,6 +246,11 @@
     border-radius: var(--gala-radius-small);
     color: var(--gala-color-text);
     padding: var(--gala-space-1) var(--gala-space-2);
+  }
+
+  [data-gala-publication-root] select:focus-visible,
+  [data-gala-publication-root] #gala-appearance-color-mode:focus-visible {
+    border-color: var(--gala-color-focus);
   }
 
   [data-gala-publication-root] option {
