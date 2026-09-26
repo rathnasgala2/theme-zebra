@@ -30,6 +30,15 @@ change to the token/CSS-hook contract).
   the theme-tooling re-pin adds `axe-core`/`playwright` to its
   devDependency tree this SBOM attributes.
 
+### Changed (THZ-H1, 2026-09-25, second pass)
+
+- Replaced the interim per-row `border-inline-start`-only accent (see the
+  earlier THZ-H1 entry below) with true `li:nth-child(odd)`/
+  `li:nth-child(even)` row alternation between `color-surface` and
+  `color-surface-raised`, now that `@rathnasgala2/theme-tooling` admits a
+  pseudo-class between a hook atom and any trailing pseudo-element. The
+  `border-inline-start` accent is kept on every `<li>`.
+
 ### Changed (Contract 2.1.0 adoption, 2026-09-25)
 
 - `theme.json.contractVersion` bumped to `2.1.0` and `stylingContractDigest`

@@ -57,17 +57,17 @@ README.md
 
 ## Visual character
 
-A near-monochrome ground with one amber accent: list items carry a raised
-panel background (`color-surface-raised` against the page's
-`color-canvas`) and a single accent-coloured `border-inline-start`, and
-`hr` carries an alternating text/accent stripe. `li:nth-child` row
-alternation is not yet reachable: the styling contract publishes a
-pseudo-class catalog (`:focus-visible`, `:hover`, `:visited`, `:active`,
-`:disabled`, and the functional `:nth-child`/`:nth-last-child` pair), but
-this package's pinned conformance tooling only strips trailing
-pseudo-_elements_ before matching a selector against the closed hook
-catalog, so any pseudo-class-bearing selector is rejected today — see
-`components.css`'s `li` rule comment.
+A near-monochrome ground with one amber accent, with true row alternation
+as its signature (THZ-H1): `li:nth-child(odd)`/`li:nth-child(even)` paint
+alternating `color-surface`/`color-surface-raised` bands, every list item
+keeps a single accent-coloured `border-inline-start`, and `hr` carries an
+alternating text/accent stripe. Contract 2.1.0 publishes the pseudo-class
+catalog (`:focus-visible`, `:hover`, `:visited`, `:active`, `:disabled`,
+and the functional `:nth-child`/`:nth-last-child` pair) and
+`@rathnasgala2/theme-tooling`'s conformance tooling now admits a
+pseudo-class between a hook atom and any trailing pseudo-element, so this
+row alternation — previously blocked by the tooling, see the CHANGELOG —
+is reachable today.
 
 Two decorative-surface floors are enforced by choice of palette value
 (not yet by an automated gate; the contrast runner in
