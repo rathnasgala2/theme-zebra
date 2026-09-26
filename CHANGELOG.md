@@ -4,6 +4,8 @@ All notable changes to `@rathnasgala2/theme-zebra` are documented here.
 
 ## Unreleased
 
+## 2.1.0 - 2026-09-26
+
 2026-09-25 code-discipline review remediation (THD-H5): this file
 previously carried three dated sub-headings under `## Unreleased` above a
 `## 2.0.0 - 2026-09-22` heading, even though `2.0.0` has been on the

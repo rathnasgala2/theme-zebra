@@ -3,7 +3,7 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.6",
   "version": 1,
-  "serialNumber": "urn:uuid:6fd21123-7dac-4ac9-afd7-8c5a3a90b34a",
+  "serialNumber": "urn:uuid:0679e761-b3e4-4f9f-ac5b-9d02087a2403",
   "metadata": {
     "timestamp": "2000-01-01T00:00:00Z",
     "tools": {
@@ -99,9 +99,8 @@
       "type": "application",
       "name": "theme-zebra",
       "group": "@rathnasgala2",
-      "version": "2.0.0",
-      "bom-ref": "@rathnasgala2/theme-zebra@2.0.0",
-      "description": "Shared dev/test/SBOM/release tooling for the five @rathnasgala2/theme-* packages (theme-default, theme-minimal, theme-amaze, theme-flashy, theme-zebra). Not yet published (OWNER-DECISION); consumed today via the GALA_THEME_TOOLING_DIR override documented in README.md.",
+      "version": "2.1.0",
+      "bom-ref": "@rathnasgala2/theme-zebra@2.1.0",
       "licenses": [
         {
           "license": {
@@ -110,33 +109,8 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40rathnasgala2/theme-zebra@2.0.0",
-      "externalReferences": [
-        {
-          "url": "git+https://github.com/rathnasgala2/theme-tooling.git",
-          "type": "vcs",
-          "comment": "as detected from PackageJson property \"repository.url\""
-        },
-        {
-          "url": "https://github.com/rathnasgala2/theme-tooling#readme",
-          "type": "website",
-          "comment": "as detected from PackageJson property \"homepage\""
-        },
-        {
-          "url": "https://github.com/rathnasgala2/theme-tooling/issues",
-          "type": "issue-tracker",
-          "comment": "as detected from PackageJson property \"bugs.url\""
-        }
-      ],
+      "purl": "pkg:npm/%40rathnasgala2/theme-zebra@2.1.0",
       "properties": [
-        {
-          "name": "cdx:npm:package:constraint:engine:node",
-          "value": "24.18.0"
-        },
-        {
-          "name": "cdx:npm:package:constraint:engine:npm",
-          "value": "11.16.0"
-        },
         {
           "name": "cdx:npm:package:path",
           "value": ""
@@ -10346,7 +10320,7 @@
   ],
   "dependencies": [
     {
-      "ref": "@rathnasgala2/theme-zebra@2.0.0",
+      "ref": "@rathnasgala2/theme-zebra@2.1.0",
       "dependsOn": [
         "@rathnasgala2/theme-tooling@0.1.0|@cyclonedx/cyclonedx-npm@6.0.1",
         "@rathnasgala2/theme-tooling@0.1.0|@eslint/js@10.0.1",

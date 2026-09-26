@@ -36,7 +36,7 @@ jobs:
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           repository: rathnasgala2/template
-          ref: d2b2f0ffc38407851e293e5a8a92d8863a0182d1 # 2.1.0 (unreleased)
+          ref: 20f8fdefe822f264f9d7fdd787d0d58431930a0b # 2.1.0
           path: template
           persist-credentials: false
 
@@ -101,7 +101,7 @@ jobs:
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           repository: rathnasgala2/template
-          ref: d2b2f0ffc38407851e293e5a8a92d8863a0182d1 # 2.1.0 (unreleased)
+          ref: 20f8fdefe822f264f9d7fdd787d0d58431930a0b # 2.1.0
           path: template
           persist-credentials: false
 
