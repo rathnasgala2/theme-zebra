@@ -29,6 +29,7 @@
     "audit": "node run.mjs audit",
     "workflows:check": "node run.mjs workflows:check",
     "workflows:drift": "node run.mjs workflows:drift",
-    "verify": "node run.mjs verify"
+    "verify": "node run.mjs verify",
+    "visual:check": "node run.mjs visual:check"
   }
 }
