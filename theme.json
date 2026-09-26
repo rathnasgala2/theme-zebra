@@ -281,13 +281,13 @@
     "fixture-token-catalog-contrast"
   ],
   "browserPolicyRef": "gala-theme-css-v2-20211224",
-  "integrity": "sha256:7656ca633d40f94bccd29f7f2d9edb80a59e1b324ce37d1011fbda767a6bc3e7",
+  "integrity": "sha256:8731c797efdacf8f9c61e33726bef25d5cafa01c3992a9030cdf14826f697d26",
   "budgets": {
     "maximumFileBytes": "16384",
     "maximumTotalBytes": "40960",
     "maximumFiles": 8
   },
   "fixtureDigest": "sha256:42ac8f857fb188b6e645f2d422fd87584f4a6273daaf1d0245a85698bd2a181a",
-  "evidenceDigest": "sha256:f8b1ab4dd3c6cdb363e4caef4de62fa36b95a0176028b1235acc62036d369e6e",
+  "evidenceDigest": "sha256:8fbc2f40bbf0afcedaec43ab1ca4d40e252e1e017b467b9ed8d124ad0e5be567",
   "stylingContractDigest": "sha256:4aca7e9794bddfb2c3afd22f4efd078e7dcf69dde9d62ce52d28cec19aef8b91"
 }
