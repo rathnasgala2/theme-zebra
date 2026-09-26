@@ -74,6 +74,7 @@
   [data-gala-publication-root] a {
     color: var(--gala-color-link);
     text-decoration-line: underline;
+    text-decoration-skip-ink: auto;
   }
 
   [data-gala-publication-root] a:visited {
