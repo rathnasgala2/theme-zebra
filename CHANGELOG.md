@@ -16,6 +16,33 @@ next version; bumping `package.json`'s `version` for that release is an
 owner decision (recommended: `2.1.0`, since nothing below is a breaking
 change to the token/CSS-hook contract).
 
+### Changed (THD-L6/THD-L7/THD-M11, 2026-09-25, third pass)
+
+- Re-pinned the `theme-tooling` sibling checkout in `ci.yml`, `nightly.yml`
+  and `release.yaml` to `ae2ee49` (from `8fd9b36f`): that commit serves the
+  `visual:check` fixture over a loopback HTTP server instead of `file://`,
+  so the theme's CSS actually loads and axe/screenshot findings are real
+  (previously the page rendered with User-Agent styles only and light/dark
+  screenshots were byte-identical); admits `text-decoration-skip-ink`;
+  and adds the `color-accent`-on-`color-code-canvas` contrast pair.
+  `theme.json` digest cycle regenerated for the unrelated `components.css`
+  change below; no SBOM change (the theme-tooling re-pin does not alter
+  its devDependency tree).
+- Added `tooling/package.json`'s missing `visual:check` script: `ci.yml`'s
+  `visual` job already ran `npm run visual:check` from `tooling/`, but no
+  such script existed there, so the job would have failed before ever
+  invoking the harness.
+- Set `text-decoration-skip-ink: auto` on the theme's one
+  `text-decoration-line: underline` rule (`a`), now that the CSS grammar
+  catalog admits it.
+- Ran `visual:check` for real against the fixed harness: 2 palettes x 3
+  viewports, 0 serious/critical axe violations, no horizontal overflow at
+  any width; light/dark screenshots at every width are visibly distinct,
+  the `li:nth-child` row-stripe alternation and the accent stripe-mark
+  icon (`[data-gala-slot="article-end"]::before`) are both visible, and
+  the new `color-accent`/`color-code-canvas` pair clears 3:1 in both
+  palettes (light 5.17, dark 5.04).
+
 ### Changed (THD-M10, 2026-09-25)
 
 - Added a `visual` CI job: installs the pinned Chromium binary and runs
