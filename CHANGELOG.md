@@ -6,6 +6,29 @@ All notable changes to `@rathnasgala2/theme-zebra` are documented here.
 
 ## 2.1.0 - 2026-09-26
 
+### Fixed (THD-M6, 2026-09-26 fourth pass)
+
+- `theme.json`'s `"package"` field named `@rathnasgala2/theme-zebra@2.0.0` even after
+  `package.json`'s `version` was bumped to `2.1.0` — a consumer resolving
+  this theme's identity from `theme.json` (rather than `package.json`)
+  would throw `THEME_CONTRACT_IDENTITY_MISMATCH`. Fixed to `@2.1.0`;
+  digest chain regenerated in this same commit (no `LOCAL_RUNNERS` script
+  changed, so only `integrity`/`evidenceDigest` shift, not
+  `fixtureDigest`). `@rathnasgala2/theme-tooling`'s
+  `package-identity:check` (new `verify` step) catches this class from now
+  on.
+- `sbom.cdx.json` is no longer committed in this repository. It used to be
+  `cyclonedx-npm` scanning `@rathnasgala2/theme-tooling`'s own
+  `package-lock.json` and attributing the result to this theme's identity
+  — a design that diverged between a local machine and CI three times
+  running (see `theme-tooling`'s own CHANGELOG 0.2.0 for the root cause).
+  `sbom:generate` now builds a self-contained CycloneDX document directly
+  from this package's own `name`/`version` (zero dependency components —
+  this theme ships none); `.github/workflows/release.yaml` generates it
+  fresh at release time and uploads it as a build artifact instead of
+  committing it. `@rathnasgala2/theme-tooling` sibling checkout re-pinned
+  accordingly.
+
 2026-09-25 code-discipline review remediation (THD-H5): this file
 previously carried three dated sub-headings under `## Unreleased` above a
 `## 2.0.0 - 2026-09-22` heading, even though `2.0.0` has been on the

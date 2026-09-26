@@ -59,7 +59,7 @@ jobs:
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           repository: rathnasgala2/theme-tooling
-          ref: af7474f8b447327e8e347750ea844c0f2ae0ec2c # 0.1.0
+          ref: 14e4dd3f68c85abcf7df9e92e0d220197a2ef4a0 # 0.2.0
           path: theme-tooling
           persist-credentials: false
 
@@ -107,6 +107,22 @@ jobs:
       # accidental working-tree mutation before it can reach `npm publish`.
       - name: Fail if verify mutated the working tree
         run: git diff --exit-code
+
+      # THD-M6: the theme's SBOM is not committed (it depends on nothing
+      # but this commit's own package.json identity, so committing it
+      # would only be another copy of information already in git) —
+      # generated fresh here and attached to this release as a build
+      # artifact instead.
+      - name: Generate the release SBOM
+        working-directory: tooling
+        run: npm run sbom:generate -- --out "${{ github.workspace }}/dist/sbom.cdx.json"
+
+      - name: Upload the release SBOM
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: sbom.cdx.json
+          path: dist/sbom.cdx.json
+          retention-days: 90
 
       - name: Verify the package payload
         run: npm pack --dry-run

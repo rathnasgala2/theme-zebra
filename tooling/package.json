@@ -13,6 +13,7 @@
     "format:check": "node run.mjs format:check",
     "lint": "node run.mjs lint",
     "schema:check": "node run.mjs schema:check",
+    "package-identity:check": "node run.mjs package-identity:check",
     "css:check": "node run.mjs css:check",
     "grammar:check": "node run.mjs grammar:check",
     "contrast:check": "node run.mjs contrast:check",

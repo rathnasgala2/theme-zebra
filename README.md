@@ -352,6 +352,22 @@ documented algorithm is reused here):
    from its own preimage) — the completed `theme.json` (steps 1–4 already
    written) is what gets hashed.
 
+Each local runner's `executableDigest` (part of `fixtureDigest`'s
+`runners` array) hashes that runner script's own bytes **as pinned in
+`@rathnasgala2/theme-tooling`** — i.e. it is a snapshot of the exact
+`theme-tooling` commit `.github/workflows/ci.yml`/`release.yaml` pin (see
+the "Check out the theme-tooling sibling repository" step), not of
+anything in this repository. Bumping that pin to a commit that changed any
+of `check-theme-schema.mjs`, `check-contrast.mjs`,
+`check-package-file-set.mjs`, `check-css-hooks.mjs`, or
+`check-forbidden-constructs.mjs` (the five `LOCAL_RUNNERS` scripts —
+`scripts/generate-theme-digests.mjs` in `theme-tooling`) changes those
+`executableDigest` values and therefore `theme.json` itself: run
+`digest:generate` again and commit the result in the same change that
+bumps the pin, or `digest:check` fails. A pin bump that only touches other
+`theme-tooling` files (as THD-M6's SBOM fix did) leaves every
+`executableDigest` unchanged.
+
 Running `digest:generate` twice in a row on an unchanged source tree
 reproduces byte-identical `theme.json` bytes both times (idempotent; no
 wall-clock, machine-identity, or non-deterministic input participates) —
