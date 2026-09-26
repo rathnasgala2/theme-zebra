@@ -238,6 +238,44 @@
     },
     {
       "type": "library",
+      "name": "axe-core",
+      "version": "4.13.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|axe-core@4.13.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MPL-2.0",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/axe-core@4.13.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/axe-core/-/axe-core-4.13.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "5331adf3383b372f1d8db60c871976cee11ebd56bbaf68098d86392f0af5c4cefe5d4da777a0a421615355c0886c03fadef4b3ef535a572cae4a4f651ca732d0"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/axe-core"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "eslint",
       "version": "10.10.0",
       "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|eslint@10.10.0",
@@ -425,6 +463,44 @@
         {
           "name": "cdx:npm:package:path",
           "value": "node_modules/jscpd"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "playwright",
+      "version": "1.63.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|playwright@1.63.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/playwright@1.63.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/playwright/-/playwright-1.63.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "fbbce204b89d4b835a34276de7b4940d3fb062699de5f9a241e8d489cfe46fe62c61208fc8e384f6c79bccc8cd990aec9cda4326a778587bd5ffc95f29f50352"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/playwright"
         }
       ]
     },
@@ -2386,6 +2462,44 @@
         {
           "name": "cdx:npm:package:path",
           "value": "node_modules/jscpd-windows-x64-msvc"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "playwright-core",
+      "version": "1.63.0",
+      "bom-ref": "@rathnasgala2/theme-tooling@0.1.0|playwright-core@1.63.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/playwright-core@1.63.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/playwright-core/-/playwright-core-1.63.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "ad80ac045fcce478d4721e766dbb5538d1058efe97bbcb26f21ef674d951e5bcc81357ef0bf6f182ca7392349f53e3307843263ccf0a25e6c6ea79f2c68e660a"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/playwright-core"
         }
       ]
     },
@@ -10211,9 +10325,11 @@
         "@rathnasgala2/theme-tooling@0.1.0|@cyclonedx/cyclonedx-npm@6.0.1",
         "@rathnasgala2/theme-tooling@0.1.0|@eslint/js@10.0.1",
         "@rathnasgala2/theme-tooling@0.1.0|@rathnasgala2/schemas@2.11.0",
+        "@rathnasgala2/theme-tooling@0.1.0|axe-core@4.13.0",
         "@rathnasgala2/theme-tooling@0.1.0|eslint@10.10.0",
         "@rathnasgala2/theme-tooling@0.1.0|globals@17.12.0",
         "@rathnasgala2/theme-tooling@0.1.0|jscpd@5.2.0",
+        "@rathnasgala2/theme-tooling@0.1.0|playwright@1.63.0",
         "@rathnasgala2/theme-tooling@0.1.0|postcss-selector-parser@7.1.6",
         "@rathnasgala2/theme-tooling@0.1.0|postcss@8.5.28",
         "@rathnasgala2/theme-tooling@0.1.0|prettier@3.9.6"
@@ -10246,6 +10362,9 @@
         "@rathnasgala2/theme-tooling@0.1.0|ajv-formats@3.0.1",
         "@rathnasgala2/theme-tooling@0.1.0|ajv@8.20.0"
       ]
+    },
+    {
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|axe-core@4.13.0"
     },
     {
       "ref": "@rathnasgala2/theme-tooling@0.1.0|eslint@10.10.0",
@@ -10308,6 +10427,12 @@
         "@rathnasgala2/theme-tooling@0.1.0|jscpd-linux-x64-musl@5.2.0",
         "@rathnasgala2/theme-tooling@0.1.0|jscpd-windows-arm64-msvc@5.2.0",
         "@rathnasgala2/theme-tooling@0.1.0|jscpd-windows-x64-msvc@5.2.0"
+      ]
+    },
+    {
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|playwright@1.63.0",
+      "dependsOn": [
+        "@rathnasgala2/theme-tooling@0.1.0|playwright-core@1.63.0"
       ]
     },
     {
@@ -10587,6 +10712,9 @@
     },
     {
       "ref": "@rathnasgala2/theme-tooling@0.1.0|jscpd-windows-x64-msvc@5.2.0"
+    },
+    {
+      "ref": "@rathnasgala2/theme-tooling@0.1.0|playwright-core@1.63.0"
     },
     {
       "ref": "@rathnasgala2/theme-tooling@0.1.0|cssesc@3.0.0"

@@ -35,7 +35,7 @@ jobs:
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           repository: rathnasgala2/template
-          ref: e66d8771189966db1f8f876b005ab59d4f676bcb # 2.1.0 (unreleased)
+          ref: d2b2f0ffc38407851e293e5a8a92d8863a0182d1 # 2.1.0 (unreleased)
           path: template
           persist-credentials: false
 
@@ -48,7 +48,7 @@ jobs:
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           repository: rathnasgala2/theme-tooling
-          ref: 68dceb301c071f3a60c2bf4c4f3215a6c3478502 # 0.1.0 (unpublished)
+          ref: 8fd9b36f85f4ae0a34dfb6ebb7c55319672071d2 # 0.1.0 (unpublished)
           path: theme-tooling
           persist-credentials: false
 
@@ -82,6 +82,68 @@ jobs:
         working-directory: tooling
         run: npm run workflows:drift
 
+  visual:
+    name: Visual/accessibility check (Playwright + axe-core)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      WORKSPACE_ROOT: ${{ github.workspace }}
+      GALA_TEMPLATE_DIR: ${{ github.workspace }}/template
+      GALA_THEME_TOOLING_DIR: ${{ github.workspace }}/theme-tooling
+    steps:
+      - name: Check out this repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+
+      - name: Check out the template sibling repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          repository: rathnasgala2/template
+          ref: d2b2f0ffc38407851e293e5a8a92d8863a0182d1 # 2.1.0 (unreleased)
+          path: template
+          persist-credentials: false
+
+      - name: Check out the theme-tooling sibling repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          repository: rathnasgala2/theme-tooling
+          ref: 8fd9b36f85f4ae0a34dfb6ebb7c55319672071d2 # 0.1.0 (unpublished)
+          path: theme-tooling
+          persist-credentials: false
+
+      - name: Install the pinned Node.js distribution
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version-file: .node-version
+          cache: npm
+          cache-dependency-path: theme-tooling/package-lock.json
+
+      - name: Install the template sibling repository's dependencies
+        working-directory: template
+        run: npm ci
+
+      - name: Install the shared tooling's dependencies
+        working-directory: theme-tooling
+        run: npm ci
+
+      - name: Install the Chromium browser this check drives
+        working-directory: theme-tooling
+        run: npx playwright install --with-deps chromium
+
+      - name: Run the visual/accessibility check
+        working-directory: tooling
+        run: npm run visual:check -- --out "${{ runner.temp }}/visual-check"
+
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: visual-check-screenshots
+          path: ${{ runner.temp }}/visual-check
+          if-no-files-found: ignore
+          retention-days: 14
+
   audit:
     name: Dependency audit
     runs-on: ubuntu-24.04
@@ -96,7 +158,7 @@ jobs:
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           repository: rathnasgala2/theme-tooling
-          ref: 68dceb301c071f3a60c2bf4c4f3215a6c3478502 # 0.1.0 (unpublished)
+          ref: 8fd9b36f85f4ae0a34dfb6ebb7c55319672071d2 # 0.1.0 (unpublished)
           path: theme-tooling
           persist-credentials: false
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6

@@ -16,6 +16,20 @@ next version; bumping `package.json`'s `version` for that release is an
 owner decision (recommended: `2.1.0`, since nothing below is a breaking
 change to the token/CSS-hook contract).
 
+### Changed (THD-M10, 2026-09-25)
+
+- Added a `visual` CI job: installs the pinned Chromium binary and runs
+  `@rathnasgala2/theme-tooling`'s `visual:check` (Playwright + axe-core,
+  320/768/1440px, light/dark), uploading screenshots as a build artifact.
+  Deliberately its own job, not part of `verify`: it is the one gate that
+  needs a browser binary on disk. Re-pinned the `template` and
+  `theme-tooling` sibling checkouts to `d2b2f0f`/`8fd9b36f` (contract
+  2.1.0's pseudo-class/icon-property/contrast-pair admission);
+  `stylingContractDigest` is unchanged (the contract's `catalogDigest`
+  did not change between these two commits). `sbom.cdx.json` regenerated:
+  the theme-tooling re-pin adds `axe-core`/`playwright` to its
+  devDependency tree this SBOM attributes.
+
 ### Changed (Contract 2.1.0 adoption, 2026-09-25)
 
 - `theme.json.contractVersion` bumped to `2.1.0` and `stylingContractDigest`
