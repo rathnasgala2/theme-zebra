@@ -66,7 +66,7 @@
       "key": "color-accent",
       "type": "color",
       "light": "#7a5205",
-      "dark": "#ffcf66"
+      "dark": "#e09a00"
     },
     {
       "key": "color-border",
@@ -143,8 +143,8 @@
     {
       "key": "color-surface-raised",
       "type": "color",
-      "light": "#e3e3e3",
-      "dark": "#232323"
+      "light": "#d3d3d3",
+      "dark": "#333333"
     },
     {
       "key": "color-text",
@@ -248,7 +248,7 @@
       "path": "tokens.css",
       "mediaType": "text/css",
       "byteLength": "6002",
-      "sha256": "sha256:36f1d2176a0a9ea00687eca7690af5b9326e580304ad53c15fb880dfcf1fb95b",
+      "sha256": "sha256:4d16a7adae110fdc2d6b9c1d08db731c8f0ef412be055d8c2da385e536ff728e",
       "license": "Apache-2.0"
     },
     {
@@ -274,13 +274,13 @@
     "fixture-token-catalog-contrast"
   ],
   "browserPolicyRef": "gala-theme-css-v2-20211224",
-  "integrity": "sha256:d68332a0e4c4f733dbd5d697842867acc72b2d81d2d374abc971ed57d5cc41f6",
+  "integrity": "sha256:191dcd99c4cfa22198d3c06d082118ead83053be100e6c4461d340a96d2c3f54",
   "budgets": {
     "maximumFileBytes": "16384",
     "maximumTotalBytes": "40960",
     "maximumFiles": 8
   },
   "fixtureDigest": "sha256:391253bd4336e245bf892017b88f56f0c9f70802f4525fe1b812f5d0f4f5c4e6",
-  "evidenceDigest": "sha256:4bfc565a39e387d532574bf6acb560f3566d46c0bde0799fa60abe0a5701f4a5",
+  "evidenceDigest": "sha256:1e8e827df62a5d1fceadc587ea240d607507087b2dd81702cb12f4e0e709c361",
   "stylingContractDigest": "sha256:9abf99b73a20e034c784ec9648d1f96ea59b59b2ba89028b8c684d1b078275e4"
 }

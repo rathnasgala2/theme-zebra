@@ -57,10 +57,37 @@ README.md
 
 ## Visual character
 
-Alternating striped listings and rules over a near-monochrome ground with one amber accent: `ul`/`ol` carry a `repeating-linear-gradient` stripe band and `hr` carries an alternating text/accent stripe. See `tokens.css` for every token value and
-`components.css` for the character-specific component rules
-(a `repeating-linear-gradient` stripe band on `ul`/`ol` and `hr`, since this template version's styling contract publishes an empty `pseudoClasses` set (no `:nth-child` selector is available to style individual rows, so the "alternating" motif is a band pattern rather than a per-row rule)); every other component rule is the same
-token-driven structure `@rathnasgala2/theme-default` uses.
+A near-monochrome ground with one amber accent: list items carry a raised
+panel background (`color-surface-raised` against the page's
+`color-canvas`) and a single accent-coloured `border-inline-start`, and
+`hr` carries an alternating text/accent stripe. `li:nth-child` row
+alternation is not yet reachable: the styling contract publishes a
+pseudo-class catalog (`:focus-visible`, `:hover`, `:visited`, `:active`,
+`:disabled`, and the functional `:nth-child`/`:nth-last-child` pair), but
+this package's pinned conformance tooling only strips trailing
+pseudo-_elements_ before matching a selector against the closed hook
+catalog, so any pseudo-class-bearing selector is rejected today — see
+`components.css`'s `li` rule comment.
+
+Two decorative-surface floors are enforced by choice of palette value
+(not yet by an automated gate; the contrast runner in
+`@rathnasgala2/theme-tooling` only checks text-against-background pairs
+today):
+
+- **`color-surface-raised` against `color-surface`/`color-canvas`** is
+  kept at or above **1.3:1** in both palettes (currently 1.34:1 light,
+  1.43:1 dark) — the WCAG 3:1 non-text threshold does not apply, since
+  this is a decorative surface distinction rather than a UI-component
+  boundary, but a floor still keeps a future palette edit from collapsing
+  it to indistinguishable.
+- **`color-accent` against `color-text`** (the `hr` stripe's two colours)
+  is kept at or above **1.3:1** in both palettes (currently 2.79:1 light,
+  2.19:1 dark) so the divider reads as two colours, not one, in either
+  palette.
+
+See `tokens.css` for every token value and `components.css` for the
+character-specific component rules; every other component rule is the
+same token-driven structure `@rathnasgala2/theme-default` uses.
 
 ## Toolchain and how to run locally
 
