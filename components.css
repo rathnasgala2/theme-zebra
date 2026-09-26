@@ -35,20 +35,8 @@
     color: var(--gala-color-text);
   }
 
-  [data-gala-publication-root] h1 {
-    color: var(--gala-color-text);
-    font-family: var(--gala-font-heading);
-    font-weight: var(--gala-weight-heading);
-    line-height: 1.2;
-  }
-
-  [data-gala-publication-root] h2 {
-    color: var(--gala-color-text);
-    font-family: var(--gala-font-heading);
-    font-weight: var(--gala-weight-heading);
-    line-height: 1.25;
-  }
-
+  [data-gala-publication-root] h1,
+  [data-gala-publication-root] h2,
   [data-gala-publication-root] h3 {
     color: var(--gala-color-text);
     font-family: var(--gala-font-heading);
@@ -76,14 +64,6 @@
   [data-gala-publication-root] a {
     color: var(--gala-color-link);
     text-decoration-line: underline;
-    /* THD-H1: a themed focus ring (`outline-color`/`outline-width`
-       alongside `outline-style: solid`, under `:focus-visible`) belongs
-       here, on `#main-content` and on `select` once the styling contract
-       publishes a pseudo-class catalog (TPL-H2). Until then, setting
-       `outline-style` unconditionally would paint a permanent ring on
-       every link, and `outline-color`/`outline-width` alone paint
-       nothing (the initial value of `outline-style` is `none`), so
-       neither is declared here. */
   }
 
   [data-gala-publication-root] blockquote {
@@ -95,13 +75,21 @@
 
   [data-gala-publication-root] ul,
   [data-gala-publication-root] ol {
+    background-image: repeating-linear-gradient(
+      to bottom,
+      var(--gala-color-surface) 0,
+      var(--gala-color-surface) 1.5rem,
+      var(--gala-color-surface-raised) 1.5rem,
+      var(--gala-color-surface-raised) 3rem
+    );
     color: var(--gala-color-text);
     margin: var(--gala-space-4) 0;
     padding-inline-start: var(--gala-space-6);
   }
 
   [data-gala-publication-root] li {
-    margin: var(--gala-space-1) 0;
+    margin: 0;
+    padding: var(--gala-space-1) var(--gala-space-2);
   }
 
   [data-gala-publication-root] li::marker {
@@ -119,6 +107,13 @@
 
   [data-gala-publication-root] hr {
     background-color: var(--gala-color-border);
+    background-image: repeating-linear-gradient(
+      to right,
+      var(--gala-color-text) 0,
+      var(--gala-color-text) var(--gala-space-2),
+      var(--gala-color-accent) var(--gala-space-2),
+      var(--gala-color-accent) var(--gala-space-4)
+    );
     border: 0;
     height: var(--gala-border-width);
     margin: var(--gala-space-6) 0;
@@ -134,7 +129,6 @@
 
   [data-gala-publication-root] img {
     border-radius: var(--gala-radius-small);
-    max-width: 100%;
   }
 
   [data-gala-publication-root] pre {
@@ -263,45 +257,9 @@
     color: var(--gala-color-text);
   }
 
-  /* Character: alternating striped listings (S2-T14, theme-zebra). No
-     :nth-child is available (this template version's styling contract
-     publishes an empty pseudoClasses set), so the stripe motif is a
-     repeating-linear-gradient band pattern rather than a per-row rule. */
-  [data-gala-publication-root] ul,
-  [data-gala-publication-root] ol {
-    background-image: repeating-linear-gradient(
-      to bottom,
-      var(--gala-color-surface) 0,
-      var(--gala-color-surface) 1.5rem,
-      var(--gala-color-surface-raised) 1.5rem,
-      var(--gala-color-surface-raised) 3rem
-    );
-  }
-
-  [data-gala-publication-root] hr {
-    background-image: repeating-linear-gradient(
-      to right,
-      var(--gala-color-text) 0,
-      var(--gala-color-text) 0.5rem,
-      var(--gala-color-accent) 0.5rem,
-      var(--gala-color-accent) 1rem
-    );
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    [data-gala-publication-root] {
-      animation-duration: 0.001ms !important;
-      transition-duration: 0.001ms !important;
-    }
-  }
-
   @media (forced-colors: active) {
     [data-gala-publication-root] a {
       color: LinkText;
-    }
-
-    [data-gala-publication-root] #main-content {
-      outline-color: Highlight;
     }
 
     [data-gala-publication-root] select {
