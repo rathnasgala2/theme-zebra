@@ -5,13 +5,12 @@ on:
     branches:
       - main
     paths:
+      - assets/**
       - components.css
       - print.css
       - theme.json
       - tokens.css
       - package.json
-      - package-lock.json
-      - tooling/package-lock.json
   workflow_dispatch: {}
 
 permissions:
@@ -32,6 +31,7 @@ jobs:
       id-token: write
     env:
       WORKSPACE_ROOT: ${{ github.workspace }}
+      GALA_THEME_TOOLING_DIR: ${{ github.workspace }}/theme-tooling
     steps:
       - name: Check out the complete history
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
@@ -39,17 +39,28 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-      # Pinned to the commit published as @rathnasgala2/template 2.0.0
-      # (verified against the registry's gitHead metadata for that version).
-      # `tooling/scripts/check-css-hooks.mjs` reads this checkout
-      # by path (WORKSPACE_ROOT/template) for the S2-T12 theme-styling
-      # hook contract, so `npm run verify` needs it present in CI.
+      # Pinned to the commit tagged @rathnasgala2/template 2.1.0 (unreleased)
+      # (not yet published to the registry; see the template's own
+      # CHANGELOG.md Unreleased section, recommended release 2.1.0).
+      # `css:check`/`grammar:check` read this checkout by path
+      # (WORKSPACE_ROOT/template) for the S2-T12 theme-styling hook
+      # contract, so `npm run verify` needs it present in CI.
       - name: Check out the template sibling repository
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           repository: rathnasgala2/template
-          ref: 15142f8baebaff5e174ac07d784073d2d2163b88 # 2.0.0
+          ref: 20f8fdefe822f264f9d7fdd787d0d58431930a0b # 2.1.0
           path: template
+          persist-credentials: false
+
+      # See ci.yml for why this is a pinned sibling checkout rather than an
+      # npm dependency (THD-M6; not yet published, owner decision).
+      - name: Check out the theme-tooling sibling repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          repository: rathnasgala2/theme-tooling
+          ref: 4d36e4a4b0e8e03033356c9dcbe4cf41d07a56f2 # 0.2.0
+          path: theme-tooling
           persist-credentials: false
 
       - name: Install the pinned Node.js distribution
@@ -57,7 +68,7 @@ jobs:
         with:
           node-version-file: .node-version
           cache: npm
-          cache-dependency-path: tooling/package-lock.json
+          cache-dependency-path: theme-tooling/package-lock.json
           registry-url: https://registry.npmjs.org
 
       - name: Verify toolchain pins
@@ -67,25 +78,61 @@ jobs:
           test "$(node --version)" = "v24.18.0"
           test "$(npm --version)" = "11.16.0"
 
-      - name: Install locked dependencies
-        working-directory: tooling
+      - name: Install the template sibling repository's dependencies
+        working-directory: template
         run: npm ci
 
-      - name: Run the complete release gate
-        working-directory: tooling
-        run: npm run verify
+      - name: Install the shared tooling's dependencies
+        working-directory: theme-tooling
+        run: npm ci
 
-      - name: Verify the package payload
-        run: npm pack --dry-run
-
-      - name: Publish with trusted provenance
+      - name: Fail if this version is already published (THD-H5)
         shell: bash
         run: |
           set -euo pipefail
           package_name="$(node --input-type=module -e "import definition from './package.json' with {type: 'json'}; process.stdout.write(definition.name)")"
           package_version="$(node --input-type=module -e "import definition from './package.json' with {type: 'json'}; process.stdout.write(definition.version)")"
           if npm view "${package_name}@${package_version}" version >/dev/null 2>&1; then
-            echo "${package_name}@${package_version} is already published, skipping."
-            exit 0
+            echo "::error::${package_name}@${package_version} is already published. Bump package.json's version (and add a dated CHANGELOG.md heading) before pushing a change to a packed path." >&2
+            exit 1
           fi
-          npm publish --access public --provenance
+
+      - name: Run the complete release gate
+        working-directory: tooling
+        run: npm run verify
+
+      # THD-H4: the release gate must never publish anything other than
+      # exactly the reviewed commit's bytes. `digest:generate` is no
+      # longer part of `verify` (THD-H2), but this still catches any other
+      # accidental working-tree mutation before it can reach `npm publish`.
+      - name: Fail if verify mutated the working tree
+        run: git diff --exit-code
+
+      # THD-M6: the theme's SBOM is not committed (it depends on nothing
+      # but this commit's own package.json identity, so committing it
+      # would only be another copy of information already in git) —
+      # generated fresh here and attached to this release as a build
+      # artifact instead.
+      - name: Generate the release SBOM
+        working-directory: tooling
+        run: npm run sbom:generate -- --out "${{ github.workspace }}/dist/sbom.cdx.json"
+
+      - name: Upload the release SBOM
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: sbom.cdx.json
+          path: dist/sbom.cdx.json
+          retention-days: 90
+
+      - name: Verify the package payload
+        run: npm pack --dry-run
+
+      # THD-H6: exercised on every push, not only discovered for the first
+      # time on the first real release. `--dry-run` performs every
+      # provenance precondition check (including deriving the source
+      # repository from package.json.repository) without publishing.
+      - name: Verify provenance can be generated
+        run: npm publish --access public --provenance --dry-run
+
+      - name: Publish with trusted provenance
+        run: npm publish --access public --provenance

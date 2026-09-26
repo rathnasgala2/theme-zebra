@@ -24,9 +24,14 @@
     padding: var(--gala-space-6) var(--gala-space-4);
   }
 
-  [data-gala-publication-root] #main-content {
-    outline-color: var(--gala-color-focus);
-    outline-width: var(--gala-focus-width);
+  /* theme.json.slotHooks declares landmark-main-content
+     (#main-content, the skip-link target) but nothing styled it, so the
+     tooling's set-equality check between declared and CSS-matched hook
+     IDs failed. This gives it a real, themed :focus-visible indicator
+     (the skip link lands here), genuinely using color-focus/focus-width
+     rather than declaring the hook and never rendering it. */
+  [data-gala-publication-root] #main-content:focus-visible {
+    border-top: var(--gala-focus-width) solid var(--gala-color-focus);
   }
 
   [data-gala-publication-root] footer {
@@ -40,20 +45,8 @@
     color: var(--gala-color-text);
   }
 
-  [data-gala-publication-root] h1 {
-    color: var(--gala-color-text);
-    font-family: var(--gala-font-heading);
-    font-weight: var(--gala-weight-heading);
-    line-height: 1.2;
-  }
-
-  [data-gala-publication-root] h2 {
-    color: var(--gala-color-text);
-    font-family: var(--gala-font-heading);
-    font-weight: var(--gala-weight-heading);
-    line-height: 1.25;
-  }
-
+  [data-gala-publication-root] h1,
+  [data-gala-publication-root] h2,
   [data-gala-publication-root] h3 {
     color: var(--gala-color-text);
     font-family: var(--gala-font-heading);
@@ -80,9 +73,24 @@
 
   [data-gala-publication-root] a {
     color: var(--gala-color-link);
-    outline-color: var(--gala-color-focus);
-    outline-width: var(--gala-focus-width);
     text-decoration-line: underline;
+    text-decoration-skip-ink: auto;
+  }
+
+  [data-gala-publication-root] a:visited {
+    color: var(--gala-color-link-visited);
+  }
+
+  [data-gala-publication-root] a:hover {
+    color: var(--gala-color-accent);
+  }
+
+  /* outline-color/outline-width are permanently inert (the closed
+     CSS property grammar never admits outline-style/outline), so this
+     :focus-visible indicator uses the admitted border-* properties
+     instead -- the first real use of color-focus/focus-width. */
+  [data-gala-publication-root] a:focus-visible {
+    border-bottom: var(--gala-focus-width) solid var(--gala-color-focus);
   }
 
   [data-gala-publication-root] blockquote {
@@ -100,7 +108,21 @@
   }
 
   [data-gala-publication-root] li {
-    margin: var(--gala-space-1) 0;
+    border-inline-start: var(--gala-border-width) solid var(--gala-color-accent);
+    margin: 0;
+    padding: var(--gala-space-1) var(--gala-space-2);
+  }
+
+  /* True row alternation via :nth-child, the theme's signature,
+     instead of a uniform per-row accent border. The surface/surface-raised
+     pair clears the tooling's 1.3:1 decorative-adjacency floor in both
+     palettes. */
+  [data-gala-publication-root] li:nth-child(odd) {
+    background-color: var(--gala-color-surface);
+  }
+
+  [data-gala-publication-root] li:nth-child(even) {
+    background-color: var(--gala-color-surface-raised);
   }
 
   [data-gala-publication-root] li::marker {
@@ -118,6 +140,13 @@
 
   [data-gala-publication-root] hr {
     background-color: var(--gala-color-border);
+    background-image: repeating-linear-gradient(
+      to right,
+      var(--gala-color-text) 0,
+      var(--gala-color-text) var(--gala-space-2),
+      var(--gala-color-accent) var(--gala-space-2),
+      var(--gala-color-accent) var(--gala-space-4)
+    );
     border: 0;
     height: var(--gala-border-width);
     margin: var(--gala-space-6) 0;
@@ -133,7 +162,6 @@
 
   [data-gala-publication-root] img {
     border-radius: var(--gala-radius-small);
-    max-width: 100%;
   }
 
   [data-gala-publication-root] pre {
@@ -218,9 +246,12 @@
     border: var(--gala-border-width) solid var(--gala-color-border);
     border-radius: var(--gala-radius-small);
     color: var(--gala-color-text);
-    outline-color: var(--gala-color-focus);
-    outline-width: var(--gala-focus-width);
     padding: var(--gala-space-1) var(--gala-space-2);
+  }
+
+  [data-gala-publication-root] select:focus-visible,
+  [data-gala-publication-root] #gala-appearance-color-mode:focus-visible {
+    border-color: var(--gala-color-focus);
   }
 
   [data-gala-publication-root] option {
@@ -255,6 +286,23 @@
     padding-top: var(--gala-space-4);
   }
 
+  /* One reference icon, an accent-coloured stripe mark echoing the
+     theme's row-alternation motif. mask-image resolves in alpha mode for
+     a plain image source (not luminance), so one palette-neutral asset
+     takes background-color: var(--gala-color-accent) and reads correctly
+     in both palettes from a single file. */
+  [data-gala-publication-root] [data-gala-slot="article-end"]::before {
+    background-color: var(--gala-color-accent);
+    content: "";
+    display: block;
+    height: var(--gala-space-2);
+    margin: 0 0 var(--gala-space-2);
+    mask-image: url("assets/stripe-mark.svg");
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    width: var(--gala-space-8);
+  }
+
   [data-gala-publication-root] [data-gala-page-kind="error"] {
     color: var(--gala-color-danger);
   }
@@ -264,45 +312,9 @@
     color: var(--gala-color-text);
   }
 
-  /* Character: alternating striped listings (S2-T14, theme-zebra). No
-     :nth-child is available (this template version's styling contract
-     publishes an empty pseudoClasses set), so the stripe motif is a
-     repeating-linear-gradient band pattern rather than a per-row rule. */
-  [data-gala-publication-root] ul,
-  [data-gala-publication-root] ol {
-    background-image: repeating-linear-gradient(
-      to bottom,
-      var(--gala-color-surface) 0,
-      var(--gala-color-surface) 1.5rem,
-      var(--gala-color-surface-raised) 1.5rem,
-      var(--gala-color-surface-raised) 3rem
-    );
-  }
-
-  [data-gala-publication-root] hr {
-    background-image: repeating-linear-gradient(
-      to right,
-      var(--gala-color-text) 0,
-      var(--gala-color-text) 0.5rem,
-      var(--gala-color-accent) 0.5rem,
-      var(--gala-color-accent) 1rem
-    );
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    [data-gala-publication-root] {
-      animation-duration: 0.001ms !important;
-      transition-duration: 0.001ms !important;
-    }
-  }
-
   @media (forced-colors: active) {
     [data-gala-publication-root] a {
       color: LinkText;
-    }
-
-    [data-gala-publication-root] #main-content {
-      outline-color: Highlight;
     }
 
     [data-gala-publication-root] select {
@@ -311,6 +323,7 @@
 
     [data-gala-publication-root] hr {
       background-color: CanvasText;
+      background-image: none;
     }
   }
 }

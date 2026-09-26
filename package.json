@@ -1,8 +1,13 @@
 {
   "name": "@rathnasgala2/theme-zebra",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rathnasgala2/theme-zebra.git"
+  },
   "files": [
+    "assets/stripe-mark.svg",
     "components.css",
     "print.css",
     "theme.json",

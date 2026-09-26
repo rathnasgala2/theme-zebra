@@ -14,127 +14,160 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  format-lint:
-    name: Format and lint
+  verify:
+    name: Verify (format, lint, conformance, digest, SBOM, audit)
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
-    steps:
-      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
-        with:
-          persist-credentials: false
-      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
-        with:
-          node-version-file: .node-version
-          cache: npm
-          cache-dependency-path: tooling/package-lock.json
-      - working-directory: tooling
-        run: npm ci
-      - working-directory: tooling
-        run: npm run format:check
-      - working-directory: tooling
-        run: npm run lint
-
-  structural:
-    name: Structural checks
-    runs-on: ubuntu-24.04
-    timeout-minutes: 10
-    steps:
-      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
-        with:
-          persist-credentials: false
-      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
-        with:
-          node-version-file: .node-version
-          cache: npm
-          cache-dependency-path: tooling/package-lock.json
-      - name: Verify toolchain pins
-        shell: bash
-        run: |
-          test "$(node --version)" = "v24.18.0"
-      - working-directory: tooling
-        run: npm ci
-      - working-directory: tooling
-        run: npm run schema:check
-      - working-directory: tooling
-        run: npm run contrast:check
-      - working-directory: tooling
-        run: npm run package:check
-      - working-directory: tooling
-        run: npm run schema-pin:check
-      - working-directory: tooling
-        run: npm run workflows:check
-      - working-directory: tooling
-        run: npm run workflows:drift
-
-  conformance:
-    name: Unit tests and template conformance
-    runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 20
     env:
       WORKSPACE_ROOT: ${{ github.workspace }}
+      GALA_THEME_TOOLING_DIR: ${{ github.workspace }}/theme-tooling
     steps:
       - name: Check out this repository
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           persist-credentials: false
 
-      # Pinned to the commit published as @rathnasgala2/template 2.0.0
-      # (verified against the registry's gitHead metadata for that version).
-      # `tooling/scripts/check-css-hooks.mjs` and the conformance
-      # tests read this checkout by path (WORKSPACE_ROOT/template).
+      # Pinned to the commit tagged @rathnasgala2/template 2.1.0 (unreleased)
+      # (not yet published to the registry; see the template's own
+      # CHANGELOG.md Unreleased section, recommended release 2.1.0).
+      # `css:check`/`grammar:check` and the template-conformance tests read
+      # this checkout by path (WORKSPACE_ROOT/template).
       - name: Check out the template sibling repository
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           repository: rathnasgala2/template
-          ref: 15142f8baebaff5e174ac07d784073d2d2163b88 # 2.0.0
+          ref: 20f8fdefe822f264f9d7fdd787d0d58431930a0b # 2.1.0
           path: template
           persist-credentials: false
 
-      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+      # Pinned to a commit of the shared tooling every @rathnasgala2/theme-*
+      # repository depends on (THD-M6). Not yet published to the registry
+      # (owner decision) — see theme-tooling/README.md "Status: not yet
+      # published" — so it is resolved by path via GALA_THEME_TOOLING_DIR,
+      # exactly like the template sibling above.
+      - name: Check out the theme-tooling sibling repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          repository: rathnasgala2/theme-tooling
+          ref: 4d36e4a4b0e8e03033356c9dcbe4cf41d07a56f2 # 0.2.0
+          path: theme-tooling
+          persist-credentials: false
+
+      - name: Install the pinned Node.js distribution
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version-file: .node-version
           cache: npm
-          cache-dependency-path: tooling/package-lock.json
+          cache-dependency-path: theme-tooling/package-lock.json
+
+      - name: Verify toolchain pins
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(node --version)" = "v24.18.0"
+          test "$(npm --version)" = "11.16.0"
 
       - name: Install the template sibling repository's dependencies
         working-directory: template
         run: npm ci
 
-      - name: Install locked dependencies
-        working-directory: tooling
+      - name: Install the shared tooling's dependencies
+        working-directory: theme-tooling
         run: npm ci
 
-      # The digest cycle regenerates theme.json's conformance evidence
-      # against the template checkout, so it belongs in the job that has
-      # that sibling on disk.
-      - working-directory: tooling
-        run: npm run digest:generate
-      - working-directory: tooling
-        run: npm run digest:check
+      - name: Run the complete verify gate
+        working-directory: tooling
+        run: npm run verify
 
-      - working-directory: tooling
-        run: npm run css:check
+      - name: Check gitleaks fragment drift (infra sibling optional)
+        working-directory: tooling
+        run: npm run workflows:drift
 
-      - working-directory: tooling
-        run: npm run absence:check
+  visual:
+    name: Visual/accessibility check (Playwright + axe-core)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      WORKSPACE_ROOT: ${{ github.workspace }}
+      GALA_TEMPLATE_DIR: ${{ github.workspace }}/template
+      GALA_THEME_TOOLING_DIR: ${{ github.workspace }}/theme-tooling
+    steps:
+      - name: Check out this repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
 
-      - working-directory: tooling
-        run: npm test
+      - name: Check out the template sibling repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          repository: rathnasgala2/template
+          ref: 20f8fdefe822f264f9d7fdd787d0d58431930a0b # 2.1.0
+          path: template
+          persist-credentials: false
+
+      - name: Check out the theme-tooling sibling repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          repository: rathnasgala2/theme-tooling
+          ref: 4d36e4a4b0e8e03033356c9dcbe4cf41d07a56f2 # 0.2.0
+          path: theme-tooling
+          persist-credentials: false
+
+      - name: Install the pinned Node.js distribution
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version-file: .node-version
+          cache: npm
+          cache-dependency-path: theme-tooling/package-lock.json
+
+      - name: Install the template sibling repository's dependencies
+        working-directory: template
+        run: npm ci
+
+      - name: Install the shared tooling's dependencies
+        working-directory: theme-tooling
+        run: npm ci
+
+      - name: Install the Chromium browser this check drives
+        working-directory: theme-tooling
+        run: npx playwright install --with-deps chromium
+
+      - name: Run the visual/accessibility check
+        working-directory: tooling
+        run: npm run visual:check -- --out "${{ runner.temp }}/visual-check"
+
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: visual-check-screenshots
+          path: ${{ runner.temp }}/visual-check
+          if-no-files-found: ignore
+          retention-days: 14
 
   audit:
     name: Dependency audit
     runs-on: ubuntu-24.04
     timeout-minutes: 10
+    env:
+      GALA_THEME_TOOLING_DIR: ${{ github.workspace }}/theme-tooling
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
+          persist-credentials: false
+      - name: Check out the theme-tooling sibling repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          repository: rathnasgala2/theme-tooling
+          ref: 4d36e4a4b0e8e03033356c9dcbe4cf41d07a56f2 # 0.2.0
+          path: theme-tooling
           persist-credentials: false
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version-file: .node-version
           cache: npm
-          cache-dependency-path: tooling/package-lock.json
-      - working-directory: tooling
+          cache-dependency-path: theme-tooling/package-lock.json
+      - working-directory: theme-tooling
         run: npm ci
       - working-directory: tooling
         run: npm run audit
@@ -154,7 +187,7 @@ jobs:
         shell: bash
         run: |
           install -d "${RUNNER_TEMP}/gitleaks"
-          curl --proto '=https' --tlsv1.2 --fail --silent --show-error --location \
+          curl --proto '=https' --tlsv1.2 --fail --silent --show-error --location --retry 3 \
             'https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz' \
             --output "${RUNNER_TEMP}/gitleaks/gitleaks.tar.gz"
           cd "${RUNNER_TEMP}/gitleaks"

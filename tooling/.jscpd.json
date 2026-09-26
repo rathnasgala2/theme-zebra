@@ -1,7 +1,0 @@
-{
-  "path": ["../components.css", "../print.css", "./test", "./scripts"],
-  "threshold": 3,
-  "minTokens": 50,
-  "reporters": ["console"],
-  "ignore": ["**/node_modules/**"]
-}
