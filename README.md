@@ -296,20 +296,26 @@ declaration block existed.
   to `--gala-color-focus` — genuinely referencing both tokens for the first
   time (closing the THD-M1 gap for these two), on top of whatever
   `:focus-visible` ring the browser's own UA stylesheet still draws.
-- **`forced-colors: active`**: `components.css` maps links, the main-content
-  focus ring, select borders and the divider rule to system colors
-  (`LinkText`, `Highlight`, `ButtonBorder`, `CanvasText`) so meaning survives
-  a forced-colors palette, per the brief's "forced-colors mode takes
-  precedence where the browser supplies system colors."
-- **`prefers-reduced-motion: reduce`**: collapses any animation/transition
-  duration to effectively zero at the root scope (defensive; this theme
-  declares no animations or transitions of its own, so this rule has no
-  visible effect today but keeps the obligation explicit and testable if a
-  future revision adds one).
+- **`forced-colors: active`**: `components.css` maps links, select borders
+  and the divider rule to system colors (`LinkText`, `ButtonBorder`,
+  `CanvasText`) so meaning survives a forced-colors palette, per the
+  brief's "forced-colors mode takes precedence where the browser supplies
+  system colors."
+- **`prefers-reduced-motion: reduce`**: `gala-base` collapses animation/
+  transition duration to effectively zero for every element on every page,
+  regardless of which theme (if any) is selected; this theme declares no
+  animation or transition of its own and so repeats no guard of its own
+  (THD-L1; a previous revision of this file incorrectly claimed this
+  theme carried such a rule itself — it never has).
 - **Zoom/reflow**: this theme sets no fixed pixel widths that would prevent
   320px-wide reflow (`main`'s `max-width` is a `rem` content measure, never
-  a lower bound); Playwright-driven 400% zoom/reflow, keyboard-journey and
-  axe-core runs are S2-T22, explicitly out of this task's scope.
+  a lower bound).
+- **Visual/accessibility check**: `@rathnasgala2/theme-tooling`'s shared
+  Playwright + axe-core harness (`visual:check`, see below) renders this
+  theme at 320/768/1440px in both palettes and scans each with axe-core.
+  It runs as this repository's own `visual` CI job, not as part of
+  `verify` (it needs a browser binary on disk). 400%-zoom, keyboard-journey
+  and manual AT scripts remain S2-T22.
 
 ## Digest cycle (`fixtureDigest`, `evidenceDigest`, `integrity`)
 
@@ -466,5 +472,6 @@ regular `0644` file; `package.json` carries no `dependencies` and no
   covers all four together, each its own repository and commit.
 - `infra/.github/workflows/theme-release.yml` and this repository's own
   `.github/workflows/release.yaml` caller — S2-T11 (infra, REMOTE-ONLY).
-- Playwright/axe-core browser conformance, no-JS/keyboard/400%-zoom
-  journeys, manual AT scripts — S2-T22.
+- No-JS/keyboard/400%-zoom journeys and manual AT scripts remain S2-T22;
+  the automated 320/768/1440px + light/dark Playwright/axe-core sweep is
+  now covered here by `visual:check` (see "Accessibility posture" above).

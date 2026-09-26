@@ -83,6 +83,17 @@ change to the token/CSS-hook contract).
   (`color-on-accent`, `color-success`, `color-warning`, `space-3`) in the
   README, each with why.
 
+### Changed (THD-L1, 2026-09-25)
+
+- Corrected the README's `prefers-reduced-motion: reduce` claim: this
+  theme has never repeated `gala-base`'s guard (there is no such rule in
+  `components.css`/`print.css`), but the README claimed one existed here.
+  Also corrected the `forced-colors: active` bullet (it referenced a
+  main-content focus ring / `Highlight` mapping that does not exist in
+  `components.css`) and the "Not in scope" list (it still said
+  Playwright/axe-core was entirely out of scope, superseded by THD-M10's
+  `visual:check` job).
+
 ### Changed (Contract 2.1.0 adoption, 2026-09-25)
 
 - `theme.json.contractVersion` bumped to `2.1.0` and `stylingContractDigest`
