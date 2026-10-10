@@ -27,16 +27,16 @@ jobs:
         with:
           persist-credentials: false
 
-      # Pinned to the commit tagged @rathnasgala2/template 2.1.0 (unreleased)
+      # Pinned to the commit at @rathnasgala2/template 3.0.1
       # (not yet published to the registry; see the template's own
-      # CHANGELOG.md Unreleased section, recommended release 2.1.0).
+      # CHANGELOG.md).
       # `css:check`/`grammar:check` and the template-conformance tests read
       # this checkout by path (WORKSPACE_ROOT/template).
       - name: Check out the template sibling repository
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           repository: rathnasgala2/template
-          ref: 20f8fdefe822f264f9d7fdd787d0d58431930a0b # 2.1.0
+          ref: 9692eda8f003f7bfbe01a452e8ad9de04a0e7ec1 # 3.0.1
           path: template
           persist-credentials: false
 
@@ -49,7 +49,7 @@ jobs:
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           repository: rathnasgala2/theme-tooling
-          ref: 4d36e4a4b0e8e03033356c9dcbe4cf41d07a56f2 # 0.2.0
+          ref: bb91515d3b30b7ae4dd1f165f525914c6bd8b626 # 0.3.0
           path: theme-tooling
           persist-credentials: false
 
@@ -101,7 +101,7 @@ jobs:
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           repository: rathnasgala2/template
-          ref: 20f8fdefe822f264f9d7fdd787d0d58431930a0b # 2.1.0
+          ref: 9692eda8f003f7bfbe01a452e8ad9de04a0e7ec1 # 3.0.1
           path: template
           persist-credentials: false
 
@@ -109,7 +109,7 @@ jobs:
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           repository: rathnasgala2/theme-tooling
-          ref: 4d36e4a4b0e8e03033356c9dcbe4cf41d07a56f2 # 0.2.0
+          ref: bb91515d3b30b7ae4dd1f165f525914c6bd8b626 # 0.3.0
           path: theme-tooling
           persist-credentials: false
 
@@ -159,7 +159,7 @@ jobs:
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           repository: rathnasgala2/theme-tooling
-          ref: 4d36e4a4b0e8e03033356c9dcbe4cf41d07a56f2 # 0.2.0
+          ref: bb91515d3b30b7ae4dd1f165f525914c6bd8b626 # 0.3.0
           path: theme-tooling
           persist-credentials: false
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6

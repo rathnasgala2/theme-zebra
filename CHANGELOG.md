@@ -4,6 +4,28 @@ All notable changes to `@rathnasgala2/theme-zebra` are documented here.
 
 ## Unreleased
 
+## 3.0.0 - 2026-10-10
+
+Breaking. This theme moves to the redesign's token system with the approved
+Zebra look (hard edges, black-and-white stripes, yellow accent, offset block
+shadows), with no compatibility with 2.x.
+
+- `theme.json` now carries the 116-token contract (schema 3.0.0) with the
+  Zebra values, `contractVersion` 3.0.0, `templateRange` `^3.0.0` and the
+  template styling contract 3.0.0 digest. The old 35-token catalog and its
+  token keys are gone.
+- `tokens.css` is generated from `theme.json` (`tokens:generate`) and checked
+  by `tokens:check`.
+- `components.css` shrank to a few skin rules; layout and components now live
+  in the template's base layer. Only the 11 hooks the CSS uses are listed in
+  `slotHooks`. The striped list rows and rule of 2.x are gone; the stripe
+  signature is now the page-background stripe paint token.
+- `print.css` keeps the same rules.
+- Removed `assets/stripe-mark.svg`; nothing uses it any more.
+- Size budgets raised to 32768 bytes per file and 98304 in total.
+- CI pins the template and theme-tooling commits for contract 3 as
+  theme-default 3.0.0 does.
+
 ## 2.1.0 - 2026-09-26
 
 ### Fixed (THD-M6, 2026-09-26 fourth pass)
