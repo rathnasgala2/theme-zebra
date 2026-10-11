@@ -12,7 +12,12 @@
 
   [data-gala-publication-root] .g-chip {
     background: var(--gala-paint-chip);
+    color: var(--gala-color-chip-text);
     text-transform: var(--gala-label-transform);
+  }
+
+  [data-gala-publication-root] .g-codebar-lang {
+    color: var(--gala-color-btn-text);
   }
 
   [data-gala-publication-root] .g-avatar {

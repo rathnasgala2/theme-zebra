@@ -2,9 +2,22 @@
   "schemaId": "urn:gala:schema:theme-contract:2.0.0",
   "schemaVersion": "2.0.0",
   "themeId": "zebra",
-  "package": "@rathnasgala2/theme-zebra@3.0.0",
-  "contractVersion": "3.0.0",
-  "templateRange": "^3.0.0",
+  "package": "@rathnasgala2/theme-zebra@4.0.0",
+  "contractVersion": "4.0.0",
+  "templateRange": "^4.0.0",
+  "composition": {
+    "schemaId": "urn:gala:schema:template-composition:2.0.0",
+    "schemaVersion": "2.0.0",
+    "profile": "developer",
+    "homeLayout": "topic-index",
+    "articleLayout": "technical",
+    "authorLayout": "biography",
+    "listingLayout": "rows",
+    "headerLayout": "utility",
+    "footerLayout": "compact",
+    "mediaRatio": "landscape",
+    "density": "compact"
+  },
   "stylesheets": ["tokens.css", "components.css", "print.css"],
   "cssLayers": ["gala-tokens", "gala-components", "gala-print"],
   "slotHooks": [
@@ -18,7 +31,8 @@
     "slot-header-actions",
     "ui-avatar",
     "ui-card",
-    "ui-chip"
+    "ui-chip",
+    "ui-codebar-lang"
   ],
   "tokens": [
     {
@@ -635,8 +649,8 @@
     {
       "path": "components.css",
       "mediaType": "text/css",
-      "byteLength": "796",
-      "sha256": "sha256:6c359485fb3989b52bbe8f32c0c414a84973dd550ab993aacfc343f067b889ac",
+      "byteLength": "929",
+      "sha256": "sha256:4841700dc0a73e8d9070674cba07fa11b113753b888f23705fcbe9a49fb7eff6",
       "license": "Apache-2.0"
     },
     {
@@ -655,13 +669,13 @@
     "fixture-token-catalog-contrast"
   ],
   "browserPolicyRef": "gala-theme-css-v2-20211224",
-  "integrity": "sha256:457f0e45374f3ff14a11c7822fa96f431ff477f31cc0afe2c86fb547efc452a1",
+  "integrity": "sha256:da30a4de09ca0925e4fde9271c274d0e0a6e6a1ddb138c866e2d8850f4f3bf9a",
   "budgets": {
     "maximumFileBytes": "32768",
     "maximumTotalBytes": "98304",
     "maximumFiles": 8
   },
-  "fixtureDigest": "sha256:2ece3f048a9e8ac12f77c23a195d3be380e2f9169cd94f21655b7f53a015e63a",
-  "evidenceDigest": "sha256:48475ab8b0680e0313b3c08dc08f269f935cb00a6b85dc253ba3e9510712c2b4",
-  "stylingContractDigest": "sha256:a10fecf6d43e4392312158f15b66d55a9e2bd3c7816a0747eb2084735d336de5"
+  "fixtureDigest": "sha256:e6d4a04d4d717c5c0299bbdc6aeed033e1f5945c348326537b34ce701229dcff",
+  "evidenceDigest": "sha256:3aceaf99e5f5aa6a0832fd6979bbbb0a37974c0f1c407f3b82264d6585b6e125",
+  "stylingContractDigest": "sha256:04abe6e0ce1e75ebfdd2549cceb66b4f4ff7aa0aeccf96ac18b300bed1f7aa0a"
 }

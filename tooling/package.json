@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "Local dev/test/SBOM entry point for @rathnasgala2/theme-zebra. Every gate implementation lives in @rathnasgala2/theme-tooling (shared across all five theme repositories, see run.mjs and ../../theme-tooling/README.md); this file only dispatches into it. Never packed: this directory is not part of the parent package.json's `files` array.",
+  "description": "Local dev/test/SBOM entry point for @rathnasgala2/theme-zebra. Every gate implementation lives in @rathnasgala2/theme-tooling (shared across all six generation-4 themes, see run.mjs and ../../theme-tooling/README.md); this file only dispatches into it. Never packed: this directory is not part of the parent package.json's `files` array.",
   "engines": {
     "node": "24.18.0",
     "npm": "11.16.0"

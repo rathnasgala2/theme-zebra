@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Thin wrapper into `@rathnasgala2/theme-tooling` (THD-M6): every real gate
- * implementation lives there now, shared across all five theme
+ * implementation lives there now, shared across all six generation-4 theme
  * repositories. This file, `package.json`, `.gitignore` and this
  * directory's `README.md` mention are all that remain of a `tooling/`
  * directory that used to carry 25 hand-copied files.

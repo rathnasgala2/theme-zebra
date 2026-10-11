@@ -27,29 +27,15 @@ jobs:
         with:
           persist-credentials: false
 
-      # Pinned to the commit at @rathnasgala2/template 3.0.1
-      # (not yet published to the registry; see the template's own
-      # CHANGELOG.md).
-      # `css:check`/`grammar:check` and the template-conformance tests read
-      # this checkout by path (WORKSPACE_ROOT/template).
-      - name: Check out the template sibling repository
-        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
-        with:
-          repository: rathnasgala2/template
-          ref: 9692eda8f003f7bfbe01a452e8ad9de04a0e7ec1 # 3.0.1
-          path: template
-          persist-credentials: false
-
       # Pinned to a commit of the shared tooling every @rathnasgala2/theme-*
       # repository depends on (THD-M6). Not yet published to the registry
       # (owner decision) — see theme-tooling/README.md "Status: not yet
-      # published" — so it is resolved by path via GALA_THEME_TOOLING_DIR,
-      # exactly like the template sibling above.
+      # published" — so it is resolved by path via GALA_THEME_TOOLING_DIR.
       - name: Check out the theme-tooling sibling repository
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           repository: rathnasgala2/theme-tooling
-          ref: 17b2471246e5cf1f36348a1aca145ed0153b74b9 # 0.4.0
+          ref: 14668c08a032bf7eb88dd74a656ee3d69ff98c9e # 0.5.0
           path: theme-tooling
           persist-credentials: false
 
@@ -66,10 +52,6 @@ jobs:
           set -euo pipefail
           test "$(node --version)" = "v24.18.0"
           test "$(npm --version)" = "11.16.0"
-
-      - name: Install the template sibling repository's dependencies
-        working-directory: template
-        run: npm ci
 
       - name: Install the shared tooling's dependencies
         working-directory: theme-tooling
@@ -89,7 +71,6 @@ jobs:
     timeout-minutes: 20
     env:
       WORKSPACE_ROOT: ${{ github.workspace }}
-      GALA_TEMPLATE_DIR: ${{ github.workspace }}/template
       GALA_THEME_TOOLING_DIR: ${{ github.workspace }}/theme-tooling
     steps:
       - name: Check out this repository
@@ -97,19 +78,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Check out the template sibling repository
-        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
-        with:
-          repository: rathnasgala2/template
-          ref: 9692eda8f003f7bfbe01a452e8ad9de04a0e7ec1 # 3.0.1
-          path: template
-          persist-credentials: false
-
       - name: Check out the theme-tooling sibling repository
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           repository: rathnasgala2/theme-tooling
-          ref: 17b2471246e5cf1f36348a1aca145ed0153b74b9 # 0.4.0
+          ref: 14668c08a032bf7eb88dd74a656ee3d69ff98c9e # 0.5.0
           path: theme-tooling
           persist-credentials: false
 
@@ -119,10 +92,6 @@ jobs:
           node-version-file: .node-version
           cache: npm
           cache-dependency-path: theme-tooling/package-lock.json
-
-      - name: Install the template sibling repository's dependencies
-        working-directory: template
-        run: npm ci
 
       - name: Install the shared tooling's dependencies
         working-directory: theme-tooling
@@ -159,7 +128,7 @@ jobs:
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           repository: rathnasgala2/theme-tooling
-          ref: 17b2471246e5cf1f36348a1aca145ed0153b74b9 # 0.4.0
+          ref: 14668c08a032bf7eb88dd74a656ee3d69ff98c9e # 0.5.0
           path: theme-tooling
           persist-credentials: false
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6

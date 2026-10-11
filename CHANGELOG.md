@@ -4,6 +4,20 @@ All notable changes to `@rathnasgala2/theme-zebra` are documented here.
 
 ## Unreleased
 
+## 4.0.0 - 2026-10-11
+
+Breaking. Zebra is now the generation-4 Developer theme; v3 remains available
+from its preserved Git baseline tag.
+
+- Upgraded the package, theme contract, and template range to 4.0.0.
+- Added the closed Developer composition: topic-index home, technical article,
+  biography author page, row listings, utility header, compact footer,
+  landscape media, and compact density.
+- Preserved Zebra's existing token palettes and CSS skin unchanged.
+- Validation consumes theme tooling from an explicit source checkout; it
+  installs integrity-checked vendored Schema 3.8.0 and Template 4.0.0
+  archives. This delivery does not publish to npm.
+
 ## 3.0.0 - 2026-10-10
 
 Breaking. This theme moves to the redesign's token system with the approved
