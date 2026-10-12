@@ -13,10 +13,12 @@ from its preserved Git baseline tag.
 - Added the closed Developer composition: topic-index home, technical article,
   biography author page, row listings, utility header, compact footer,
   landscape media, and compact density.
-- Preserved Zebra's existing token palettes and CSS skin unchanged.
+- Preserved Zebra's existing token palettes; the skin gained one rule
+  that sets the header brand name to 1rem so a long uppercase publication name
+  no longer overflows a 320px viewport on Linux fonts.
 - Validation consumes theme tooling from an explicit source checkout; it
   installs integrity-checked vendored Schema 3.8.0 and Template 4.0.0
-  archives. This delivery does not publish to npm.
+  archives. The release workflow publishes it to npm with trusted-publishing provenance.
 
 ## 3.0.0 - 2026-10-10
 

@@ -22,7 +22,7 @@ design tokens and small skin stylesheet.
   and conformance digest chain.
 - `tokens.css`: generated from `theme.json` by `tokens:generate`. Never edit
   it by hand; `tokens:check` fails if it drifts from `theme.json`.
-- `components.css`: a small skin layer (card shadow and lift, chip fill and case, avatar radius, strong text)
+- `components.css`: a small skin layer (card shadow and lift, chip fill and case, avatar radius, strong text, brand-name size)
   that uses tokens only.
 - `print.css`: print rules.
 - `LICENSE`, `README.md`.

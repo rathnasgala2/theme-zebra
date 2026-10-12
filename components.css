@@ -10,6 +10,10 @@
     transform: translate(var(--gala-lift-x), var(--gala-lift-y));
   }
 
+  [data-gala-publication-root] .g-brand-name {
+    font-size: 1rem;
+  }
+
   [data-gala-publication-root] .g-chip {
     background: var(--gala-paint-chip);
     color: var(--gala-color-chip-text);
