@@ -18,6 +18,7 @@
     "grammar:check": "node run.mjs grammar:check",
     "contrast:check": "node run.mjs contrast:check",
     "tokens:check": "node run.mjs tokens:check",
+    "palette:check": "node run.mjs palette:check",
     "tokens:generate": "node run.mjs tokens:generate",
     "budgets:check": "node run.mjs budgets:check",
     "package:check": "node run.mjs package:check",

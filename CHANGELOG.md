@@ -4,6 +4,15 @@ All notable changes to `@rathnasgala2/theme-zebra` are documented here.
 
 ## Unreleased
 
+## 4.1.0 - 2026-10-12
+
+- Declares a `palette` block (`gala-palette-follow-v1`): 36 tokens follow the
+  author's accent, background and text colours. The default palette is the
+  theme's own colours; no colour value changed.
+- `tokens.css` no longer declares the bound tokens; the template's palette
+  sheet is their only source.
+- `templateRange` is `^4.1.0`; the styling contract digest is unchanged.
+
 ## 4.0.0 - 2026-10-11
 
 Breaking. Zebra is now the generation-4 Developer theme; v3 remains available

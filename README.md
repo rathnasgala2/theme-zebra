@@ -1,7 +1,7 @@
 # @rathnasgala2/theme-zebra
 
 A high-contrast Developer theme for Galascribe portable publications using
-`@rathnasgala2/template@^4.0.0`: hard edges, black-and-white stripes, a yellow
+`@rathnasgala2/template@^4.1.0`: hard edges, black-and-white stripes, a yellow
 accent, and offset block shadows. This package is a **closed, passive file
 set**: JSON and CSS only, with no JavaScript, build step, runtime dependency,
 lifecycle script, external URL, or runtime font request.
