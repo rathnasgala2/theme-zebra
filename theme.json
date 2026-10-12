@@ -670,13 +670,13 @@
     "fixture-token-catalog-contrast"
   ],
   "browserPolicyRef": "gala-theme-css-v2-20211224",
-  "integrity": "sha256:5ddec5b77416f3fbd817d7f02cdaa51ac967d70fe6bd8f0fe1ba8e625c509149",
+  "integrity": "sha256:ae51dff58488908109b000eb958dc586cbc46c1d533b8df13c9983f27241634d",
   "budgets": {
     "maximumFileBytes": "32768",
     "maximumTotalBytes": "98304",
     "maximumFiles": 8
   },
-  "fixtureDigest": "sha256:e6d4a04d4d717c5c0299bbdc6aeed033e1f5945c348326537b34ce701229dcff",
-  "evidenceDigest": "sha256:55fc1ee3411835c137977b917d73f7c562cc4e35d6e5869792f93d2f876fcdcf",
-  "stylingContractDigest": "sha256:04abe6e0ce1e75ebfdd2549cceb66b4f4ff7aa0aeccf96ac18b300bed1f7aa0a"
+  "fixtureDigest": "sha256:75267c3c8593f553e3dde7265593e4c0c5582139bb4344ecb0a3b768c6e0f4c4",
+  "evidenceDigest": "sha256:ef5587241d2551910b2fcdf0b9b938bd3b4c03b61d9a2b5e0e93ae8cb52df4f2",
+  "stylingContractDigest": "sha256:63a76754b591a3cda91a4be1f43bdb3fe1d44cf4f9be766154f3944a043399b5"
 }
