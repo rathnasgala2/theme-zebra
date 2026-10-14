@@ -21,7 +21,11 @@
   }
 
   [data-gala-publication-root] .g-codebar-lang {
-    color: var(--gala-color-btn-text);
+    /* The chip background is the fixed white --gala-color-input, so its text
+       must come from a token that is fixed too: the code block's own ink,
+       code-canvas, is not palette-bound (btn-text follows the palette and
+       failed contrast). */
+    color: var(--gala-color-code-canvas);
   }
 
   [data-gala-publication-root] .g-avatar {
