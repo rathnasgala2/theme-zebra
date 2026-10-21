@@ -4,6 +4,18 @@ All notable changes to `@rathnasgala2/theme-zebra` are documented here.
 
 ## Unreleased
 
+## 4.2.0 - 2026-10-21
+
+- Built against template 4.4.0 and styling contract 4.1.0 (new
+  `stylingContractDigest`; template 4.4.0 refuses contract-4.0.0 themes).
+  `contractVersion` is `4.1.0` and `templateRange` is `^4.4.0`.
+- The template's base layer styles the new footer legal links, consent
+  controls and `policy` page kind; this theme sets no new rule.
+- Includes the code block language label fix already on main (b38e42b): the
+  label uses the fixed `--gala-color-code-canvas` ink, 19.8:1 or better under
+  every palette, instead of falling to 1.26-2.28:1 on the App's presets.
+- Gated by theme-tooling 0.7.0. No token change.
+
 ## 4.1.0 - 2026-10-12
 
 - Declares a `palette` block (`gala-palette-follow-v1`): 36 tokens follow the

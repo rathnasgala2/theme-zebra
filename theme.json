@@ -2,9 +2,9 @@
   "schemaId": "urn:gala:schema:theme-contract:2.0.0",
   "schemaVersion": "2.0.0",
   "themeId": "zebra",
-  "package": "@rathnasgala2/theme-zebra@4.1.0",
-  "contractVersion": "4.0.0",
-  "templateRange": "^4.1.0",
+  "package": "@rathnasgala2/theme-zebra@4.2.0",
+  "contractVersion": "4.1.0",
+  "templateRange": "^4.4.0",
   "composition": {
     "schemaId": "urn:gala:schema:template-composition:2.0.0",
     "schemaVersion": "2.0.0",
@@ -723,13 +723,13 @@
     "fixture-token-catalog-contrast"
   ],
   "browserPolicyRef": "gala-theme-css-v2-20211224",
-  "integrity": "sha256:994f274f17088f908cacb8ab98364a3abffd0bf7aeec7d5db68e078ef36b50cd",
+  "integrity": "sha256:6ac61bdc86ba3d5357b6e660890865cf5d69b3c324b9513efd61a08a1ce16f6b",
   "budgets": {
     "maximumFileBytes": "32768",
     "maximumTotalBytes": "98304",
     "maximumFiles": 8
   },
-  "fixtureDigest": "sha256:75267c3c8593f553e3dde7265593e4c0c5582139bb4344ecb0a3b768c6e0f4c4",
-  "evidenceDigest": "sha256:7913f75acf249297faf99caf443c4a72c66719265a948e6536cecad4ae7eae45",
-  "stylingContractDigest": "sha256:63a76754b591a3cda91a4be1f43bdb3fe1d44cf4f9be766154f3944a043399b5"
+  "fixtureDigest": "sha256:13ed5fe2ae941d682c86f4a0ca9974b8b38285e8f95db295bb447bf127df95d2",
+  "evidenceDigest": "sha256:4c984c8223722215c5387ac96d6eec08d762d59bda11b6c99fe46f07acfda554",
+  "stylingContractDigest": "sha256:4afdcb555d21fc205ab332a9e8996a09e1eb607053353c399eb070d0f0525f29"
 }
