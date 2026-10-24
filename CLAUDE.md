@@ -21,14 +21,24 @@ file set. Never add:
   All tooling lives in `tooling/`, which is never part of `files` and is
   never packed.
 - `utilities.css`, or any file outside the closed set the brief names
-  (`.github/workflows/release.yaml`, once added by a later task, is
-  source-validated but never packed either).
+  (`.github/workflows/release.yaml` is source-validated but never packed
+  either).
 - Any CSS selector that is not the root/palette scope or one of
   `@rathnasgala2/template`'s published styling-contract hooks
   (`contracts/theme-styling-contract.jcs` in the template repository) —
   `css:check` in `@rathnasgala2/theme-tooling` enforces this.
 - `@import`, an external-origin `url(...)`, or any other remote reference
   in CSS.
+
+## Releasing
+
+A release is a version bump in `package.json` plus a `## <version> - <date>`
+heading in `CHANGELOG.md`, pushed to main. `.github/workflows/release.yaml`
+(byte-identical in all six theme repositories) then runs the complete gate and
+publishes with npm trusted publishing. A push that changes a packed path
+without a version that is new on npm fails the run; it never skips. Do not add
+`publishConfig` to `package.json`: the closed shape above forbids it, and the
+workflow passes `--access public --provenance` itself.
 
 ## Commands
 
