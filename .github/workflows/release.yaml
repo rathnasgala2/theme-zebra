@@ -65,7 +65,7 @@ jobs:
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           repository: rathnasgala2/theme-tooling
-          ref: ed2591f0fbae55db56118f26a857c1896f7abc91 # 0.7.0
+          ref: 51360a31a94a32e27d0294085249b94d8589b5d2 # 0.7.0
           path: theme-tooling
           persist-credentials: false
 
