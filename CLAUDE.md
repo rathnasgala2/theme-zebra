@@ -62,6 +62,23 @@ The schema and `@rathnasgala2/template` are never npm dependencies — they are
 resolved from sibling checkouts through `$GALA_SCHEMA_DIR` and
 `$GALA_TEMPLATE_DIR`; see README "Commands".
 
+## Journey documents
+
+One document per user journey, end to end, lives in the App repository at
+`../app/docs/journeys/`, indexed in `../app/docs/journeys/README.md`. Two
+describe what a theme takes part in: `site-design-and-look.md` (a writer
+picks a theme, palette and layout) and `reader-site-experience.md` (what a
+reader sees on the published site).
+
+- Before changing what a writer can choose or what a reader sees beyond
+  colour and type, read those two documents and each one's "Connections to
+  other journeys".
+- A change here that alters what a person sees or can choose updates the
+  journey document in the App repository as part of the same piece of work.
+  The App's tests cannot see this repository, so nothing fails if the
+  document is left stale.
+- A defect found while reading goes under that document's "Known open gaps".
+
 ## What never goes here
 
 `@rathnasgala2/theme-default` (S2-T13, canonical owner of `tooling/`) and
