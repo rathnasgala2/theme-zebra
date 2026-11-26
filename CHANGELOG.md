@@ -4,6 +4,10 @@ All notable changes to `@rathnasgala2/theme-zebra` are documented here.
 
 ## Unreleased
 
+## 4.2.1 - 2026-11-26
+
+- Digests regenerated for theme-tooling 186f9cb, whose contrast check also measures the muted panel text over the panel gradient. No visual change.
+
 ## 4.2.0 - 2026-10-21
 
 - Built against template 4.4.0 and styling contract 4.1.0 (new
